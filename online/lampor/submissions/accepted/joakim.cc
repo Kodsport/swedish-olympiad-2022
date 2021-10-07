@@ -7,7 +7,7 @@ using namespace std;
 #define debug(...) //ignore
 typedef long long ll;
 typedef pair<int, int> pii;
-typedef vector<int> vi;
+typedef vector<ll> vi;
 typedef long double ld;
 
 int main() {
