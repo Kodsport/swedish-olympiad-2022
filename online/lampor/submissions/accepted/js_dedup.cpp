@@ -16,6 +16,8 @@ int compute(string& R, string& L, bool hasR, bool hasG, bool hasB) {
 }
 
 int main() {
+    int ign;
+    cin >> ign >> ign;
     string U, R, B, L;
     cin >> U >> R >> B >> L;
 
@@ -26,7 +28,7 @@ int main() {
     int RB = compute(R, L, true, false, true);
     int GB = compute(R, L, false, true, true);
 
-    int whiteSquares = 0;
+    long long whiteSquares = 0;
     for (int i = 0; i < (int)U.size(); i++) {
         bool hasR = U[i] == 'R' || B[i] == 'R';
         bool hasG = U[i] == 'G' || B[i] == 'G';

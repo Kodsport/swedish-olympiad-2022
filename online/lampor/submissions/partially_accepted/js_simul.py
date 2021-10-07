@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+input()
 U, R, B, L = input(), input(), input(), input()
 
 ans = 0

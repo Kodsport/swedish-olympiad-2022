@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+input()
+
 def compute(R, L, hasR, hasG, hasB):
     whiteSquares = 0
     for i in range(len(R)):
