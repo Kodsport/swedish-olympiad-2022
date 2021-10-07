@@ -12,7 +12,7 @@ typedef vector<ll> vi;
 int main() {
     int R, C; cin >> R >> C;
     string rup, rdown, rleft, rright;
-    cin >> rup >> rleft >> rdown >> rright;
+    cin >> rup >> rdown >> rleft >> rright;
     ll vR = 0, vG = 0, vB = 0, vRG = 0, vGB = 0, vBR = 0;
     ll hR = 0, hG = 0, hB = 0, hRG = 0, hGB = 0, hBR = 0;
     rep(i, 0, C) {
@@ -69,7 +69,7 @@ int main() {
         vRG * (hB + hGB + hBR) +
         vGB * (hR + hBR + hRG) +
         vBR * (hG + hRG + hGB) +
-        vB * hRG +
-        vR * hGB +
-        vG * hBR << endl;
+        hRG * (vB + vGB + vBR) +
+        hGB * (vR + vBR + vRG) +
+        hBR * (vG + vRG + vGB) << endl;
 }

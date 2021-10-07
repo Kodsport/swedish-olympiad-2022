@@ -18,8 +18,8 @@ int main() {
     cin >> U >> R >> B >> L;
     for (int i = 0; i < c; i++) U[i] = toi(U[i]);
     for (int i = 0; i < r; i++) R[i] = toi(R[i]);
-    for (int i = 0; i < r; i++) B[i] = toi(B[i]);
-    for (int i = 0; i < c; i++) L[i] = toi(L[i]);
+    for (int i = 0; i < c; i++) B[i] = toi(B[i]);
+    for (int i = 0; i < r; i++) L[i] = toi(L[i]);
 
     long long ans = 0;
     for (int i = 0; i < r; i++)
