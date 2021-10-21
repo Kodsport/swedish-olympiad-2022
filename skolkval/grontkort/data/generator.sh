@@ -8,13 +8,16 @@ REQUIRE_SAMPLE_REUSE=0
 use_solution joakim.cc
 
 samplegroup
-sample 1
-sample 2
+sample_manual 1
+sample_manual 2
+sample_manual 3
 
 group g1 20
+limits max_m=0
 tc_manual g1
 
 group g2 20
+limits max_n=2
 tc_manual g2
 
 group g3 20

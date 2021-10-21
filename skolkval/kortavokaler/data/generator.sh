@@ -5,7 +5,7 @@ PPATH=$(realpath ..)
 REQUIRE_SAMPLE_REUSE=0
 . ../../../testdata_tools/gen.sh
 
-use_solution joakim.cc
+use_solution nils.py
 
 samplegroup
 sample 1

@@ -1,0 +1,48 @@
+\problemname{Boris}
+
+%TODO: improve statement, write story...
+
+Exakt på tidpunkten $t_{i}$ förekommer $s_{i}$ stycken ``borisar'' på punkten $(x_{i}, y_{i})$. Om Philip står på denna punkt vid precis denna tidpunkt $t_{i}$ får han dessa ``borisar'', annars missar han dem.
+
+Philip kan börja var som helst vid tidpunkt 0, och kan på ett tidssteg antingen röra sig ett steg rakt upp, ner, höger, vänster, eller stå still.
+
+Vad är det största antalet ``borisar'' Philip kan samla på sig?
+
+\section*{Indata}
+Den första raden inehåller ett heltal $N$.
+
+Därefter följer $N$ rader. På rad $i$ finns fyra heltal: $t_{i}, s_{i}, x_{i}$ och $y_{i}$.
+
+I alla testfall gäller det att:
+\begin{itemize}
+  \item $1 \le N \le 2\,000$.
+  \item $1 \le s_{i} \le 500\,000$.
+  \item $0 \le t_{i}, x_{i}, y_{i} \le 500\,000\,000$.
+  \item Om $i \neq j$ så gäller det att
+    $t_{i} \neq t_{j}$,
+    $x_{i} \neq x_{j}$, eller
+    $y_{i} \neq y_{j}$.
+\end{itemize}
+
+\section*{Utdata}
+Skriv ut en rad med ett heltal -- det största antalet ``borisar'' Philip kan samla på sig.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en antal testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  Grupp & Poängvärde & Gränser \\ \hline
+  $1$   & $8$        & $N \le 2$ \\ \hline
+  $2$   & $31$       & $N \le 16$ \\ \hline
+  $3$   & $33$       & $t_{i},x_{i},y_{i}\le 50$ och $s_{i} = 1$ \\ \hline
+  $4$   & $28$       & Inga ytterligare begränsningar \\ \hline
+\end{tabular}
+
+Notera att vissa exempelfall är inte giltiga i vissa testfallsgrupper.
+
+\section*{Exempelfall}
+
+%TODO förklara exempelfall
