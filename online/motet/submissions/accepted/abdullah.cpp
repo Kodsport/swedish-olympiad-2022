@@ -46,6 +46,8 @@ int main()
             else
                 cur_r = max(cur_r, interval.second);
         }
+        s.emplace(cur_l, -1);
+        s.emplace(cur_r, 1);
     }
     ll ans = 0;
     ll cur = 0;
