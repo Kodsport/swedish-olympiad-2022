@@ -60,21 +60,8 @@ void set_n(ll &n, ll sum_m, ll max_m, ll min_m, ll type_of_n)
 vector<vector<pair<ll, ll>>> all_length(ll n, ll min_m, ll max_m, ll sum_m, ll max_coordinate)
 {
     // some interavls are going to include all allowed coodirnates
-    if (max_coordinate / 2 < min_m)
-    {
-        cout << "Impossible conditionns regarding max_coordinate sum_m or n" << endl;
-        assert(0);
-    }
-    if (max_m > max_coordinate / 2)
-    {
-        cout << "max_m is effectively less than what is wanted becuase of too low max_coordinate" << endl;
-        assert(0);
-    }
-    if (min_m * n > sum_m || max_m * n < sum_m)
-    {
-        cout << "Impossible conditions regarding max_m,min_m sum_m or n" << endl;
-        assert(0);
-    }
+        assert(max_coordinate / 2 >= min_m);
+        assert(min_m * n <= sum_m && max_m * n >= sum_m);
     queue<pair<ll, ll>> available;
     vector<vector<pair<ll, ll>>> vec(n);
     rep(i, 0, n)
@@ -116,7 +103,7 @@ int main(int argc, char **argv)
     srand(seed);
     max_coordinate = convert_to_int(cmdlinearg("max_coordinate"));
     set_n(n, sum_m, max_m, min_m, type_of_n);
-    vector<vector<pair<ll, ll>>> vec = all_length(n, min_m, max_m, sum_m, max_coordinate);
+    vector<vector<pair<ll, ll>>> vec = all_length(n,min_m,max_m,sum_m,max_coordinate);
     cout << n << endl;
     trav(v, vec)
     {

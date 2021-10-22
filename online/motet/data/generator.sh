@@ -21,8 +21,8 @@ sample 2
 sample 3
 
 
-group group1 10                       # Add a new testdata group worth 7 points
-limits sum_m=100 max_coordinate=100                          # Pass "n=15" to the input validator.
+group group1 10                       
+limits sum_m=100 max_coordinate=100                          
 tc 1
 tc 2
 tc 3                                
