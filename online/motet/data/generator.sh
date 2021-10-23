@@ -51,25 +51,25 @@ tc small-gen_short-intervals3 gen_short_intervals seed=20 sum_m=100 max_m=100 mi
 
 group group2 15
 limits n=1000 max_coordinate=1000 disjoint=1
-tc medium-all-length-disjoint1 gen_all_length_disjoint seed=1 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=5
-tc medium-all-length-disjoint2 gen_all_length_disjoint seed=2 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=5
-tc medium-all-length-disjoint3 gen_all_length_disjoint seed=3 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=5
-tc medium-all-length-disjoint4 gen_all_length_disjoint seed=4 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=5
-tc medium-all-length-disjoint5 gen_all_length_disjoint seed=5 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=1
-tc medium-disjoint1 gen_disjoint seed=6 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=5
-tc medium-disjoint2 gen_disjoint seed=7 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=5
-tc medium-disjoint3 gen_disjoint seed=8 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=5
-tc medium-disjoint4 gen_disjoint seed=9 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=5
-tc medium-disjoint5 gen_disjoint seed=10 sum_m=1000 max_m=100 min_m=50 max_coordinate=1000 type_of_n=5
-tc medium-disjoint6 gen_disjoint seed=11 sum_m=1000 max_m=100 min_m=50 max_coordinate=1000 type_of_n=5
-tc medium-disjoint7 gen_disjoint seed=12 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=1
-tc medium-disjoint8 gen_disjoint seed=13 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=3
-tc medium-disjoint9 gen_disjoint seed=14 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=2
-tc medium-disjoint10 gen_disjoint seed=15 sum_m=1000 max_m=35 min_m=30 max_coordinate=1000 type_of_n=2
-tc medium-disjoint11 gen_disjoint seed=16 sum_m=1000 max_m=35 min_m=30 max_coordinate=1000 type_of_n=2
-tc tiny-disjoint1 gen_disjoint seed=17 sum_m=20 max_m=20 min_m=1 max_coordinate=1000 type_of_n=5
-tc tiny-disjoint2 gen_disjoint seed=18 sum_m=20 max_m=20 min_m=1 max_coordinate=1000 type_of_n=5
-tc tiny-disjoint3 gen_disjoint seed=19 sum_m=20 max_m=20 min_m=1 max_coordinate=1000 type_of_n=5
+tc medium-all-length-disjoint1 gen_all_length_disjoint seed=1 sum_m=1000 max_m=1000 min_m=1 max_coordinate=4000 type_of_n=5
+tc medium-all-length-disjoint2 gen_all_length_disjoint seed=2 sum_m=1000 max_m=1000 min_m=1 max_coordinate=4000 type_of_n=5
+tc medium-all-length-disjoint3 gen_all_length_disjoint seed=3 sum_m=1000 max_m=1000 min_m=1 max_coordinate=4000 type_of_n=5
+tc medium-all-length-disjoint4 gen_all_length_disjoint seed=4 sum_m=1000 max_m=1000 min_m=1 max_coordinate=4000 type_of_n=5
+tc medium-all-length-disjoint5 gen_all_length_disjoint seed=5 sum_m=1000 max_m=1000 min_m=1 max_coordinate=4000 type_of_n=1
+tc medium-disjoint1 gen_disjoint seed=6 sum_m=1000 max_m=1000 min_m=1 max_coordinate=4000 type_of_n=5
+tc medium-disjoint2 gen_disjoint seed=7 sum_m=1000 max_m=1000 min_m=1 max_coordinate=4000 type_of_n=5
+tc medium-disjoint3 gen_disjoint seed=8 sum_m=1000 max_m=1000 min_m=1 max_coordinate=4000 type_of_n=5
+tc medium-disjoint4 gen_disjoint seed=9 sum_m=1000 max_m=1000 min_m=1 max_coordinate=4000 type_of_n=5
+tc medium-disjoint5 gen_disjoint seed=10 sum_m=1000 max_m=100 min_m=50 max_coordinate=4000 type_of_n=5
+tc medium-disjoint6 gen_disjoint seed=11 sum_m=1000 max_m=100 min_m=50 max_coordinate=4000 type_of_n=5
+tc medium-disjoint7 gen_disjoint seed=12 sum_m=1000 max_m=1000 min_m=1 max_coordinate=4000 type_of_n=1
+tc medium-disjoint8 gen_disjoint seed=13 sum_m=1000 max_m=1000 min_m=1 max_coordinate=4000 type_of_n=3
+tc medium-disjoint9 gen_disjoint seed=14 sum_m=1000 max_m=1000 min_m=1 max_coordinate=4000 type_of_n=2
+tc medium-disjoint10 gen_disjoint seed=15 sum_m=1000 max_m=35 min_m=30 max_coordinate=4000 type_of_n=2
+tc medium-disjoint11 gen_disjoint seed=16 sum_m=1000 max_m=35 min_m=30 max_coordinate=4000 type_of_n=2
+tc tiny-disjoint1 gen_disjoint seed=17 sum_m=20 max_m=20 min_m=1 max_coordinate=4000 type_of_n=5
+tc tiny-disjoint2 gen_disjoint seed=18 sum_m=20 max_m=20 min_m=1 max_coordinate=4000 type_of_n=5
+tc tiny-disjoint3 gen_disjoint seed=19 sum_m=20 max_m=20 min_m=1 max_coordinate=4000 type_of_n=5
 tc tiny-disjoint4 gen_disjoint seed=20 sum_m=20 max_m=6 min_m=4 max_coordinate=50 type_of_n=5
 tc tiny-disjoint5 gen_disjoint seed=21 sum_m=20 max_m=6 min_m=4 max_coordinate=50 type_of_n=5
 tc tiny-disjoint6 gen_disjoint seed=22 sum_m=20 max_m=6 min_m=4 max_coordinate=50 type_of_n=5
@@ -124,14 +124,14 @@ tc medium-no-restrictions6 gen_no_restrictions seed=11 sum_m=1000 max_m=1000 min
 tc medium-no-restrictions7 gen_no_restrictions seed=12 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=5
 tc medium-no-restrictions8 gen_no_restrictions seed=13 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=5
 tc medium-no-restrictions9 gen_no_restrictions seed=14 sum_m=1000 max_m=100 min_m=50 max_coordinate=1000 type_of_n=5
-tc medium-no-restrictions1 gen_no_restrictions seed=15 sum_m=1000 max_m=100 min_m=50 max_coordinate=50 type_of_n=5
-tc medium-no-restrictions2 gen_no_restrictions seed=16 sum_m=1000 max_m=35 min_m=30 max_coordinate=50 type_of_n=2
-tc medium-no-restrictions3 gen_no_restrictions seed=17 sum_m=1000 max_m=35 min_m=30 max_coordinate=50 type_of_n=2
+tc medium-no-restrictions10 gen_no_restrictions seed=15 sum_m=1000 max_m=100 min_m=50 max_coordinate=110 type_of_n=5
+tc medium-no-restrictions11 gen_no_restrictions seed=16 sum_m=1000 max_m=35 min_m=30 max_coordinate=70 type_of_n=2
+tc medium-no-restrictions12 gen_no_restrictions seed=17 sum_m=1000 max_m=35 min_m=30 max_coordinate=70 type_of_n=2
 tc medium-gen_short-intervals1 gen_short_intervals seed=18 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=5
 tc medium-gen_short-intervals2 gen_short_intervals seed=19 sum_m=1000 max_m=1000 min_m=1 max_coordinate=1000 type_of_n=5
 tc medium-gen_short-intervals3 gen_short_intervals seed=20 sum_m=1000 max_m=100 min_m=50 max_coordinate=1000 type_of_n=5
-tc medium-gen_short-intervals3 gen_short_intervals seed=20 sum_m=1000 max_m=100 min_m=50 max_coordinate=1000 type_of_n=5
-tc medium-gen_short-intervals3 gen_short_intervals seed=20 sum_m=1000 max_m=100 min_m=50 max_coordinate=1000 type_of_n=5
+tc medium-gen_short-intervals4 gen_short_intervals seed=20 sum_m=1000 max_m=100 min_m=50 max_coordinate=1000 type_of_n=5
+tc medium-gen_short-intervals5 gen_short_intervals seed=20 sum_m=1000 max_m=100 min_m=50 max_coordinate=1000 type_of_n=5
 
 group group5 30
 limits sum_m=200000 max_coordinate=1000000000
@@ -143,9 +143,10 @@ include_group group4
 
 tc large-all-length1 gen_all_length seed=1 sum_m=200000 max_m=1000 min_m=1 max_coordinate=1000000000 type_of_n=2
 tc large-all-length2 gen_all_length seed=2 sum_m=200000 max_m=1000 min_m=1 max_coordinate=1000000000 type_of_n=5
-tc large-no-restrictions1 gen_no_restrictions seed=3 sum_m=200000 max_m=200000 min_m=1 max_coordinate=1000000000 type_of_n=2
-tc large-no-restrictions2 gen_no_restrictions seed=4 sum_m=200000 max_m=200000 min_m=1 max_coordinate=1000000000 type_of_n=5
-tc large-no-restrictions3 gen_no_restrictions seed=4 sum_m=200000 max_m=200000 min_m=1 max_coordinate=1000000000 type_of_n=5
+tc large-no-restrictions1 gen_no_restrictions seed=3 sum_m=200000 max_m=450 min_m=400 max_coordinate=1000000000 type_of_n=2
+tc large-no-restrictions2 gen_no_restrictions seed=3 sum_m=200000 max_m=450 min_m=400 max_coordinate=1000000000 type_of_n=2
+tc large-no-restrictions3 gen_no_restrictions seed=3 sum_m=200000 max_m=200000 min_m=1 max_coordinate=1000000000 type_of_n=2
 tc large-no-restrictions4 gen_no_restrictions seed=4 sum_m=200000 max_m=200000 min_m=1 max_coordinate=1000000000 type_of_n=5
+tc large-no-restrictions5 gen_no_restrictions seed=4 sum_m=200000 max_m=200000 min_m=1 max_coordinate=1000000000 type_of_n=5
+tc large-no-restrictions6 gen_no_restrictions seed=4 sum_m=200000 max_m=200000 min_m=1 max_coordinate=1000000000 type_of_n=5
 tc large-slow-update gen_slow_update seed=4 sum_m=200000 max_m=200000 min_m=1 max_coordinate=1000000000 type_of_n=5
-
