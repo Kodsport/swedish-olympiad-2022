@@ -1,0 +1,37 @@
+\problemname{Hockey matchen}
+
+
+Maliah älskar att kolla på Hockey matcher. Tyvärr hade han alldeles för många läxor förra kvällen och kunde inte kolla på senaste hockey matchen när den sändes direkt, och nu är han nyfiken på vad som hände under matchen.\\ Han går in på en hemsida för att ta reda på det, men tyvärr är en stor del av koden trasig (de behöver bättre programmerare, lika bra som PO-deltagare) och endast en viss del av statistiken finns fortfarande.\\ Givet en del av statisken om hur många skott på mål, räddningar och mål varje lag gjorde under matchen, återkonstruera så mycket information som det går.
+\section*{Indata}
+Den första raden inehåller tre heltat: Antlet räddningar, antalet mål och antlet skott på mål det första laget gjorde
+
+Den andra raden inehåller tre heltat: Antlet räddningar, antalet mål och antlet skott det andra laget gjorde
+
+Om det står -1 så betyder det att information saknas
+
+Alla tal är mellan -1 och $10^9$
+
+\section*{Utdata}
+Skriv ut två rader, varje rade ska innehålla tre heltal. Varje heltal ska beskriva antal skott, mål eller räddningar för lagen. Om det inte går att veta exakt skriv ut -1.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en antal testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  Grupp & Poängvärde & Gränser \\ \hline
+  $1$   & $30$        & Det går alltid att veta exakt vad varje tal är \\ \hline
+  $2$   & $20$       & Alla tal är som störst 5 \\ \hline
+  $3$   & $50$       & Inga ytterligare begränsningar \\ \hline
+\end{tabular}
+
+Notera att vissa exempelfall är inte giltiga i vissa testfallsgrupper.
+
+\section*{Exempelfall}
+
+\section*{Förklarning av exempelfall 1}
+Exempelfall 1 är ett exmempel på ett testfall som kan förekomma i grupp 1.\\
+Eftersom det första laget hade totalt 3 skott på mål och det andra laget hade 2 äddningar så måste det första laget ha gjort 1 mål.\\
+Eftersom det första laget har gjort 1 räddning och det andra laget har gjort 4 mål så måste det andra laget ha gjort 5 skott på mål.
