@@ -50,7 +50,7 @@ tc small-gen_short-intervals3 gen_short_intervals seed=20 sum_m=100 max_m=100 mi
 
 
 group group2 15
-limits n=1000 max_coordinate=1000 disjoint=1
+limits sum_m=1000 max_coordinate=1000 disjoint=1
 tc medium-all-length-disjoint1 gen_all_length_disjoint seed=1 sum_m=1000 max_m=1000 min_m=1 max_coordinate=4000 type_of_n=5
 tc medium-all-length-disjoint2 gen_all_length_disjoint seed=2 sum_m=1000 max_m=1000 min_m=1 max_coordinate=4000 type_of_n=5
 tc medium-all-length-disjoint3 gen_all_length_disjoint seed=3 sum_m=1000 max_m=1000 min_m=1 max_coordinate=4000 type_of_n=5
