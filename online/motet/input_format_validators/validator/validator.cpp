@@ -1,94 +1,31 @@
-#include <bits/stdc++.h>
-
-#define rep(i, a, b) for (int i = a; i < int(b); ++i)
-#define all(v) v.begin(), v.end()
-#define trav(a, v) for (auto &a : v)
-
-typedef long long ll;
-typedef long double ld;
-
-const long long inf = 2e9;
-
-using namespace std;
-int main(int argc, char **argv)
+#include "validator.h"
+void run()
 {
-    ll sum_m, max_coordinate, min_m, max_m;
-    // Arguments: sum_m max_m  min_m max_coordinate
-    vector<ll> v;
-    rep(i, 1, argc)
-    {
-        stringstream ss;
-        ss << argv[i];
-        ll val;
-        ss >> val;
-        v.push_back(val);
-    }
-    sum_m = v[0];
-    max_m = v[1];
-    min_m = v[2];
-    max_coordinate = v[3];
-    ll n;
-    cin >> n;
-    ll sum = 0;
-    bool min_m_satisfied = 1, disjoint = 1, max_m_satisfied = 1, max_coordinate_satisfied = 1;
-    bool length_greater_than_zero = 1;
-    rep(i, 0, n)
-    {
-        ll m;
-        cin >> m;
-        sum += m;
-        min_m_satisfied = min_m_satisfied && (m >= min_m);
-        max_m_satisfied = max_m_satisfied && (m <= max_m);
-        set<pair<ll, ll>> intervals;
-        rep(j, 0, m)
-        {
-            ll l, r;
-            cin >> l >> r;
-            if (max(l, r) > max_coordinate)
-                max_coordinate_satisfied = 0;
-            intervals.emplace(l, r);
-            length_greater_than_zero = ((r - l + 1) > 0) && length_greater_than_zero;
+    int sum_m=Arg("sum_m");
+    bool disjoint = Arg("disjoint", 0);
+    int max_coordinate=Arg("max_coordinate");
+    int n = Int(1, sum_m);
+	Endl();
+    for(int i=0;i<n;i++){
+        int m=Int(0,sum_m);
+        sum_m-=m;
+        set<pair<int,int>> intervals;
+        for(int j=0;j<m;j+=2){
+            int a=Int(0,max_coordinate);
+            Space();
+            int b=Int(a,max_coordinate);
+            Space();
+            intervals.emplace(a,b);
         }
-        ll last_r = -inf;
-        trav(a, intervals)
-        {
-            if (last_r >= a.first)
-                disjoint = 0;
-            last_r = max(a.second, last_r);
+        Endl();
+        if(disjoint){
+            int cur_r=-1;
+            for(pair<int,int> a:intervals){
+                assert(cur_r<a.first);
+                cur_r=a.second;
+            }
         }
     }
-    bool good = 1;
-    if (!length_greater_than_zero || sum != sum_m || !min_m_satisfied || !max_m_satisfied || !max_coordinate_satisfied)
-    {
-        cout << "bad" << endl;
-        good = 0;
-    }
-    else
-        cout << "good" << endl;
-    if (!length_greater_than_zero)
-    {
-        cout << "length less or equal to zero in some interval" << endl;
-    }
-    if (!min_m_satisfied)
-    {
-        cout << "min_m not satisified" << endl;
-    }
-    if (!max_m_satisfied)
-    {
-        cout << "max_m not satisfied" << endl;
-    }
-    if (!max_coordinate_satisfied)
-    {
-        cout << "max_coordinate not satisfied" << endl;
-    }
-    if (sum != sum_m)
-    {
-        cout << "sum_m not satisfied" << endl;
-    }
-    if (disjoint)
-        cout << "disjoint" << endl;
-    else
-        cout << "not disjoint" << endl;
-    assert(good);
-    return 0;
+    assert(sum_m==0);
+    Eof();
 }
