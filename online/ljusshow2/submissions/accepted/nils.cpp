@@ -68,6 +68,7 @@ bool brute_force(bool row, int i){
 
 struct TC{
     vector<int> col_mask, row_mask;
+    TC(){}
     TC(int n, int m){
         col_mask.assign(m, 0);
         row_mask.assign(n, 0);
@@ -105,6 +106,35 @@ int col_score(TC &tc, int i){
     return res;
 }
 
+void hillclimb(TC &tc){
+    for(int i = 0; i < n; i++){
+        int old_score = row_score(tc, i);
+        int best_mask = tc.row_mask[i];
+        for(int mask = 1; mask < 7; mask++){
+            tc.row_mask[i] = mask;
+            int new_score = row_score(tc, i);
+            if(new_score > old_score){
+                old_score = new_score;
+                best_mask = mask;
+            }
+        }
+        tc.row_mask[i] = best_mask;
+    }
+    for(int i = 0; i < m; i++){
+        int old_score = col_score(tc, i);
+        int best_mask = tc.col_mask[i];
+        for(int mask = 1; mask < 7; mask++){
+            tc.col_mask[i] = mask;
+            int new_score = col_score(tc, i);
+            if(new_score > old_score){
+                old_score = new_score;
+                best_mask = mask;
+            }
+        }
+        tc.col_mask[i] = best_mask;
+    }
+}
+
 int score(TC &tc){
     int res = 0;
     for(int c1 = 0; c1 < n; c1++){
@@ -113,20 +143,40 @@ int score(TC &tc){
     return 2*res-n*m;
 }
 
+vector<int> all_masks = {1,2,3,4,5,6};
+int best_score = -inf;
+TC ans;
+vector<int> best_ind;
 
-TC greedy(){
+void greedy(int swaps){
     // Shuffle the rows/columns, greedily pick lamps that increase answer the most.
     vector<int> ind;
-    for(int c1 = 0; c1 < n+m; c1++){
-        ind.push_back(c1);
+    if(best_ind.size() > 0){
+        ind = best_ind;
     }
-    random_shuffle(ind.begin(), ind.end());
+    else{
+        for(int c1 = 0; c1 < n+m; c1++){
+            ind.push_back(c1);
+        }
+    }
+    if(swaps == -1){
+        random_shuffle(ind.begin(), ind.end());
+    }
+    else{
+        for(int c1 = 0; c1 < swaps; c1++){
+            int i = rand()%(n+m);
+            int j = rand()%(n+m);
+            swap(ind[i], ind[j]);
+        }
+    }
     TC tc(n, m);
     for(auto i : ind){
         if(i < n){
             int best = -inf;
             int best_mask = 1;
-            for(int mask = 1; mask < 7; mask++){
+            random_shuffle(all_masks.begin(), all_masks.end());
+            for(int c1 = 0; c1 < 6; c1++){
+                int mask = all_masks[c1];
                 tc.row_mask[i] = mask;
                 int temp = row_score(tc, i);
                 if(temp > best){
@@ -151,7 +201,16 @@ TC greedy(){
             tc.col_mask[i] = best_mask;
         }
     }
-    return tc;
+    hillclimb(tc);
+    hillclimb(tc);
+    hillclimb(tc);
+    int sc = score(tc);
+    if(sc > best_score){
+        cerr << sc/2 << "\n";
+        best_score = sc;
+        ans = tc;
+        best_ind = ind;
+    }
 }
 
 
@@ -221,19 +280,19 @@ int main() {
     }
     else{
         // Greedy heuristic
-        int best_score = -inf;
-        TC ans(n, m);
+        int LIM1, LIM2;
 
-        int LIM = 7000000 / (n*m);
-        for(int c1 = 0; c1 < LIM; c1++){
-            TC tc = greedy();
-            int sc = score(tc);
-            if(sc > best_score){
-                best_score = sc;
-                ans = tc;
-            }
+        if(T == 8){LIM1 = 500000; LIM2 = 1000;}
+        if(T == 9){LIM1 = 5000; LIM2 = 5000;}
+        if(T == 10){LIM1 = 75; LIM2 = 75;}
+
+        for(int c1 = 0; c1 < LIM1; c1++){
+            greedy(-1);
         }
-
+        for(int c1 = 0; c1 < LIM2; c1++){
+            greedy(4);
+        }
+        for(int c1 = 0; c1 < 10; c1++){hillclimb(ans);}
         print_tc(ans);
         cerr << T << ": " << double(best_score)/2.0 << "\n";
     }
