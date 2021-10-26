@@ -86,59 +86,70 @@ void print_tc(TC tc){
     }
 }
 
-int row_score(TC &tc, int i){
+vector<int> get_mask_counts(vector<int> &masks, bitset<MAXN> &row){
+    vector<int> ans(13, 0);
+    for(int c1 = 0; c1 < masks.size(); c1++){
+        int a = masks[c1] + 6 * (masks[c1] != 0 & row[c1]);
+        ans[a]++;
+    }
+    return ans;
+}
+
+int potential(vector<int> &mask_counts, int mask){
+    // Gets the score of a row or column, given info on how many of each (mask, lamp)
+    // pair is on this row/column. This takes O(1) since there are only 13 distinct
+    // (mask, lamp) pairs. Computing mask_counts still takes O(n), but different masks
+    // can be considered without extra cost, so this cuts down time with a factor ~6.
     int res = 0;
-    for(int c1 = 0; c1 < m; c1++){
-        if(tc.col_mask[c1] != 0 && tc.row_mask[i] != 0){
-            res += (((tc.col_mask[c1]|tc.row_mask[i])==7)==rows[i][c1]);
-        }
+    for(int c1 = 1; c1 < mask_counts.size(); c1++){
+        bool row_entry = (c1 > 6);
+        int temp_mask = c1 - int(row_entry) * 6;
+        res += mask_counts[c1] * (((mask | temp_mask) == 7) == row_entry);
     }
     return res;
 }
 
-int col_score(TC &tc, int i){
-    int res = 0;
-    for(int c1 = 0; c1 < n; c1++){
-        if(tc.row_mask[c1] != 0 && tc.col_mask[i] != 0){
-            res += (((tc.col_mask[i]|tc.row_mask[c1])==7)==rows[c1][i]);
-        }
-    }
-    return res;
-}
-
-void hillclimb(TC &tc){
+bool hillclimb(TC &tc){
+    // Go through each row and column, check if score can be increased by changing it.
+    bool improvement = 0;
     for(int i = 0; i < n; i++){
-        int old_score = row_score(tc, i);
         int best_mask = tc.row_mask[i];
+        vector<int> mask_counts = get_mask_counts(tc.col_mask, rows[i]);
+        int old_score = potential(mask_counts, best_mask);
+
         for(int mask = 1; mask < 7; mask++){
-            tc.row_mask[i] = mask;
-            int new_score = row_score(tc, i);
+            int new_score = potential(mask_counts, mask);
             if(new_score > old_score){
                 old_score = new_score;
                 best_mask = mask;
+                improvement = 1;
             }
         }
         tc.row_mask[i] = best_mask;
     }
     for(int i = 0; i < m; i++){
-        int old_score = col_score(tc, i);
         int best_mask = tc.col_mask[i];
+        vector<int> mask_counts = get_mask_counts(tc.row_mask, cols[i]);
+        int old_score = potential(mask_counts, best_mask);
+
         for(int mask = 1; mask < 7; mask++){
-            tc.col_mask[i] = mask;
-            int new_score = col_score(tc, i);
+            int new_score = potential(mask_counts, mask);
             if(new_score > old_score){
                 old_score = new_score;
                 best_mask = mask;
+                improvement = 1;
             }
         }
         tc.col_mask[i] = best_mask;
     }
+    return improvement;
 }
 
 int score(TC &tc){
     int res = 0;
     for(int c1 = 0; c1 < n; c1++){
-        res += row_score(tc, c1);
+        vector<int> mask_counts = get_mask_counts(tc.col_mask, rows[c1]);
+        res += potential(mask_counts, tc.row_mask[c1]);
     }
     return 2*res-n*m;
 }
@@ -174,11 +185,11 @@ void greedy(int swaps){
         if(i < n){
             int best = -inf;
             int best_mask = 1;
+            vector<int> mask_counts = get_mask_counts(tc.col_mask, rows[i]);
             random_shuffle(all_masks.begin(), all_masks.end());
             for(int c1 = 0; c1 < 6; c1++){
                 int mask = all_masks[c1];
-                tc.row_mask[i] = mask;
-                int temp = row_score(tc, i);
+                int temp = potential(mask_counts, mask);
                 if(temp > best){
                     best = temp;
                     best_mask = mask;
@@ -190,9 +201,11 @@ void greedy(int swaps){
             i -= n;
             int best = -inf;
             int best_mask = 1;
-            for(int mask = 1; mask < 7; mask++){
-                tc.col_mask[i] = mask;
-                int temp = col_score(tc, i);
+            vector<int> mask_counts = get_mask_counts(tc.row_mask, cols[i]);
+            random_shuffle(all_masks.begin(), all_masks.end());
+            for(int c1 = 0; c1 < 6; c1++){
+                int mask = all_masks[c1];
+                int temp = potential(mask_counts, mask);
                 if(temp > best){
                     best = temp;
                     best_mask = mask;
@@ -201,12 +214,17 @@ void greedy(int swaps){
             tc.col_mask[i] = best_mask;
         }
     }
-    hillclimb(tc);
-    hillclimb(tc);
-    hillclimb(tc);
+
+    int tries = 0;
+    while(1){
+        bool hc = hillclimb(tc);
+        tries++;
+        if(!hc ||tries > 50)break;
+    }
+
     int sc = score(tc);
     if(sc > best_score){
-        cerr << sc/2 << "\n";
+        //cerr << sc/2 << "  tries: " << tries << "\n";
         best_score = sc;
         ans = tc;
         best_ind = ind;
@@ -283,8 +301,8 @@ int main() {
         int LIM1, LIM2;
 
         if(T == 8){LIM1 = 500000; LIM2 = 1000;}
-        if(T == 9){LIM1 = 5000; LIM2 = 5000;}
-        if(T == 10){LIM1 = 75; LIM2 = 75;}
+        if(T == 9){LIM1 = 30000; LIM2 = 0;}
+        if(T == 10){LIM1 = 90; LIM2 = 50;}
 
         for(int c1 = 0; c1 < LIM1; c1++){
             greedy(-1);
