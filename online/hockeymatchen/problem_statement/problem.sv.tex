@@ -1,35 +1,42 @@
-\problemname{Hockey matchen}
+\problemname{Hockeymatchen}
+Maliah älskar att kolla på ishockey.
+Tyvärr hade han alldeles för många läxor att göra förra kvällen och kunde inte kolla på direktsändningen av hans favoritlags senaste match, så nu är han nyfiken på vad som hände under matchen.
 
+Vanligtvis går han in på Kvällspapprets sportsidor för att ta reda på det, men tyvärr är en stor del av deras hemsida trasig (de behöver bättre programmerare, lika bra som PO-deltagare) och endast en viss del av statistiken går att utläsa.
+Maliah är främst intresserad av tre olika frågor för varje lag: antalet mål de gjorde, antalet skott deras målvakt räddade, och det totala antalet skott de sköt på motståndarens mål.
+Givet en del av denna statistik för respektive lag, återkonstruera så mycket av statistiken som möjligt.
 
-Maliah älskar att kolla på Hockey matcher. Tyvärr hade han alldeles för många läxor förra kvällen och kunde inte kolla på senaste hockey matchen när den sändes direkt, och nu är han nyfiken på vad som hände under matchen.\\ Han går in på en hemsida för att ta reda på det, men tyvärr är en stor del av koden trasig (de behöver bättre programmerare, lika bra som PO-deltagare) och endast en viss del av statistiken finns fortfarande.\\ Givet en del av statisken om hur många skott på mål, räddningar och mål varje lag gjorde under matchen, återkonstruera så mycket information som det går.
 \section*{Indata}
-Den första raden inehåller tre heltat: Antlet räddningar, antalet mål och antlet skott på mål det första laget gjorde
+Den första raden innehåller tre heltal: antalet mål som gjordes av det första laget, antalet räddningar det första lagets målvakt gjorde, samt antalet skott som det första laget sköt på motståndarens mål.
+Den andra raden innehåller motsvarande information för det andra laget.
 
-Den andra raden inehåller tre heltat: Antlet räddningar, antalet mål och antlet skott det andra laget gjorde
+Alla tal i statistiken som är kända är mellan $0$ och $10^9$.
+Om ett tal i statistiken saknas ersätts det med $-1$.
 
-Om det står -1 så betyder det att information saknas
-
-Alla tal är mellan -1 och $10^9$
+Det är garanterat att det finns minst ett sätt att ersätta alla $-1$ med tal så att den resulterande statistiken är korrekt.
 
 \section*{Utdata}
-Skriv ut två rader, varje rade ska innehålla tre heltal. Varje heltal ska beskriva antal skott, mål eller räddningar för lagen. Om det inte går att veta exakt skriv ut -1.
+Skriv ut statistiken för de två lagen på samma format som i indatan.
+All saknad statistik som går att unikt bestämma utifrån övriga tal ska skrivas ut istället för $-1$.
+Om det inte går att unikt bestämma ett visst tal, skriv ut $-1$.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en antal testfallsgrupper.
 För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 
 \noindent
-\begin{tabular}{| l | l | l |}
+\begin{tabular}{| l | l | p{12cm} |}
   \hline
   Grupp & Poängvärde & Gränser \\ \hline
-  $1$   & $30$        & Det går alltid att veta exakt vad varje tal är \\ \hline
-  $2$   & $20$       & Alla tal är som störst 5 \\ \hline
+  $1$   & $30$       & Alla tal går att återkonstruera \\ \hline
+  $2$   & $20$       & Alla tal i den ursprungliga statistiken var högst $5$ \\ \hline
   $3$   & $50$       & Inga ytterligare begränsningar \\ \hline
 \end{tabular}
 
-Notera att vissa exempelfall är inte giltiga i vissa testfallsgrupper.
+Notera att vissa exempelfall är inte giltiga i alla testfallsgrupper.
 
-\section*{Förklarning av exempelfall 1}
-Exempelfall 1 är ett exmempel på ett testfall som kan förekomma i grupp 1.\\
-Eftersom det första laget hade totalt 3 skott på mål och det andra laget hade 2 äddningar så måste det första laget ha gjort 1 mål.\\
-Eftersom det första laget har gjort 1 räddning och det andra laget har gjort 4 mål så måste det andra laget ha gjort 5 skott på mål.
+\section*{Förklaring av exempelfall 1}
+Eftersom det första laget hade totalt $3$ skott på mål och det andra laget hade $2$ räddningar så måste de släppt in det sista skottet, så det blev $1$ mål.
+Eftersom det första laget gjorde $1$ räddning men det andra laget gjorde $4$ mål så måste det andra laget ha gjort totalt $5$ skott på mål.
+
+Detta fall skulle kunna förekomma i den första testfallsgruppen.
