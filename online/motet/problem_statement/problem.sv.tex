@@ -1,34 +1,45 @@
 \problemname{Mötet}
+En styrelse med $N$ medlemmar planerar att ha ett möte.
+På grund av det stora antalet styrelseledamöter är det svårt att hitta en tid som passar alla, men man vill gärna att så många personer som möjligt kan vara med på mötet.
 
-En styrelse med $N$ medlemmar planerar att ha ett möte. På grund av det stora antalet medlemar i stryelsen är det svårt att ha en tid som passar alla, men man vill gärna att så många personer som möjligt kan vara med i mötet.\\ Personen $i$ säger att $m_i$ tidsintervall passar dem.\\
-När en person säger att tidsintervallet $[a,b]$ passar dem så bteyder det att om mötet startar vid någon tid $t$ sdär $a\leq t \leq b$ så kan de vara med.\\
-Vad är det maximala antalet personer som kan vara med i mötet?\\
-Notera att personerna i styrelsen är slarviga och kan säga att de kan på intervallen $[a_x,b_x]$, $[a_y,b_y]$ , $x \neq y$ även om intervallen $[a_x,b_x]$, $[a_y,b_y]$ har gemensamma punkter. Exempelvis kan en person säga att de kan på tidsintervallet $[1,3]$ och $[2,4]$.
+Varje ledamot är tillgänglig under ett antal olika tidsintervall, där varje tidsintervall $[a, b]$ betyder att ledamöten kan närvara om \textbf{mötet startar vid någon tid} $t$ där $a \le t \le b$.
+Eftersom vissa ledamöter är väldigt slarviga med sina kalendrar kan en och samma ledamot råka ge dig olika tidsintervall som överlappar, t.ex $[1, 3]$ och $[2, 4]$, även om det haed räckt med ett enda intervall, i detta fall $[1, 4]$.
+
+Beräkna det största antalet ledamöter som kan delta på mötet.
+
 \section*{Indata}
-Den första raden inehåller ett heltal $N \leq 2\cdot 10^5$.
+Den första raden innehåller ett heltal $N$ ($1 \le N \leq 2\cdot 10^5$), antalet ledamöter i styrelsen.
 
-Därefter följer $N$ rader. Rad $i$ börjar med ett heltal $1 \leq m_i \leq 2\cdot 10^5 $ som följs av $m_i$ tidsintervall ($2 \cdot m_i$ heltal). Varje intervall $j$ är i formen $a_i_j\; b_i_j$ , $0\leq a_i_j\leq b_i_j<10^9$ där $a_i_j$ och  $b_i_j$ är hetlat 
+Därefter följer $N$ rader, en för varje styrelseledamot.
+Den $i$:te raden börjar med antalet tidsintervall $m_i$ ($1 \leq m_i \leq 2\cdot 10^5$) som den $i$:te ledamöten kan närvara under.
+Detta följs av $m_i$ par av heltal, ett för varje intervall.
+Dessa par $a, b$ ($0 \le a \le b < 10^9$) representerar intervallet $[a, b]$.
 
-Låt $B=\sum_{i=1}^{N} m_i$ (summan av alla $m_i$), då gäller det att i alla testfall $B \leq 2\cdot 10^5$
+Låt $B=\sum_{i=1}^{N} m_i$ vara summan av antalet tidsintervall som alla ledamöter är tillgängliga under.
+Då gäller det att $B \leq 2\cdot 10^5$.
 
 \section*{Utdata}
-Skriv ut en rad med ett heltal -- det största antalet personer som kan vara med i ett möte om man väljer en optimal tid att start mötet i
+Skriv ut en rad med ett heltal -- det största antalet ledamöter som kan delta i mötet om starttiden väljs optimalt.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en antal testfallsgrupper.
 För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 
 \noindent
-\begin{tabular}{| l | l | l |}
+\begin{tabular}{| l | l | p{12cm} |}
   \hline
   Grupp & Poängvärde & Gränser \\ \hline
-  $1$   & $10$        & $B \leq 100$ , $0 \leq a_i_j \leq b_i_j  \leq 100$ \\ \hline
-  $2$   & $15$       & $B \leq  1000$ , $0 \leq a_i_j \leq b_i_j  \leq 4000$, och personen $i$ har inga två intervall som delar punkter. \\ \hline
-  $3$   & $30$       & personen $i$ har inga två intervall som delar punkter. \\ \hline
-  $4$   & $15$       & $B \leq 1000$ , $0 \leq a_i_j \leq b_i_j  \leq 4000$ \\ \hline
+  $1$   & $10$       & $B \leq 100$, $0 \leq a \leq b \leq 100$ \\ \hline
+  $2$   & $15$       & $B \leq  1,000$, $0 \leq a \leq b \leq 4\,000$, och ingen enskild ledamot har två tidsintervall som överlappar \\ \hline
+  $3$   & $30$       & Ingen enskild ledamot har två tidsintervall som överlappar \\ \hline
+  $4$   & $15$       & $B \leq 1\,000$, $0 \leq a \leq b \leq 4\,000$ \\ \hline
   $5$   & $30$       & Inga ytterligare begränsningar \\ \hline
 \end{tabular}
-Notera att vissa exempelfall är inte giltiga i vissa testfallsgrupper.
 
-\section*{Förklaring av exempel 1}
-Exempelfall $1$ är ett exmepel på ett testfall som kan vara med i Grupp $2$ och Grupp $3$.\\ Om vi exmpelvis väljer att starta mötet vid tiden $4$ då kan person $2$ och person $3$ vara med.\\ Notera att exmpelfall $2$ och $3$ kan inte förekomma i Grupp $2$ och Grupp $3$
+Notera att vissa exempelfall är inte giltiga i alla testfallsgrupper.
+
+\section*{Förklaring av exempelfall}
+I det första exemplet kan vi välja att starta mötet vid tiden $4$, då ledamot $2$ och $3$ kan delta.
+Fallet skulle kunna vara med i samtliga testfallsgrupper.
+
+Exempel $2$ och $3$ skulle inte kunna förekomma i testfallsgrupp $2$ eller $3$.
