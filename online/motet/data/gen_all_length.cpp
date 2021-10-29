@@ -60,8 +60,8 @@ void set_n(ll &n, ll sum_m, ll max_m, ll min_m, ll type_of_n)
 vector<vector<pair<ll, ll>>> all_length(ll n, ll min_m, ll max_m, ll sum_m, ll max_coordinate)
 {
     // some interavls are going to include all allowed coodirnates
-        assert(max_coordinate / 2 >= min_m);
-        assert(min_m * n <= sum_m && max_m * n >= sum_m);
+    assert(max_coordinate / 2 >= min_m);
+    assert(min_m * n <= sum_m && max_m * n >= sum_m);
     queue<pair<ll, ll>> available;
     vector<vector<pair<ll, ll>>> vec(n);
     rep(i, 0, n)
@@ -103,16 +103,17 @@ int main(int argc, char **argv)
     srand(seed);
     max_coordinate = convert_to_int(cmdlinearg("max_coordinate"));
     set_n(n, sum_m, max_m, min_m, type_of_n);
-    vector<vector<pair<ll, ll>>> vec = all_length(n,min_m,max_m,sum_m,max_coordinate);
+    vector<vector<pair<ll, ll>>> vec = all_length(n, min_m, max_m, sum_m, max_coordinate);
     cout << n << endl;
     trav(v, vec)
     {
         cout << v.size() << " ";
-        trav(a, v)
+        rep(i, 0, v.size())
         {
+            pair<ll, ll> a = v[i];
             if (a.first > a.second)
                 swap(a.first, a.second);
-            cout << a.first << " " << a.second << " ";
+            cout << a.first << " " << a.second << (i + 1 == v.size() ? "" : " ");
         }
 
         cout << endl;

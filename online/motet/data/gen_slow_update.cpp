@@ -93,11 +93,12 @@ int main(int argc, char **argv)
     trav(v, vec)
     {
         cout << v.size() << " ";
-        trav(a, v)
+        rep(i, 0, v.size())
         {
+            pair<ll, ll> a = v[i];
             if (a.first > a.second)
                 swap(a.first, a.second);
-            cout << a.first << " " << a.second << " ";
+            cout << a.first << " " << a.second << (i + 1 == v.size() ? "" : " ");
         }
 
         cout << endl;
