@@ -60,8 +60,8 @@ void set_n(ll &n, ll sum_m, ll max_m, ll min_m, ll type_of_n)
 
 vector<vector<pair<ll, ll>>> no_restrictions(ll n, ll min_m, ll max_m, ll sum_m, ll max_coordinate)
 {
-        assert(max_coordinate / 2 >= min_m);
-        assert(min_m * n <= sum_m && max_m * n >= sum_m);
+    assert(max_coordinate / 2 >= min_m);
+    assert(min_m * n <= sum_m && max_m * n >= sum_m);
     vector<vector<pair<ll, ll>>> vec(n);
     queue<pair<ll, ll>> available;
     rep(i, 0, n)
@@ -108,11 +108,12 @@ int main(int argc, char **argv)
     trav(v, vec)
     {
         cout << v.size() << " ";
-        trav(a, v)
+        rep(i, 0, v.size())
         {
+            pair<ll, ll> a = v[i];
             if (a.first > a.second)
                 swap(a.first, a.second);
-            cout << a.first << " " << a.second << " ";
+            cout << a.first << " " << a.second << (i + 1 == v.size() ? "" : " ");
         }
 
         cout << endl;

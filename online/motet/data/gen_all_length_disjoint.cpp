@@ -60,9 +60,10 @@ void set_n(ll &n, ll sum_m, ll max_m, ll min_m, ll type_of_n)
 vector<vector<pair<ll, ll>>> all_length(ll n, ll min_m, ll max_m, ll sum_m, ll max_coordinate)
 {
     // some interavls are going to include all allowed coodirnates
-    vector<vector<pair<ll,ll>>> vec(n);
-    rep(i,0,n){
-        vec[i].emplace_back(0,max_coordinate);
+    vector<vector<pair<ll, ll>>> vec(n);
+    rep(i, 0, n)
+    {
+        vec[i].emplace_back(0, max_coordinate);
     }
     return vec;
 }
@@ -87,11 +88,12 @@ int main(int argc, char **argv)
     trav(v, vec)
     {
         cout << v.size() << " ";
-        trav(a, v)
+        rep(i, 0, v.size())
         {
+            pair<ll, ll> a = v[i];
             if (a.first > a.second)
                 swap(a.first, a.second);
-            cout << a.first << " " << a.second << " ";
+            cout << a.first << " " << a.second << (i + 1 == v.size() ? "" : " ");
         }
 
         cout << endl;
