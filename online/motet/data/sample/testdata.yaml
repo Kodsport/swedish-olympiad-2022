@@ -1,0 +1,5 @@
+on_reject: continue
+range: 0 0
+accept_score: 0
+grader_flags: first_error
+input_validator_flags: sum_m=200000 max_coordinate=1000000000

@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 n = int(input())
 # Här har vi två listor: en "global" för att lagra intervall på allas intervall, och en "local" för att lagra intervall till en person
 global_intervals = []

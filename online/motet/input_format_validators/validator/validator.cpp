@@ -6,10 +6,12 @@ void run()
     int max_coordinate = Arg("max_coordinate");
     int n = Int(1, sum_m);
     Endl();
+
+    int b = 0;
     for (int i = 0; i < n; i++)
     {
         int m = Int(0, sum_m);
-        sum_m -= m;
+        b += m;
         set<pair<int, int>> intervals;
         for (int j = 0; j < m; j++)
         {
@@ -25,11 +27,15 @@ void run()
             int cur_r = -1;
             for (pair<int, int> a : intervals)
             {
-                assert(cur_r < a.first);
+                if(cur_r >= a.first) die_line("intervals overlap");
                 cur_r = a.second;
             }
         }
     }
-    assert(sum_m == 0);
+    if(b > sum_m)
+        die_line("[B is too large] "
+                "Actual:" + to_string(b) + "; "
+                "Expected: <= " + to_string(sum_m));
+
     Eof();
 }

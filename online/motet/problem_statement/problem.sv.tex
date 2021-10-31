@@ -13,7 +13,7 @@ Den första raden innehåller ett heltal $N$ ($1 \le N \leq 2\cdot 10^5$), antal
 Därefter följer $N$ rader, en för varje styrelseledamot.
 Den $i$:te raden börjar med antalet tidsintervall $m_i$ ($1 \leq m_i \leq 2\cdot 10^5$) som den $i$:te ledamöten kan närvara under.
 Detta följs av $m_i$ par av heltal, ett för varje intervall.
-Dessa par $a, b$ ($0 \le a \le b < 10^9$) representerar intervallet $[a, b]$.
+Dessa par $a, b$ ($0 \le a \le b \le 10^9$) representerar intervallet $[a, b]$.
 
 Låt $B=\sum_{i=1}^{N} m_i$ vara summan av antalet tidsintervall som alla ledamöter är tillgängliga under.
 Då gäller det att $B \leq 2\cdot 10^5$.
@@ -29,10 +29,10 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   Grupp & Poängvärde & Gränser \\ \hline
-  $1$   & $10$       & $B \leq 100$, $0 \leq a \leq b \leq 100$ \\ \hline
-  $2$   & $15$       & $B \leq  1,000$, $0 \leq a \leq b \leq 4\,000$, och ingen enskild ledamot har två tidsintervall som överlappar \\ \hline
+  $1$   & $10$       & $B \leq 100$ och $0 \leq a \leq b \leq 100$ \\ \hline
+  $2$   & $15$       & $B \leq  1\,000$, och $0 \leq a \leq b \leq 4\,000$, och ingen enskild ledamot har två tidsintervall som överlappar \\ \hline
   $3$   & $30$       & Ingen enskild ledamot har två tidsintervall som överlappar \\ \hline
-  $4$   & $15$       & $B \leq 1\,000$, $0 \leq a \leq b \leq 4\,000$ \\ \hline
+  $4$   & $15$       & $B \leq 1\,000$ och $0 \leq a \leq b \leq 4\,000$ \\ \hline
   $5$   & $30$       & Inga ytterligare begränsningar \\ \hline
 \end{tabular}
 
