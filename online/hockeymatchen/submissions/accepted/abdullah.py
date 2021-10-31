@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 saves_a, goals_a, shots_a = [int(i) for i in input().split()]
 saves_b, goals_b, shots_b = [int(i) for i in input().split()]
 if shots_a == 0:

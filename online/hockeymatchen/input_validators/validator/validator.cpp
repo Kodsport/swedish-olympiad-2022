@@ -29,12 +29,13 @@ void run() {
   Endl();
   if(doable){
     ll howmany=(v[0]!=-1)+(v[4]!=-1)+(v[5]!=-1);
-    assert(howmany>= 2 || (v[5]!=0));
+    assert(howmany>= 2 || (v[5]==0));
     howmany=(v[1]!=-1)+(v[2]!=-1)+(v[3]!=-1);
-    assert(howmany>= 2 || (v[2]!=0));
+    assert(howmany>= 2 || (v[2]==0));
   }
-  assert(v[0]<=v[5] && v[4]<=5);
-  assert(v[1]<=v[2] && v[3]<=v[2]);
+  auto leq = [&](int x, int y){ return (v[x] == -1 || v[y] == -1 || v[x] <= v[y]); };
+  assert(leq(0,5) && leq(4,5));
+  assert(leq(1,2) && leq(3,2));
   if(v[0]!=-1 && v[4]!=-1 && v[5]!=-1)assert(v[0]+v[4]==v[5]);
   if(v[1]!=-1 && v[2]!=-1 && v[3]!=-1)assert(v[1]+v[3]==v[2]);
   Eof();

@@ -81,7 +81,7 @@ ll a=rand()%max_value+1;
     ll b=rand()%max_value+1;
     ll c=rand()%max_value+1;
     ll d=rand()%max_value+1;
-    cout<<((rand()%2)?a:-1)<<" "<<((rand()%2)?c:-1)<<" "<<((rand()%2)?a+b:-1)<<endl;
+    cout<<((rand()%2)?c:-1)<<" "<<((rand()%2)?a:-1)<<" "<<((rand()%2)?a+b:-1)<<endl;
     cout<<((rand()%2)?b:-1)<<" "<<((rand()%2)?d:-1)<<" "<<((rand()%2)?c+d:-1)<<endl;
 }
 int main(int argc, char **argv)

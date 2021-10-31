@@ -31,6 +31,7 @@ tc doable-6 gen seed=6 max_value=$mx type=3
 tc doable-7 gen seed=5 max_value=$mx type=1
 
 group group2 20 # max_value=5
+limits max_value=5
 tc 3
 tc small-1 gen seed=1 max_value=5 type=1
 tc small-2 gen seed=2 max_value=5 type=4
@@ -45,6 +46,7 @@ tc small-10 gen seed=10 max_value=5 type=3
 tc small-11 gen seed=11 max_value=5 type=3
 
 group group3 50
+limits max_value=$mx
 include_group group1
 include_group group2
 include_group sample
