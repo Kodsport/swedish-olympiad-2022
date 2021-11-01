@@ -1,0 +1,47 @@
+\problemname{Korta vokaler}
+
+Att lösa algoritmproblem är svårt, men en sak som ofta är ännu svårare är att förbereda
+testdatan. Ta problemet \textit{Det arabiska alfabetet} till exempel. Här har juryn lagt
+många timmars intensivt arbete åt att konstruera mästerverk som \texttt{hej! vad heter du?}.
+
+
+En fråga som dyker upp är: hur skapar man strängar som inte innehåller några korta vokaler?
+Om du läste \textit{Det arabiska alfabetet} så kanske du kommer ihåg att en kort vokal är en
+vokal som följs av minst två konsonanter. I ordet \texttt{tall} så är a:et en kort vokal, medan
+ordet \texttt{potatis} inte har några korta vokaler. För enkelhets skull räknar vi  \textit{a, e, i, o, u} 
+som vokaler i det här problemet (inte \textit{y} alltså!).
+
+
+Ett sätt att skapa strängar som inte innehåller några korta vokaler är att utgå ifrån en sträng,
+och sedan ta bort några slumpmässigt valda bokstäver från den. Om vi utgår från \texttt{potatis} så 
+skulle vi då kunna få \texttt{ptais} till exempel. Men om ordet istället blev \texttt{otats} så uppstod
+tyvärr en kort vokal.
+
+
+Din uppgift är att räkna antalet sätt att ta bort bokstäver från ett givet ord så att resultatet inte
+innehåller några korta vokaler. Det är tillåtet att inte ta bort några bokstäver alls (i andra exemplet
+så bidrar det med $1$ till svaret). Däremot är det inte tillåtet att ta bort alla bokstäver. Om samma ord
+uppstår genom att ta bort olika mängder bokstäver, så räknas de separat (I första exemplet finns det två sätt
+att få ordet \texttt{tal}, vi kan ta bort det första eller det andra \texttt{l}:et).
+
+\section*{Indata}
+Indatan består av en rad med ett ord $S$ ($1 \leq |S| \leq 50$). Ordet består bara av bokstäverna \texttt{a-z}.
+
+\section*{Utdata}
+Skriv ut ett heltal, antalet sätt att ta bort bokstäver så att ett ord utan korta vokaler bildas.
+
+Notera att svaret inte alltid får plats i ett $32$-bitars heltal i de senare testfallen.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på fem olika testfall.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  Fall & Poängvärde & Gränser \\ \hline
+  $1$    & $20$    &  Alla bokstäver är samma  \\ \hline 
+  $2$    & $20$    &  $|S| \leq 10$  \\ \hline 
+  $3$    & $20$    &  $|S| \leq 10$  \\ \hline 
+  $4$    & $20$    &  $|S| \leq 50$  \\ \hline
+  $5$    & $20$    &  $|S| \leq 50$  \\ \hline
+\end{tabular}
