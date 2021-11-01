@@ -9,7 +9,7 @@ int main() {
   for(char c : s) {
     tie(none,one,many) =
       count(begin(vowels),end(vowels),c)
-      ? make_tuple(none+none+none, one, many)
+      ? make_tuple(none+none+one, one, many)
       : make_tuple(none, one+none, many+one+many);
   }
   cout << none + one + many - 1 << endl;
