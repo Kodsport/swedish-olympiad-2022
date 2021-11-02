@@ -5,7 +5,7 @@ PPATH=$(realpath ..)
 REQUIRE_SAMPLE_REUSE=0
 . ../../../testdata_tools/gen.sh
 
-use_solution abdullah.py
+use_solution axel100.cpp
 
 samplegroup
 sample 1
