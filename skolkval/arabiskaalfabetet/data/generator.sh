@@ -13,9 +13,11 @@ sample 2
 sample 3
 
 group g1 20
+limits subtask=1
 tc_manual g1
 
 group g2 20
+limits subtask=1
 tc_manual g2
 
 group g3 20

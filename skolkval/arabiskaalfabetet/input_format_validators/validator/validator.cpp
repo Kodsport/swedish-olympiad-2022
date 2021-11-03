@@ -19,6 +19,7 @@ void run()
   rep(i, 0, n)
   {
     string s = _token();
+    assert(s.size() <= 30);
     if (sz(s) == 0)
       die_line("empty word");
     for (int j = 0; j < s.size(); j++)
