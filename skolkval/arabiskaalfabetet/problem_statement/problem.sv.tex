@@ -1,15 +1,20 @@
 \problemname{Det arabiska alfabetet}
+Det är ganska känt att när man skriver text på arabiska skriver man från höger till vänster.
+Det är däremot mindre välkänt att man aldrig skriver ut korta vokaler.
 
+Med vokaler menar vi en av bokstäverna: \textit{a,e,i,o,u,y}.
+En kort vokal defineras i detta problem som en vokal som följs av två eller fler konsonanter.
 
-Det är välkänt att i det arabiska alfabetet skriver man från höger till vänster. Det är däremot mindre välkänt att man aldrig skriver korta vokaler. I det här problemet räknas $a,e,i,o,u,y$ som vokaler.\\ Vi definierar en kort vokal som en vokal som följs av två eller fler konsonanter.\\ Givet en mening på latinska bokstäver, hur skulle den skrivas på arabiska? Kolla exemplen för tydligare förståelse av vad som ska göras.
-
+Du kommer få en mening som använder bokstäverna $a$ till $z$ samt vissa specialtecken.
+Skriv ett program som visar hur meningen skulle se ut om den skrevs som om det vore på arabiska, d.v.s från höger till vänster och utan några av dess korta vokaler).
 
 \section*{Indata}
 Den första raden inehåller ett heltal $N$ ($1 \le N \le 10$), antalet ord i meningen.
 
-Den andra raden innehåller $N$ ord, varje ord består av maximallt 30 tecken. Alla tecken är antingen en bokstav i det latinska alfabetet eller något av dessa tecken: ".,?!\_"
+Den andra raden innehåller $N$ ord, varje ord består av maximallt 30 tecken. Alla tecken är antingen en bokstav i det latinska alfabetet eller något av dessa tecken: ``\texttt{.,?!\_}''.
 
 \section*{Utdata}
 Skriv utt en mening bestående av $N$ ord -- hur meningen skulle skrivas på arabiska.
+
 \section*{Poängsättning}
 För 2 poäng gäller att det inte finns några korta vokaler. \\
