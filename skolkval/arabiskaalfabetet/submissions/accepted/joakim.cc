@@ -16,7 +16,7 @@ int main() {
   string s;
   getline(cin,s);
   getline(cin,s);
-  string vowels = "aeiouAEIOU";
+  string vowels = "aeiouyAEIOUY";
   auto is_vowel = [&](char c) { return count(all(vowels),c); };
   auto is_consonant = [&](char c) { return !is_vowel(c) && isalpha(c); };
   rep(i,0,sz(s)) {

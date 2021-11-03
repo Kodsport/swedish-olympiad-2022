@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 n = int(input())
-vowels = "aieou"
-consonants = "bcdfghjklmnpqrstvwxyz"
+vowels = "aieouy"
+consonants = "bcdfghjklmnpqrstvwxz"
 words = input().split()
 result = ""
 for j, word in enumerate(words):
