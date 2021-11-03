@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-  string s, vowels = "aeiou";
+  string s, vowels = "aeiouy";
   cin >> s;
   long long none = 1, one = 0, many = 0;
   reverse(begin(s),end(s));

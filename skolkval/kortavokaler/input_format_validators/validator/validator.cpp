@@ -9,5 +9,11 @@ using namespace std;
 typedef long long ll;
 
 void run() {
-	string s = Line();
+  bool alleq = Arg("eq", false);
+  int maxlen = Arg("maxlen", 50);
+	string S = Line();
+  assert(sz(S) <= maxlen);
+  if (alleq) {
+    rep(i,0,sz(S) - 1) assert(S[i] == S[i + 1]);
+  }
 }

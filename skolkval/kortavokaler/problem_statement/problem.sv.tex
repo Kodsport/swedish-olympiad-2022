@@ -1,15 +1,14 @@
 \problemname{Korta vokaler}
-
 Att lösa algoritmproblem är svårt, men en sak som ofta är ännu svårare är att förbereda
 testdatan. Ta problemet \textit{Det arabiska alfabetet} till exempel. Här har juryn lagt
 många timmars intensivt arbete åt att konstruera mästerverk som \texttt{hej! vad heter du?}.
 
 
-En fråga som dyker upp är: hur skapar man strängar som inte innehåller några korta vokaler?
+En fråga som dyker upp är: hur skapar man textsträngar som inte innehåller några korta vokaler?
 Om du läste \textit{Det arabiska alfabetet} så kanske du kommer ihåg att en kort vokal är en
 vokal som följs av minst två konsonanter. I ordet \texttt{tall} så är a:et en kort vokal, medan
-ordet \texttt{potatis} inte har några korta vokaler. För enkelhets skull räknar vi  \textit{a, e, i, o, u} 
-som vokaler i det här problemet (inte \textit{y} alltså!).
+ordet \texttt{potatis} inte har några korta vokaler. För enkelhets skull räknar vi  \textit{a, e, i, o, u, y} 
+som vokaler i det här problemet.
 
 
 Ett sätt att skapa strängar som inte innehåller några korta vokaler är att utgå ifrån en sträng,
@@ -25,7 +24,7 @@ uppstår genom att ta bort olika mängder bokstäver, så räknas de separat (I 
 att få ordet \texttt{tal}, vi kan ta bort det första eller det andra \texttt{l}:et).
 
 \section*{Indata}
-Indatan består av en rad med ett ord $S$ ($1 \leq |S| \leq 50$). Ordet består bara av bokstäverna \texttt{a-z}.
+Indatan består av en rad med ett ord $S$ med högst $50$ bokstäver. Ordet består bara av bokstäverna \texttt{a-z}.
 
 \section*{Utdata}
 Skriv ut ett heltal, antalet sätt att ta bort bokstäver så att ett ord utan korta vokaler bildas.
@@ -33,15 +32,5 @@ Skriv ut ett heltal, antalet sätt att ta bort bokstäver så att ett ord utan k
 Notera att svaret inte alltid får plats i ett $32$-bitars heltal i de senare testfallen.
 
 \section*{Poängsättning}
-Din lösning kommer att testas på fem olika testfall.
-
-\noindent
-\begin{tabular}{| l | l | l |}
-  \hline
-  Fall & Poängvärde & Gränser \\ \hline
-  $1$    & $20$    &  Alla bokstäver är samma  \\ \hline 
-  $2$    & $20$    &  $|S| \leq 10$  \\ \hline 
-  $3$    & $20$    &  $|S| \leq 10$  \\ \hline 
-  $4$    & $20$    &  $|S| \leq 50$  \\ \hline
-  $5$    & $20$    &  $|S| \leq 50$  \\ \hline
-\end{tabular}
+För testfall värda $1$ poäng gäller att alla bokstäver i $S$ är samma.
+För testvall värda ytterligare $2$ poäng gäller att $S$ har högst $10$ bokstäver.

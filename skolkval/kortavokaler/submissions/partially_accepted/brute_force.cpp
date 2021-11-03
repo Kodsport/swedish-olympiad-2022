@@ -6,7 +6,7 @@ int main() {
     cin.tie(0);
 
     string s;
-    string vowels = "aeiou";
+    string vowels = "aeiouy";
     cin >> s;
     bool vowel_map[26] = {0};
     for(int c1 = 0; c1 < vowels.length(); c1++){

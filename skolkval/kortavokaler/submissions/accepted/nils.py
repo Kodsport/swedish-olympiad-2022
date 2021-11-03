@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 s = input()
-vowels = "aeiou"
+vowels = "aeiouy"
 dp = [[1, 0] for _ in range(len(s))]
 ans = 0
 for i in range(len(s)):
