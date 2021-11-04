@@ -56,8 +56,8 @@ breaaak:;
             }
         };
 
-        rep(i,0,n) go('A'+i, [&](int j)->char&{return v[i][j];});
-        rep(j,0,n) go('a'+j, [&](int i)->char&{return v[i][j];});
+        rep(i,0,n) go('1'+i, [&](int j)->char&{return v[i][j];});
+        rep(j,0,n) go('A'+j, [&](int i)->char&{return v[i][j];});
 
         if(done) {
             for(int i = sz(where_ans); i--;) cout << where_ans[i];
