@@ -10,16 +10,16 @@ typedef long long ll;
 
 void run()
 {
-  int n = Int(1, 10);
+  int n = Int(1, 5);
   Endl();
   bool subtask = Arg("subtask", 0);
-  string vowels = "aeiouyAEIOUY";
-  string consonants = "bcdfghjklmnpqrstvwxzBCDFGHJKLMNPQRSTVWXZ";
-  string ok_chars = ".,?!_";
+  string vowels = "aeiouy";
+  string consonants = "bcdfghjklmnpqrstvwxz";
+  string ok_chars = "";
   rep(i, 0, n)
   {
     string s = _token();
-    assert(s.size() <= 30);
+    assert(s.size() <= 10);
     if (sz(s) == 0)
       die_line("empty word");
     for (int j = 0; j < s.size(); j++)
