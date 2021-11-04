@@ -21,7 +21,7 @@ int main() {
 
     bool done = false;
     while(!done) {
-        done = tru;
+        done = true;
         auto go = [&](char where, const auto& at) {
             vi cnt(300);
             rep(j,0,n) ++cnt[at(j)];
