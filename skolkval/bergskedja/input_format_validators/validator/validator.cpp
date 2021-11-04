@@ -17,6 +17,7 @@ void run() {
 	for(int c1 = 0; c1 < n; c1++){
         for(int c2 = 0; c2 < m; c2++){
             char ch = Char();
+            assert('0' <= ch && ch <= '4');
         }
         Endl();
     }
