@@ -65,11 +65,9 @@ Varje år skickar PO ut affischer till ca $450$ gymnasieskolor. Ett utskick best
 \item ett informationsblad av A4-storlek ($210\text{ mm} \times 297\text{ mm}$)
 \end{itemize}
 
-Det är mycket viktigt att brevet väger högst $50$ gram, eftersom portot annars blir dubbelt så högt. För att klara denna magiska viktgräns kan PO kontrollera tre faktorer: pappersvikten på kuvertet, affischerna och informationsbladet. Pappersvikt anges typiskt i $\frac{\text{gram}}{\text{m}^2}$, där dimensionerna framgår ovan. Notera att kuvertet består av \textbf{två sammanklistrade ark} av C4-storlek, medan pappersvikter och mått är för \emph{ett ark}.
+Det är mycket viktigt att brevet väger högst $50$ gram, eftersom portot annars blir dubbelt så högt. För att klara denna magiska viktgräns kan PO styra över vilken sorts papper som används för de tre sakerna. Varje sort har en ytvikt (vikt per area) som typiskt anges i $\frac{\text{gram}}{\text{m}^2}$. Notera att kuvertet består av \textbf{två sammanklistrade ark} av C4-storlek, medan ytvikter och ovanstående mått gäller för \emph{ett ark}.
 
-Skriv ett program som givet ett förslag på pappersvikt för kuvert, affisch och informationsblad, räknar ut den totala vikten för brevet.
-
-Programmet ska läsa in tre heltal mellan $50$ och $200$, pappersvikterna i $\frac{\text{gram}}{\text{m}^2}$ för kuvertet, affischerna och informationsbladet. Skriv ut ett enda decimaltal: vikten på ett fullständigt brevutskick i gram. Svaret ska anges med minst $3$ decimalers noggrannhet (d.v.s. vara inom $5 \cdot 10^{-4}$ från rätt svar).
+Skriv ett program som räknar ut den totala vikten för ett brev. Programmet ska läsa in tre heltal mellan $50$ och $200$, ytvikterna i $\frac{\text{gram}}{\text{m}^2}$ för sorterna som används till kuvertet, affischerna respektive informationsbladet. Skriv ut ett enda decimaltal: vikten på ett fullständigt brevutskick i gram. Svaret ska anges med minst $3$ decimalers noggrannhet (d.v.s. vara inom $5 \cdot 10^{-4}$ från rätt svar).
 
 %Svaret kommer alltid att ha högst $6$ siffror efter decimaltecknet.
 
@@ -123,6 +121,8 @@ Mening ? hej vad heter du
 Svar: ud reteh dav jeh
 \end{verbatim}
 
+\fe{Förklaring: } Det finns inga korta vokaler i meningen.
+
 \vspace{1cm}
 
 \fe{Körningsexempel 2}
@@ -132,6 +132,8 @@ Mening ? leende
 
 Svar: ednel
 \end{verbatim}
+
+\fe{Förklaring: } Det andra \emph{e}:et i ordet \emph{leende} räknas som kort vokal och utelämnas därför. Notera att det första \emph{e}:et ska stå kvar eftersom det inte var en kort vokal i den ursprungliga meningen.
 
 \vspace{1cm}
 
@@ -218,7 +220,7 @@ För det första kan roboten endast förflytta sig rakt framåt, så den målar 
 För det andra kan Ilad inte programmera.
 Han vet dock att du är en skicklig programmerare och undrar därför om du kan hjälpa honom. 
 
-Ilad har en bild som visar hur golvet ska se ut till slut. Hela golvet är från början omålat.
+Ilad har en bild som visar exakt hur golvet ska se ut till slut. Hela golvet är från början omålat.
 Skriv ett program som berättar för roboten hur den ska måla golvet.
 För att inte slösa på färg får den inte måla samma rad eller kolumn flera gånger.
 
@@ -228,7 +230,7 @@ För att inte slösa på färg får den inte måla samma rad eller kolumn flera 
 Programmet ska fråga efter ett heltal $1 \leq N \leq 9$, antalet rader och kolumner på golvet som roboten ska måla. Därefter ska det läsa in $N$ rader med $N$ tecken på varje rad, en punkt ($.$) för en omålad ruta, $S$ för en svart ruta och $V$ för en vit ruta. Golvet kommer alltid vara möjligt att måla enligt det givna mönstret. 
 
 Skriv först ut en teckensträng med de rader och kolumner roboten ska måla, i ordning.
-Rader beskrivs med siffrorna $1$, $2$, $\dots$ och kolumner med bokstäverna $A$, $B$, $\dots$ (se figuren nedan). Skriv sedan ut en lika lång teckensträng med de färger roboten ska måla varje gång, med tecknen \texttt{V} för vitt och \texttt{S} för svart.
+Rader beskrivs med siffrorna $1$, $2$, $\dots$ och kolumner med bokstäverna $A$, $B$, $\dots$ (se figuren nedan). Skriv sedan ut en lika lång teckensträng med de färger roboten ska använda varje gång, med tecknen \texttt{V} för vitt och \texttt{S} för svart.
 
 \fe{Poängsättning:} För testfall värda 2 poäng är $N \le 4$.
 \setlength\columnsep{20pt}
@@ -358,23 +360,23 @@ Torunn bor på rutan längst upp till vänster i rutnätet.
 Tyvärr har en extra jobbig hyresgäst nyligen flyttat in, så Torunn har bestämt sig för att sälja sin bostad och flytta någon annanstans.
 Först måste hon dock ta reda på hur mycket bostaden är värd.
 
-Varje ruta i rutnätet har en höjd. Alla höjder är olika, så låt oss för enkelhets skull anta att höjderna är $1, 2, 3, \cdots, n\cdot m$.
+Varje ruta i rutnätet har en höjd. Alla höjder är olika, så låt oss för enkelhets skull anta att höjderna är $1, 2, 3, \dots, n\cdot m$.
 Tomter med högre höjd är värda mer på bostadsmarknaden, så Torunn vill ta reda på höjden på sin tomt. Hon har därför gått runt till varje ruta i rutnätet och kollat hur många angränsande rutor som är lägre.
-En ruta anses vara angränsande om den delar en sida (rutor som inte ligger längs en kant har alltså $4$ angränsande rutor).
+En ruta anses vara angränsande om den delar en sida (rutor som inte ligger längs bostadsområdets kant har alltså $4$ angränsande rutor).
 
-Skriv ett program som, givet informationen Torunn samlade in, hittar minsta och största möjliga höjd för rutan i övre vänstra hörnet.
+Skriv ett program som, givet informationen Torunn samlade in, hittar minsta och största möjliga höjd för hennes tomt.
 
 Programmet ska läsa in två heltal $n$ och $m$ ($1 \leq n,m \leq 8$), antalet rader och kolumner i
 rutnätet. Därefter ska det läsa in $n$ rader vardera innehållande en sträng med längden $m$. Detta rutnät utgör informationen
 som Torunn samlade in, varje siffra motsvarar alltså antalet angränsande rutor som är lägre än rutan som
 siffran står i. Det är garanterat att det finns minst ett sätt att tilldela höjderna 
-$1, 2, \cdots, n\cdot m$ till rutorna så att den insamlade informationen är korrekt. Notera att värdena
+$1, 2, \dots, n\cdot m$ till rutorna så att den insamlade informationen är korrekt. Notera att värdena
 som samlats in alltid kommer vara mellan $0$ och $4$.
 
 Programmet ska skriva ut två heltal, den minsta och den största möjliga höjden på rutan i övre vänstra hörnet.
 
 \fe{Poängsättning}\\
-För ett poäng gäller att $n = 1$.\\
+För 1 poäng gäller att $n = 1$.\\
 För ytterligare 1 poäng gäller att $n = m = 3$.\\
 För ytterligare 1 poäng gäller att $n = m = 4$.\\
 
