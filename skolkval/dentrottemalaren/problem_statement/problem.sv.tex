@@ -2,32 +2,32 @@
 Ilad Rodavlas har jobbat som målare i hela sitt liv men börjar nu bli trött på sitt jobb.
 Dra penseln upp, ned och upp igen.
 Samma sak varje dag.
-Han har länge funderat på att säga upp sig men det har aldrig blivit av.
-Han vet ju inte var han skulle jobba annars.
-Men en dag får han en snilleblixt.
+%Han har länge funderat på att säga upp sig men det har aldrig blivit av.
+%Han vet ju inte var han skulle jobba annars.
+Men en dag när han ska måla ett golv, indelat i $N \times N$ rutor, får han en snilleblixt.
 ``Tänk om en robot skulle kunna göra allt jobb åt mig'' utbrister han.
 Det finns dock två problem med den  idén.
-Först och främst kan roboten endast förflytta sig rakt framåt, den kan inte svänga.
+För det första kan roboten endast förflytta sig rakt framåt, så den målar alltid en hel rad eller kolumn med samma färg.
 För det andra kan Ilad inte programmera.
-Ilad vet dock att du är en skicklig programmerare och undrar därför om du kan hjälpa honom. 
+Han vet dock att du är en skicklig programmerare och undrar därför om du kan hjälpa honom. 
 
-Ilad har en bild på ett $N \times N$ golv med svarta och vita rutor, av storlek $1 \times 1$, som visar hur han vill att roboten ska måla.
-Golvet är till en början inte målat.
-Kan du skriva ett program som berättar för roboten hur den ska måla golvet?
+Ilad har en bild som visar hur golvet ska se ut till slut. Hela golvet är från början omålat.
+Skriv ett program som berättar för roboten hur den ska måla golvet? 
+För att inte slösa på färg får den inte måla samma rad eller kolumn flera gånger.
 
-För att inte slösa på färg får roboten inte måla en rad eller kolumn, om samtliga rutor i raden eller kolumnen målas över (möjligtvis av samma färg) senare.
-Den får heller inte måla en rad eller kolumn om alla rutor i raden eller kolumnen redan har den tiltänkta färgen.
+%För att inte slösa på färg får roboten inte måla en rad eller kolumn, om samtliga rutor i raden eller kolumnen målas över (möjligtvis av samma färg) senare.
+%Den får heller inte måla en rad eller kolumn om alla rutor i raden eller kolumnen redan har den tiltänkta färgen.
 
 \section*{Indata}
-På första raden står ett tal $1 \leq N \leq 9$, antalet rader och kolumner på golvet roboten ska måla. Därefter följer $N$ rader och med $N$ tecken på varje rad, en punkt ($.$) för en tom ruta, $S$ för en svart ruta och $V$ för en vit ruta.
+På första raden står ett tal $1 \leq N \leq 9$, antalet rader och kolumner på golvet som roboten ska måla. Därefter följer $N$ rader och med $N$ tecken på varje rad, en punkt ($.$) för en omålad ruta, $S$ för en svart ruta och $V$ för en vit ruta.
 
 Golvet kommer alltid vara möjligt att måla enligt det givna mönstret. 
 
 \section*{Utdata}
-Skriv först ut en rad med de rader och kolumner roboten ska måla i ordning.
+Skriv först ut en teckensträng med de rader och kolumner roboten ska måla, i ordning.
 Rader beskrivs med siffrorna $1$, $2$, $\dots$ och kolumner med bokstäverna $A$, $B$, $\dots$.
 
-Skriv sedan ut en rad med de färger roboten ska måla varje gång, med tecknen \texttt{V} för vitt och \texttt{S} för svart.
+Skriv sedan ut en teckensträng med de färger roboten ska måla varje gång, med tecknen \texttt{V} för vitt och \texttt{S} för svart.
 
 \section*{Poängsättning}
 För testfall värda 2 poäng är $N \le 4$.
