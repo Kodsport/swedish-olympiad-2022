@@ -300,9 +300,9 @@ int main() {
         // Greedy heuristic
         int LIM1, LIM2;
 
-        if(T == 8){LIM1 = 500000; LIM2 = 1000;}
-        if(T == 9){LIM1 = 30000; LIM2 = 0;}
-        if(T == 10){LIM1 = 90; LIM2 = 50;}
+        if(T == 8){LIM1 = 100000; LIM2 = 1000;}
+        if(T == 9){LIM1 = 10000; LIM2 = 10;}
+        if(T == 10){LIM1 = 40; LIM2 = 20;}
 
         for(int c1 = 0; c1 < LIM1; c1++){
             greedy(-1);
@@ -310,7 +310,7 @@ int main() {
         for(int c1 = 0; c1 < LIM2; c1++){
             greedy(4);
         }
-        for(int c1 = 0; c1 < 10; c1++){hillclimb(ans);}
+        while(hillclimb(ans)){}
         print_tc(ans);
         cerr << T << ": " << double(best_score)/2.0 << "\n";
     }
