@@ -45,14 +45,14 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \end{tabular}
 
 \section*{Förklaring av exempelfall 2}
-Den första örnen kraschar i nod $1$ med fart $10$.
-Därifrån sprids skakningen till nod $2$ och $3$.
-Från nod $2$ har skakningen ingenstans att sprida sig men från nod $3$ sprids den vidare till nod $4$ och $5$.
-
-Den andra örnen kraschar i nod $4$ med fart $6$.
+\illustration{0.9}{a}{Första örnen.}
+\illustration{0.9}{b}{Andra örnen.}
+Den första örnen kraschar i nod $4$ med fart $5$.
 Från nod $4$ sprids skakningen endast till nod $3$ och från nod $3$ till både nod $1$ och $5$.
-Från nod $5$ har skakningen ingenstans att ta vägen men från nod $1$ sprids den till nod 2$.$
+Från nod $5$ har skakningen ingenstans att ta vägen men från nod $1$ sprids den till nod $2$.
 
-Den tredje och sista örnen kraschar i nod $3$ med fart $5$.
-Sedan sprids skakningen till nod $3$ och därifrån till nod $4$ och $1$.
-Skakningen i nod $4$ har ingenstans att ta vägen men skakningen från nod $1$ sprids till nod $2$.
+Den andra örnen kraschar i nod $3$ med fart $6$.
+Från nod $3$ sprids skakningen till nod $1$, $4$ och $5$.
+Skakningarna i nod $4$ och $5$ har ingenstans att ta vägen men skakningen i nod $1$ sprids till nod $2$.
+
+För att få svaren ska varje nods skakningar adderas, exempelvis blir svaret $2.5+2=4.5$ i nod $1$ och $5+6=11$ i nod $3$.
