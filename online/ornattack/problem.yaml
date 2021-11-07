@@ -1,11 +1,9 @@
 author: Victor Vatn, Gustav Kalander
-source: Programmeringsolympiadens Onlinekval 2022
+source: Programmeringsolympiadens onlinekval 2022
 rights_owner: Programmeringsolympiaden
 license: cc by-sa
 type: scoring
 validation: default
 validator_flags: float_tolerance 1e-5
 grading:
-    show_test_data_groups: yes
-limits:
-    time_multiplier: 3
+      show_test_data_groups: yes
