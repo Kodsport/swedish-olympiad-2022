@@ -1,0 +1,40 @@
+\problemname{Örnattack}
+Ekorrarna och örnarna har krigat sedan urminnes tider. Gammelekorren är en mästare på astrologi och har förutspått att örnarna snart kommer försöka sig på en sista attack mot storträdet.
+Enligt gammelekorren kommer $K$ örnar flyga in i trädet i hög fart för att få hela trädet att skaka så att ekorrarna riskerar att ramla ned.
+Han har förutspått i vilken av trädets $N$ noder var och en av örnarna kommer krascha och med vilken fart.
+Gammelekorren vill veta hur mycket varje nod kommer skaka under attacken för att kunna varna alla ekorrar om de farligaste noderna.
+Tyvärr är gammelekorren inte lika bra på programmering som på astrologi, så han har anställt dig för att räkna ut hur mycket varje nod kommer skaka under attacken.
+
+När en örn kraschar med farten $v$ i nod $u$ börjar nod $u$ skaka med styrkan $v$. Skakningen sprider sig sedan genom kanter ut från noden. Vid varje nod delas skakstyrkan upp i lika delar till varje granne (utom den den kom ifrån). 
+Vi kan anta att skakningen hinner sprida sig genom hela trädet och försvinna innan nästa örn kraschar. För var och en av noderna i trädet vill gammelekorren veta hur mycket
+noden totalt kommer skaka, dvs. summan av alla skakningars styrkor som noden kommer utsättas för.
+
+\section*{Indata}
+På den första raden finns heltalet $N$ -- antalet noder i trädet.
+De följande $N-1$ raderna innehåller två heltal $a$ och $b$ ($1 \le a,b \le N$), vilket betyder att det går en kant mellan nod $a$ och nod $b$.
+Därefter följer en rad med heltalet $K$ -- antalet örnar som kommer attackera.
+Slutligen finns $K$ rader som beskriver örnarna. På varje rad finns två heltal, noden $u$ ($1 \le u \le N$) där örnen kommer krascha och örnens fart $v$ ($1 \le v \le 10^9$).
+
+\section*{Utdata}
+Skriv ut hur mycket varje nod totalt kommer skaka på var sin rad. På rad $i$ ska den totala skakningen i nod $i$ stå. Varje tal får max ha ett absolut eller relativt fel på $10^{-5}$.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  Grupp & Poängvärde & Gränser \\ \hline
+  $1$    & $15$       &  Den $i$:te kanten går mellan nod $i$ och $i+1$ (för $1 \le i \le N-1$) \\ \hline 
+  $2$    & $30$       &  $1 \le N,K \le 2000$ \\ \hline
+  $3$    & $5$        &  $1 \le N \le 2000, 1 \le K \le 100000 $ \\ \hline
+  $4$    & $50$       &  Inga ytterligare  begränsningar \\ \hline
+\end{tabular}
+
+\section*{Förklaring av exempelfall 2}
+Första örnen kraschar i nod 1 med fart 10. Därifrån sprids skakningen till nod 2 och 3. Från nod 2 har skakningen ingenstans att sprida sig men från nod 3 sprids den vidare till nod 4 och 5.
+Andra örnen kraschar i nod 4 med fart 6. Från nod 4 sprids skakningen endast till nod 3 och från nod 3 till både nod 1 och 5. Från nod 5 har skakningen ingenstans att ta vägen men från nod 1 sprids den till nod 2.
+Den tredje och sista örnen kraschar i nod 3 med fart 5. Sedan sprids skakningen till nod 3 och därifrån till nod 4 och 1. Skakningen i nod 4 har ingenstans att ta vägen men skakningen från nod 1 sprids till nod 2.
+
+\section*{Exempelfall}
