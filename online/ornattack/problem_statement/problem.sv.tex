@@ -45,16 +45,23 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \end{tabular}
 
 \section*{Förklaring av exempelfall 2}
-\begin{figure}[h]
+\begin{figure}
   \centering
-      \includegraphics[width=0.7\textwidth]{a}
-      \caption{Första örnen.}
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{a}
+    \caption{Första örnen.}
+    \label{fig:test1}
+  \end{minipage}%
+  \begin{minipage}{.5\textwidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{b}
+    \caption{Andra örnen.}
+    \label{fig:test2}
+  \end{minipage}
 \end{figure}
-\begin{figure}[h]
-  \centering
-      \includegraphics[width=0.7\textwidth]{b}
-      \caption{Andra örnen.}
-\end{figure}
+      
+      
 Den första örnen kraschar i nod $4$ med fart $5$.
 Från nod $4$ sprids skakningen endast till nod $3$ och från nod $3$ till både nod $1$ och $5$.
 Från nod $5$ har skakningen ingenstans att ta vägen men från nod $1$ sprids den till nod $2$.
