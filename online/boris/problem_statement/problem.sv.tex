@@ -1,17 +1,22 @@
 \problemname{Boris}
 
-%TODO: improve statement, write story...
+På tågen i Philips hemstad brukar man kunna hitta världens finaste reklamskylt. Denna skylt har en bild på ingen mindre än matteläraren Boris, tillsammans med texten "Räkna med Boris". 
+Naturligtvis har Philip blivit helt besatt av att samla på dessa fina reklamskyltar, och nu behöver han din hjälp för att optimera sin rutt mellan tågstationerna i staden för att få tag på så många Borisar som möjligt.
 
-Exakt på tidpunkten $t_{i}$ förekommer $s_{i}$ stycken ``borisar'' på punkten $(x_{i}, y_{i})$. Om Philip står på denna punkt vid precis denna tidpunkt $t_{i}$ får han dessa ``borisar'', annars missar han dem.
+Genom sitt breda kontaktnät har Philip fått reda på att det i den närmaste framtiden kommer avgå $N$ st. tåg från staden. För varje tåg vet han avgångstiden räknat i sekunder efter starten av hans jakt, hur många Borisar som kommer finnas på tåget samt koordinaterna för tågstationen, angett i meter. 
+För att kunna ta Borisarna på tåget måste han som senast vara på plats exakt den sekunden som tåget ska gå, men om han vill kan han ju också komma dit i förväg och vänta på tåget i lugn och ro. 
+Eftersom han älskar Boris så pass mycket, och han inte heller vill råka fastna på ett tåg som kommer föra bort honom från hans hemstad, är han supersnabb med att plocka upp alla Borisar på tåget och grejar det på 0 sekunder.
 
-Philip kan börja var som helst vid tidpunkt 0, och kan på ett tidssteg antingen röra sig ett steg rakt upp, ner, höger, vänster, eller stå still.
+I sådana stressiga situationer som att jaga efter Borisar blir det väldigt påfrestande för Philip att hålla koll på väderstrecken. För att inte riskera att gå vilse vill han därför bara röra sig rakt norrut, söderut, österut eller västerut, så han lättare vet vart han är på väg.
 
-Vad är det största antalet ``borisar'' Philip kan samla på sig?
+Eftersom Philip har gott om tid till att förbereda sitt äventyr kan han börja i vilken punkt han vill. När han sedan börjar rör han sig med hastigheten 1 meter/sekund. Han har en väldigt stor ryggsäck, så han kan bära hur många Borisar som helst på en gång.
+
+Vad är det största antalet Borisar Philip kan samla på sig?
 
 \section*{Indata}
-Den första raden inehåller ett heltal $N$.
+Den första raden inehåller ett heltal $N$. 
 
-Därefter följer $N$ rader. På rad $i$ finns fyra heltal: $t_{i}, s_{i}, x_{i}$ och $y_{i}$.
+Därefter följer $N$ rader. På rad $i$ finns fyra heltal: $t_{i}, s_{i}, x_{i}$ och $y_{i}$, vilket betyder att tåg nummer $i$ avgår efter $t_{i}$ sekunder med $s_{i}$ st. Borisar, från en station i punkten $(x_{i},y_{i})$.
 
 I alla testfall gäller det att:
 \begin{itemize}
@@ -25,7 +30,7 @@ I alla testfall gäller det att:
 \end{itemize}
 
 \section*{Utdata}
-Skriv ut en rad med ett heltal -- det största antalet ``borisar'' Philip kan samla på sig.
+Skriv ut en rad med ett heltal -- det största antalet Borisar som Philip kan samla på sig.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en antal testfallsgrupper.
