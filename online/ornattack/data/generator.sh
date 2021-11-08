@@ -62,6 +62,7 @@ tc g3-10 gen_random n=2000 k=99000 mode=random shuffle_nodes=true min_power=1235
 
 
 group group4 50
+include_group group1
 include_group group3
 limits max_n=100000 max_k=100000 line=0
 tc g4-1 gen_random n=90000 k=90000 mode=random shuffle_nodes=false min_power=100000 max_power=1000000 plane_distribution=0.5
