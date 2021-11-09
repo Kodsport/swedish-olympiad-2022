@@ -108,7 +108,11 @@ int main(int argc, char **argv)
     cout << q << endl;
     rep(i, 0, q)
     {
-        cout << 1 + rand() % max_r << " " << 1 + rand() % max_r << endl;
+        ll A = 1 + rand() % max_r;
+        ll B = 1 + rand() % max_r;
+        while (A == B)
+            B = 1 + rand() % max_r;
+        cout << A << " " << B << endl;
     }
     return 0;
 }
