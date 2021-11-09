@@ -37,6 +37,7 @@ void run()
     int A = Int(1, max_r);
     Space();
     int B = Int(1, max_r);
+    assert(A != B);
     Endl();
   }
   Eof();
