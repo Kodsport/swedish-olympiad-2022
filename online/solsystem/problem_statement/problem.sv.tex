@@ -40,7 +40,13 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   $2$   & $30$        & för alla $i$ gäller att $l_i \le l_{i + 1}$ och $r_i \le r_{i+1}$ \\ \hline
   $3$   & $30$       & $ A_i,B_i,r_i \leq 10^5$ \\ \hline
   $4$   & $25$       & Inga ytterligare begränsningar \\ \hline
->>>>>>> 04df152 (Statement fixes)
 \end{tabular}
 
 Notera att vissa exempelfall är inte giltiga i vissa testfallsgrupper.
+
+\section*{Förklaringar av exempelfall}
+I exempelfall $2$ finns det fem tullunioner.
+Av dessa är planet $1$ med i den första och den fjärde, och planet $10$ i den första och den femte.
+Resan mellan planet $1$ och $10$ kräver alltså två tullprocesser: först en när transporten lämnar planet $1$ och den fjärde unionen, och en när den ankommer till planet $10$ och åker in i den femte unionen.
+Den andra och tredje unionen ligger strikt emellan de två planeterna, så transporten behöver aldrig åka in i någon av unionerna.
+Svaret är därför $2$.
