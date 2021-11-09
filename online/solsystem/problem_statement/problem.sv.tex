@@ -1,33 +1,32 @@
 \problemname{Solsystem}
+Planeterna i ett solsystem har ingått ett antal mycket komplicerade tullunioner.
+Varje tullunion består av ett kontinuerligt intervall av planeter, där tullunionen $[a, b]$ består av alla planeter mellan den $a$:te och den $b$:te, räknat från solen.
 
-Planeterna i ett solsystem har ingått $N$ mycket komplicerade tullunioner. Varje tullunion i beskrivs med ett intevall av planeter.
+Din kompis Zorgax driver ett stort logistikföretag som sköter interplanetära transporter.
+Varje gång företaget gör en transport mellan två planeter måste de genomgå en förtullningsprocess för varje tullunion som de lämnar eller åker in i mellan de två planeterna.
+Om en viss tullunion ligger strikt mellan resans startpunkt och slutpunkt behöver transporten dock inte åka genom denna tullunion; man flyger över alla planeter som ingår i den unionen, helt enkelt.
 
-Din kompis Zorgax driver ett stort logistikföretag som sköter interplanetära transporter. Varje gång företaget gör en transport mellan två planeter måste de genomgå en förtullningsprocess för varje tullunion som de lämnar eller åker in i mellan de två planeterna. Om en viss tullunion ligger strikt mellan planeterna resan sker mellan behöver transporten dock inte åka genom denna tullunion (man tar en omväg runt de planeterna, helt enkelt).
+Vid varje transporten måste Zorgax först ta reda på hur vilka inrese- respektive utreseprocesser transporten måste utföra.
+Detta är mycket tidskrävande, så hen har bett om din hjälp.
 
-Vid varje transporten måste Zorgax först ta reda på hur vilka inrese- respektive utreseprocesser transporten måste utföra. Detta är mycket tidskrävande, så hen har bett om din hjälp.
-
-Zorgax har planterat $Q$, varje resa är mellan två planeter. För varje planerad resa,  skriv ut antalet inrese- respektive utresetullprocesser som transporten måste genomgå. 
+Zorgax har planterat $Q$ olika resor, där varje resa går mellan två planeter.
+För varje planerad resa, skriv ut antalet inrese- respektive utresetullprocesser som transporten måste genomgå. 
 
 
 \section*{Indata}
-Den första raden inehåller ett heltal $N$.
+Den första raden innehåller antalet tullunioner $N$ ($1 \le N \le 10^5$).
 
-Sedan följer $N$ rader. Den $i$:te raden beskriver den $i$:te tullunion och innehåller två heltal, $l_i$ $r_i$. Detta betyder att den $i$:te tullunionen består av alla planeter $j$ där $l_i \leq j \leq r_i$.
+Sedan följer $N$ rader, en för varje tullunion.
+Den $i$:te av dessa innehåller två heltal, $1 \le l_i \leq r_i \le 10^9$.
+Detta betyder det finns en tullunionen som består av alla planeter $j$ där $l_i \leq j \leq r_i$, där planeterna är numrerade efter deras avstånd från solen.
 
-Därefter följer en rad med ett heltal $Q$
+Därefter följer en rad med antalet planerade resor $Q$ ($1 \le Q \le 10^5$).
 
-Till sist följer $Q$ rader. Varje rad består av två heltal $A_i$ och $B_i$
-
-I alla testfall gäller det att:
-\begin{itemize}
-  \item $1 \le N \le 10^5$.
-  \item $1 \le Q \le 10^5$.
-  \item $1\leq l_i \leq r_i \leq 10^9$
-  \item $1 \leq A_i, B_i \leq 10^9$
-\end{itemize}
+Till sist följer $Q$ rader, en för varje resa.
+Varje rad består av två heltal $1 \le A_i, B_i \le 10^9$ -- de planeter som resan startar från respektive slutar på.
 
 \section*{Utdata}
-För varje resa skriv ut ett heltal - antalet inrese- respektive utresetullprocesser som transporten måste genomgå.
+Skriv ut ett heltal för varje resa -- antalet inrese- respektive utresetullprocesser transporten måste genomgå.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på ett antal testfallsgrupper.
@@ -38,10 +37,10 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   \hline
   Grupp & Poängvärde & Gränser \\ \hline
   $1$   & $15$        & $Q=1$  \\ \hline
-  $2$   & $30$       & alla $l_i$ är i stgiande ordning, och alla $r_i$ är i stigande ordning \\ \hline
-  $3$   & $35$       & $ A_i,B_i,r_i \leq 10^5$ \\ \hline
-  $4$   & $20$       & Inga ytterligare begränsningar \\ \hline
+  $2$   & $30$        & för alla $i$ gäller att $l_i \le l_{i + 1}$ och $r_i \le r_{i+1}$ \\ \hline
+  $3$   & $30$       & $ A_i,B_i,r_i \leq 10^5$ \\ \hline
+  $4$   & $25$       & Inga ytterligare begränsningar \\ \hline
+>>>>>>> 04df152 (Statement fixes)
 \end{tabular}
 
 Notera att vissa exempelfall är inte giltiga i vissa testfallsgrupper.
-
