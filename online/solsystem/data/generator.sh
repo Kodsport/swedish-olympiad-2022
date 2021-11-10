@@ -15,7 +15,7 @@ max_r=1000000000
 
 #################################################################################
 samplegroup
-limits max_n=$MAX_N =$max_q max_s=$MAX_S max_xy=$MAX_XY
+limits max_n=$max_n max_q=$max_q max_r=$max_r
 sample 1
 sample 2
 sample 3
