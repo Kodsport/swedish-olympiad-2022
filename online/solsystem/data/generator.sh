@@ -58,7 +58,7 @@ tc few-queries-tiny13 gen_no_restrictions max_n=5 max_q=1 max_r=5 seed=25
 
 
 #################################################################################
-group group2 30 # l_i and r_i are increasing
+group group2 35 # l_i and r_i are increasing
 limits max_n=$max_n max_q=$max_q max_r=$max_r increasing=1
 
 tc 3
@@ -75,21 +75,21 @@ tc increasing-no-restrictions5 gen_no_restrictions max_n=$max_n max_q=$max_q max
 tc increasing-no-restrictions6 gen_no_restrictions max_n=$max_n max_q=$max_q max_r=$max_r seed=10 increasing=1
 tc increasing-no-restrictions7 gen_no_restrictions max_n=$max_n max_q=$max_q max_r=$max_r seed=11 increasing=1
 
-tc inreasing-tiny1 gen_no_restrictions max_n=20 max_q=20 max_r=60 seed=12 increasing=1
-tc inreasing-tiny2 gen_no_restrictions max_n=20 max_q=20 max_r=60 seed=13 increasing=1
-tc inreasing-tiny3 gen_no_restrictions max_n=20 max_q=20 max_r=60 seed=14 increasing=1
-tc inreasing-tiny4 gen_no_restrictions max_n=20 max_q=20 max_r=60 seed=15 increasing=1
-tc inreasing-tiny5 gen_no_restrictions max_n=20 max_q=20 max_r=60 seed=16 increasing=1
+tc inreasing-tiny1 gen_no_restrictions max_n=20 max_q=20 max_r=100 seed=12 increasing=1
+tc inreasing-tiny2 gen_no_restrictions max_n=20 max_q=20 max_r=100 seed=13 increasing=1
+tc inreasing-tiny3 gen_no_restrictions max_n=20 max_q=20 max_r=100 seed=14 increasing=1
+tc inreasing-tiny4 gen_no_restrictions max_n=20 max_q=20 max_r=100 seed=15 increasing=1
+tc inreasing-tiny5 gen_no_restrictions max_n=20 max_q=20 max_r=100 seed=16 increasing=1
 
-tc inreasing-tiny6 gen_no_restrictions max_n=5 max_q=5 max_r=20 seed=18 increasing=1
-tc inreasing-tiny7 gen_no_restrictions max_n=5 max_q=5 max_r=20 seed=19 increasing=1
-tc inreasing-tiny8 gen_no_restrictions max_n=5 max_q=5 max_r=20 seed=20 increasing=1
-tc inreasing-tiny9 gen_no_restrictions max_n=5 max_q=5 max_r=20 seed=21 increasing=1
+tc inreasing-tiny6 gen_no_restrictions max_n=5 max_q=5 max_r=25 seed=18 increasing=1
+tc inreasing-tiny7 gen_no_restrictions max_n=5 max_q=5 max_r=25 seed=19 increasing=1
+tc inreasing-tiny8 gen_no_restrictions max_n=5 max_q=5 max_r=25 seed=20 increasing=1
+tc inreasing-tiny9 gen_no_restrictions max_n=5 max_q=5 max_r=25 seed=21 increasing=1
 
-tc inreasing-tiny10 gen_no_restrictions max_n=5 max_q=5 max_r=20 seed=22 increasing=1
-tc inreasing-tiny11 gen_no_restrictions max_n=5 max_q=5 max_r=20 seed=23 increasing=1
-tc inreasing-tiny12 gen_no_restrictions max_n=5 max_q=5 max_r=20 seed=24 increasing=1
-tc inreasing-tiny13 gen_no_restrictions max_n=5 max_q=5 max_r=20 seed=25 increasing=1
+tc inreasing-tiny10 gen_no_restrictions max_n=5 max_q=5 max_r=25 seed=22 increasing=1
+tc inreasing-tiny11 gen_no_restrictions max_n=5 max_q=5 max_r=25 seed=23 increasing=1
+tc inreasing-tiny12 gen_no_restrictions max_n=5 max_q=5 max_r=25 seed=24 increasing=1
+tc inreasing-tiny13 gen_no_restrictions max_n=5 max_q=5 max_r=25 seed=25 increasing=1
 #################################################################################
 group group3 38 # A_i,B_i,r_i<=1e5
 limits max_n=$max_n max_q=$max_q max_r=100000 
@@ -131,10 +131,10 @@ tc small-coordinates-tiny13 gen_no_restrictions max_n=5 max_q=5 max_r=5 seed=25
 
 #################################################################################
 group group4 12 # no additional constraints
-limits max_n=$MAX_N max_q=$max_q max_r=$max_r 
+limits max_n=$max_n max_q=$max_q max_r=$max_r 
 include_group sample
 include_group group1
-# include_group group2
+include_group group2
 include_group group3
 
 tc large-coordinates-all-length1 gen_all_length max_n=$max_n max_q=$max_q max_r=$max_r seed=1

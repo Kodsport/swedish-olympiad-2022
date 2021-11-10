@@ -78,12 +78,12 @@ int main(int argc, char **argv)
                 ll mn = l;
                 if (it != intervals.end())
                 {
-                    mx = it->second;
+                    mx = min(max_r, it->second);
                 }
                 if (it != intervals.begin())
                 {
                     it--;
-                    mn = it->second + 1;
+                    mn = max(mn, it->second + 1);
                 }
                 if (mx <= mn)
                     continue;
