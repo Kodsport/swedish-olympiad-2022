@@ -32,10 +32,11 @@ struct Node {
   }
   void inc(int pos) {
     if (pos + 1 <= lo || hi <= pos) return;
-    val++;
     if (pos <= lo && hi <= pos+1) {
+      val++;
     } else {
       push(), l->inc(pos), r->inc(pos);
+      val = l->val + r->val;
     }
   }
   void push() {
@@ -54,55 +55,48 @@ struct Q {
 void solve() {
   int N;
   cin >> N;
-  set<int> evs;
+  map<int, int> evs;
 
-  map<int, vi> L;
-  map<int, vi> R;
+  unordered_map<int, vi> R;
   rep(i,0,N) {
     int l, r;
     cin >> l >> r;
+    assert(l <= r);
     R[r].push_back(l);
-    L[l].push_back(r);
-    evs.insert(r);
-    evs.insert(l);
+    evs[r];
+    evs[l]++;
   }
 
   int queries;
   cin >> queries;
-  map<int, vector<Q>> qs;
+  unordered_map<int, vector<Q>> qs;
   rep(i,0,queries) {
     Q query;
     cin >> query.a >> query.b;
     if (query.a > query.b) swap(query.a, query.b);
     query.name = i;
     qs[query.b].push_back(query);
-    evs.insert(query.a);
-    evs.insert(query.b);
+    evs[query.a];
+    evs[query.b];
   }
 
   const int mx = 1'000'000'000 + 1;
   Node t(0, mx);
-  auto itsbetween = [&](int l) {
-    return t.query(l, mx);
-  };
 
-  map<int, int> endprefix;
-  endprefix[-1] = 0;
   int endpoints = 0;
-
   vi ans(queries);
-  trav(p, evs) {
-    endpoints += sz(L[p]);
+  trav(ev, evs) {
+    int p = ev.first;
+    ev.second += endpoints;
+    endpoints = ev.second;
     trav(it, qs[p]) {
-      int epsbetween = endpoints - endprefix[it.a];
-      ans[it.name] = epsbetween - 2 * itsbetween(it.a + 1);
+      int epsbetween = endpoints - evs[it.a];
+      ans[it.name] = epsbetween - 2 * t.query(it.a + 1, mx);
     }
     trav(it, R[p]) t.inc(it);
-    endprefix[p] = endpoints;
     endpoints += sz(R[p]);
   }
-
-  cout << ans;
+  trav(it, ans) cout << it << endl;
   _Exit(0);
 }
 
