@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-from functools import lru_cache
 import sys
-sys.setrecursionlimit(10**8)
+sys.setrecursionlimit(10**4)
 def distance(x1, y1, x2, y2):
   return abs(x1 - x2) + abs(y1 - y2)
 n = int(input())
