@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{nccmath}
+\usepackage[margin=0.5in]{geometry}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\usepackage[utf8]{inputenc}
+\title{Lösnings förslag till Grönt Kort - Skolkvalet 2022}
+\begin{document}
+\maketitle
+I det här problemet måste man komma på en viktig insikt: om vi lyckas få de med grönt kort att vara uppptagna så mycket som möjligt kommer vi att få ett optimalt svar. Det kan inte gå snabbare. Eftersom vi har ett ett obegränsat antal klätterväggar kan vi låta hur många som helst klättra samtidigt.\\\\
+Betrkata fallet där alla har grönt kort. Om $N$ är jämn kan hälften klättra och hälften säkra. Alla i första hälften klättrar samtidigt så det tar 10 sekunder tills de blir klara. När första hälften är klara med att klättra kan både halvorna byta plats, och då behövs det ytterliggare 10 sekunder så att andra hälften blir klara. Det här betyder att om $N$ är jämnt så är svaret alltid 20.\\\\
+Om $N$ är udda kan vi inte direkt tillämpa samma logik. Notera att det alltid är ett par av personer som är upptagna: en som klättrar och en som säkrar. Detta betyder att det nödvändigtvis måste finnas en person som varken klättrar eller säkrar i de första 20 sekunderna. Vi kan inte göra bättre än att låta $N-1$ peersoner ( som är ett jämnt antal då $N$ är udda) utföra samma process som ovan. Processen kommer att ta 20 sekunder. Efter att processen är klar kommer endast $N-1$ att ha klättrat färdigt, därför behöver vi extra 10 sekunder så att alla den sista personen kan klättra. Det här betyder att om $N$ är udda så är svaret alltid 30.\\\\
+Om $M \neq 0$ delar vi upp problemet i två fall: Fall 1 är om $N \geq M$ och fall 2 är om $N < M$.\\
+I fall 1 är svaret alltid 30 oavsett om $N$ är udda eller jämnt. Om $N$ är jämnt kan vi först låta de med grönt kort klättra vilket tar 20 sekudner, sedan låter vi de utan grönt kort klättra och eftersom det finns $N \geq M$ så tar det bara 10 sekunder, alltså totalt tar det 30 sekunder.\\\\
+Om $N$ är udda kan vi låta dem som har grönt kort först, men den som blir över kan säkra två personer utan grönt kort så efter 20 sekunder har vi $max(M -2,0)$ personer utan grönt kort som behöver klättra och en person med grönt kort som vi behöver klättra. Vi kan låta personen utan grönt klättra, vliket lämnar $N-2$ personer med grönt kort lediga, alltså kan de resterande utan grönt kort personerna klättra då det finns tillräckligt många personer som kan säkra dem.\\\\
+I fall 2 kan vi alltid göra alla med grönt kort upptagna med att säkra personer utan grönt kort tills det finns färre personer som inte har klättrat än personer med grönt kort, detta tar $10 \cdot (\lceil \frac{M}{N} \rceil -1)$. Efter det går vil tillbaka till fall 1 och vi behöver ytterliggare 30 sekunder, alltså behöver vi totalt $10 \cdot (\lceil \frac{M}{N} \rceil -1) +30 = 10 \cdot \lceil \frac{M}{N} \rceil + 20$.\\ Notera att vi inte ens behöver kolla om $N\geq M$ för att om den är det så blir $\lceil \frac{M}{N} \rceil=1$ och svaret blir 30, vilket stämmer.  
+\begin{lstlisting}[language=Python, caption=En lösning i python]
+import math
+N=int(input())
+M=int(input())
+if M==0:
+    print(20 + (N%2)*10)
+else:
+    print(math.ceil(M/N)*10+20)
+\end{lstlisting}
+
+\end{document}

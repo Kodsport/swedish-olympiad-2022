@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\usepackage[utf8]{inputenc}
+\title{Lösnings förslag till Arabiska - Skolkvalet 2022}
+\begin{document}
+\maketitle
+Här gäller det bara att direkt implementera det som står i uppgiften. Vi går igenom varje tecken i meningen och kollar om tecknet är en vokal och de två följande tecknen är konsonanter, om dessa vilkor är uppfyllda för tecknet vi just nu är på tar vi bort den. Ibland kan det vara lurigt att ta bort element från en lista/sträng man itererar över, för att undvika konstiga buggar så skapar vi en sträng som är resultatet. När vi itererar över tecknen i meningen så är frågan nu istället: ska vi lägga det här tecknet till resultat strängen eller inte? på det här sätt hamnar inga korta vokaler i slutsträngen. När vi är klara vänder vi om resultat strängen. 
+\begin{lstlisting}[language=Python, caption=En lösning i python]
+n = int(input())
+vowels = "aieouyAIEOUY"
+consonants = "bcdfghjklmnpqrstvwxzBCDFGHJKLMNPQRSTVWXZ"
+words = input()
+result = ""
+for i, letter in enumerate(words):
+    if letter in vowels:
+        if (
+            i + 2 >= len(words)
+            or words[i + 1] not in consonants
+            or words[i + 2] not in consonants
+        ):
+            result += letter
+    else:
+        result += letter
+print(result[::-1])  # Reverses the string
+\end{lstlisting}
+
+\end{document}
