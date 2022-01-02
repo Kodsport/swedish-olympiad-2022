@@ -1,0 +1,34 @@
+\problemname{Kortlek}
+I ett kortlek som består av $N$ rundor visas ett tal per runda och varje spelare ska lägga ett kort. Om värdet som visas är $y$ och spelaren använder ett kort med värde $x$ får spelaren $|x-y|$ som skuld. Givet att du har $M$ kort, vad är den minimala skulden du kan få? $M$ är alltid lika med antingen $N$ eller $N+1$
+
+
+
+\section*{Indata}
+Den första raden innehåller två heltal: $1\leq N \leq 2 \cdot 10^5$ och $N\leq M \leq N+1$
+
+Den andra raden innehåller N heltal, det $i:$te talet är värdet som visas i den $i:$te rundan.
+
+Den tredje raden innehåller M heltat, det $i:$te talet är värdet av det $i:$te kortet du har.
+
+Alla tal är mellan $0$ och $10^9$ inklusive i både $0$ och $10^9$
+
+\section*{Utdata}
+Skriv ut ett heltal - den minsta totala skulden du kan få i slutet av spelet.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en antal testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  Grupp & Poängvärde & Gränser \\ \hline
+  $1$   & $15$       & $N \leq 8 $\\ \hline
+  $2$   & $20$       & $N \leq 2000 $  \\ \hline
+  $3$   & $25$       & $M=N$ \\ \hline
+  $4$   & $40$       & Inga ytterligare begränsningar \\ \hline
+\end{tabular}
+
+Notera att vissa exempelfall är inte giltiga i alla testfallsgrupper.
+
+\section*{Förklaring av exempelfall 1}
