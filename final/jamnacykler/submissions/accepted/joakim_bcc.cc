@@ -106,16 +106,17 @@ int main() {
     vi in_path(n,-1);
     vi pth;
 
-    function<pii(int,int,bool)> nxt_large = [&](int x, int p, bool push_path) -> pii {
+    function<pii(int,int,bool)> nxt_large = [&](int v, int p, bool push_path) -> pii {
       if(push_path) {
-        in_path[x] = sz(pth);
-        pth.emplace_back(x);
+        in_path[v] = sz(pth);
+        pth.emplace_back(v);
       }
-      if(sz(g[x]) >= 3) {
-        return {x,1};
+      if(sz(g[v]) >= 3) {
+        return {v,1};
       }
-      assert(sz(g[x]) == 2);
-      auto res = nxt_large(g[x][0]^g[x][1]^p, x, push_path);
+      assert(sz(g[v]) == 2);
+      assert(g[v][0] == p || g[v][1] == p);
+      auto res = nxt_large(g[v][0]^g[v][1]^p, v, push_path);
       return {res.first, res.second+1};
     };
 
@@ -134,6 +135,7 @@ int main() {
           nxt_large(y,x, true);
           x = yy;
           ok = true;
+          break;
         }
       }
       if(!ok) break;
@@ -145,7 +147,7 @@ int main() {
     rep(at,0,3) rep(bt,at+1,3) {
       int a = ys[at].first;
       int b = ys[bt].first;
-      int len = abs(a-b) + ys[at].second + ys[bt].second;
+      int len = abs(in_path[a]-in_path[b]) + ys[at].second + ys[bt].second;
       assert(in_path[a] != -1 && in_path[b] != -1);
 
       if(len % 2 == 0) {

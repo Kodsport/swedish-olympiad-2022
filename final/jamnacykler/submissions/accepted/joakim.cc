@@ -5,7 +5,6 @@ using namespace std;
 #define all(x) begin(x), end(x)
 #define sz(x) (int)(x).size()
 #define debug(...) //ignore
-#define debug(x) cerr << "[" <<#x << " = " << x << "]" << endl
 typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
@@ -157,7 +156,7 @@ int main() {
 
     for(int q : {a,b}) {
       edge e = edges[q];
-      rep(i,in_path[ax],sz(p)) e = merge_edge(e, edges[p[i]]);
+      rep(i,in_path[edges[q].other(x)],sz(p)) e = merge_edge(e, edges[p[i]]);
       if(e.len % 2 == 0) answer(e);
     }
 

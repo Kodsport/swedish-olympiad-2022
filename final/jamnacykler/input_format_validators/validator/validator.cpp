@@ -39,7 +39,7 @@ void run() {
 
   int n = Int(1,maxn);
   Space();
-  int m = Int(1,maxm);
+  int m = Int(0,maxm);
   Endl();
 
   set<pii> s;

@@ -38,7 +38,7 @@ int main() {
         st.pop_back();
       }
       cout << sz(c) << endl;
-      rep(i,0,sz(c)) cout << c[x]+1 << " ";
+      rep(i,0,sz(c)) cout << c[i]+1 << " ";
       cout << endl;
       exit(0);
     }
