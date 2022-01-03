@@ -1,0 +1,12 @@
+author: Joakim Blikstad
+source: Programmeringsolympiadens final 2022
+rights_owner: Programmeringsolympiaden
+license: cc by-sa
+type: scoring
+grading:
+    show_test_data_groups: yes
+
+validation: custom
+
+limits:
+    time_multiplier: 3
