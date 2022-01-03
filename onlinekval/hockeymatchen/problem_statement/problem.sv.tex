@@ -1,0 +1,42 @@
+\problemname{Hockeymatchen}
+Malin älskar att kolla på ishockey.
+Tyvärr hade hon alldeles för många läxor att göra förra kvällen och kunde inte kolla på direktsändningen av hennes favoritlags senaste match, så nu är hon nyfiken på vad som hände under matchen.
+
+Vanligtvis går hon in på Kvällspapprets sportsidor för att ta reda på det, men tyvärr är en stor del av deras hemsida trasig (de behöver bättre programmerare, lika bra som PO-deltagare) och endast en viss del av statistiken går att utläsa.
+Malin är främst intresserad av tre olika frågor för varje lag: antalet mål de gjorde, antalet skott deras målvakt räddade, och det totala antalet skott de sköt på motståndarens mål.
+Givet en del av denna statistik för respektive lag, återkonstruera så mycket av statistiken som möjligt.
+
+\section*{Indata}
+Den första raden innehåller tre heltal: antalet räddningar det första lagets målvakt gjorde, antalet mål som gjordes av det första laget, samt antalet skott som det första laget sköt på motståndarens mål.
+Den andra raden innehåller motsvarande information för det andra laget.
+
+Alla tal i statistiken som är kända är mellan $0$ och $10^9$.
+Om ett tal i statistiken saknas ersätts det med $-1$.
+
+Det är garanterat att det finns minst ett sätt att ersätta alla $-1$ med tal så att den resulterande statistiken är korrekt.
+
+\section*{Utdata}
+Skriv ut statistiken för de två lagen på samma format som i indatan.
+All saknad statistik som går att unikt bestämma utifrån övriga tal ska skrivas ut istället för $-1$.
+Om det inte går att unikt bestämma ett visst tal, skriv ut $-1$.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en antal testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  Grupp & Poängvärde & Gränser \\ \hline
+  $1$   & $30$       & Alla tal går att återkonstruera \\ \hline
+  $2$   & $20$       & Alla tal i den ursprungliga statistiken var högst $5$ \\ \hline
+  $3$   & $50$       & Inga ytterligare begränsningar \\ \hline
+\end{tabular}
+
+Notera att vissa exempelfall är inte giltiga i alla testfallsgrupper.
+
+\section*{Förklaring av exempelfall 1}
+Eftersom det första laget hade totalt $3$ skott på mål och det andra laget hade $2$ räddningar så måste de släppt in det sista skottet, så det blev $1$ mål.
+Eftersom det första laget gjorde $1$ räddning men det andra laget gjorde $4$ mål så måste det andra laget ha gjort totalt $5$ skott på mål.
+
+Detta fall skulle kunna förekomma i samtliga testfallsgrupper.

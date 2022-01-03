@@ -1,0 +1,30 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array, mdframed, tikz}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{Bergskedja}
+\date{}
+\maketitle
+
+Låt oss först undersöka hur vi kan dela ut höjderna i rutnätet på ett giltigt sätt. Börja med att välja vilken ruta som ska ha höjd $1$. Eftersom $1$ är den lägsta höjden kan den inte vara högre än någon av sina grannar, och måste därför ha värdet noll. Men det visar sig att det går att hitta en giltig utplacering oavsett vilken nollruta man väljer. Så ta en av nollrutorna, låt den få höjden $1$, och ta bort den från rutnätet. När en ruta tas bort så måste grannarnas värden minskas med ett, och de kan då bli nya nollrutor. Nu vill vi hitta rutan med höjd $2$, alltså den lägsta rutan i det nya "rutnätet". Men den måste nu också vara en nollruta, så vi kan fortsätta så här tills alla rutor har fått en höjd.
+\newline
+
+
+För att hitta den högsta möjliga höjden för rutan i övre vänstra hörnet så kan vi köra algoritmen ovan, men vänta så länge som möjligt med att välja den övre vänstra rutan som lägsta. Efter ett tag kommer det hända att den övre vänstra rutan är den enda nollrutan kvar, och då har vi svaret.
+\newline
+
+
+För att hitta den lägsta möjliga höjden så placerar vi ut höjderna från högst till lägst istället. Vi hittar alltså rutan med höjd $nm$, $nm-1$, osv. Detta kan göras på liknande sätt som innan, och än en gång väntar vi så länge som möjligt innan vi väljer rutan i övre vänstra hörnet.
+\newline
+
+Allt det här går att implementera i $O(nm)$ på lite olika sätt. Men med de låga gränserna så funkar i princip vad som helst som är polynomiellt i $nm$. En sak som kan underlätta är att algoritmen som hittar en utplacering av höjder också entydigt bestämmer alla relationer mellan grannrutor. Så vi vet vilken som är högst av alla par av grannar. Dessa relationer bildar en riktad acyklisk graf med rutorna som noder, och problemet kan lösas genom att undersöka den här grafen istället.
+
+
+\end{document}

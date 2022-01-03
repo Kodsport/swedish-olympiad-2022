@@ -1,0 +1,70 @@
+\problemname{Ljusshow 2}
+Efter att du löst problemet \textit{Ljusshow} så inser du att det vita bländande ljuset kan
+utnyttjas för att lysa upp vissa av rutorna i rutnätet. I det här problemet får du givet vilka av
+rutorna som ska lysa vitt och vilka som inte ska göra det, och din uppgift är att placera ut lamporna
+längs kanten så att så många av kraven som möjligt blir uppfyllda.
+
+
+\section*{Indata}
+Indatan består av $10$ testfall.
+
+\begin{itemize}
+  \item 
+    Den första raden innehåller ett heltal $T$ ($0 \leq T \leq 10$), numret på testfallet ($0$ är exempelfallet nedan).
+  \item
+    Den andra raden innehåller två heltal: $n$ och $m$ ($1 \le n,m \le 1000$), antalet rader och kolumner i rutnätet.
+  \item
+
+    De följande $n$ raderna utgör en beskrivning av vilka rutor som ska lysa i rutnätet och vilka som inte ska det.
+    Varje rad kommer bestå av en sträng med $m$ ettor och nollor. En etta på rad $r$ och kolumn $c$ indikerar att den
+    rutan ska lysa vitt. En nolla indikerar att rutan inte ska lysa vitt.
+
+\end{itemize}
+
+\section*{Utdata}
+Skriv ut fyra rader med en sträng på varje. Strängarna ska utgöra en utplacering av lampor, på samma format
+som indatan i \textit{Ljusshow}. Notera att du inte ska skriva ut $n$ och $m$.
+
+\section*{Poängsättning}
+Ditt program kommer att testas på $10$ testfall, och poängsättas baserat på hur det står sig relativt domarnas lösning.
+
+En lösnings poäng på ett specifikt testfall definieras som $\max(0, x - \frac{nm}{2})$, där $x$ är 
+antalet rutor i rutnätet där ljuset från lamporna som lösningen placerade ut uppfyller de givna kraven
+på vilka rutor som skulle lysa vitt och inte. Om din lösning fick poängen $P_1$ och domarlösningen fick
+poängen $P_2$ så får du $10 \cdot (P_1 / P_2)$ poäng på testfallet, avrundat till två decimaler.
+
+Din poäng för en inskickning är summan av poängen för testfallen, och din totala poäng är poängen för den bästa inskickningen.
+Det går alltså inte att kombinera testfall mellan olika inskickningar, utan du måste skicka in ett enda program som
+maximerar din poäng på alla testfall samtidigt.
+
+Din lösning kan maximalt få $100$ poäng, även om den är bättre än den domarna skrivit.
+
+Exempeltestfallet kommer alltid att ge $0$ poäng.
+
+
+\section*{Förklaring av exampelfall}
+I exempelfallet så uppfyller lösningen alla kraven och dess poäng är därför $7.5$, vilket är det
+maximala möjliga.
+
+\section*{Testfall}
+Här är beskrivningar av de $10$ testfallen som förekommer.
+Testfall av typ 1 har genererats genom att ta resultatet av en slumpmässig utplacering av lampor.
+Det finns alltså alltid ett sätt att uppnå det maximala $\frac{nm}{2}$ poäng på dessa testfall.
+Testfall av typ 2 har genererats genom att bara slumpa för varje ruta om den ska vara ett eller noll,
+med $50\%$ sannolikhet. Dessa testfall har ofta ingen lösning som uppfyller alla kraven.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+\hline
+Testfall & Gränser                                     & Typ  \\ \hline
+$1$       & $n = 10$, $m = 10$                           & 1  \\ \hline
+$2$       & $n = 40$, $m = 40$                           & 1   \\ \hline
+$3$       & $n = 150$, $m = 150$                           & 1   \\ \hline
+$4$       & $n = 400$, $m = 400$                          & 1  \\ \hline
+$5$       & $n = 1000$, $m = 1000$                          & 1   \\ \hline
+$6$       & $n = 100$, $m = 10$                           & 1   \\ \hline
+$7$       & $n = 1000$, $m = 1$                           & 1   \\ \hline
+$8$       & $n = 10$, $m = 10$                           & 2  \\ \hline
+$9$       & $n = 100$, $m = 100$                      & 2   \\ \hline
+$10$      & $n = 1000$, $m = 1000$                       & 2   \\ \hline
+\end{tabular}
