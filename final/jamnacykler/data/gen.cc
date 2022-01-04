@@ -11,11 +11,6 @@ typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
 
-void gen_odd_cactus(int n) {
-  // TODO: implement
-};
-
-
 struct UF { // to check bipartiteness
   vi e;
   UF(int n) : e(n, -1) {}
@@ -35,10 +30,11 @@ int main(int argc, char *argv[]) {
   registerGen(argc, argv);
   parseArgs(argc, argv);
 
-  int n, q;
+  int q;
   string type;
-  getNamed(n,q,type);
+  getNamed(q,type);
   int m = getOpt("m",-1);
+  int n = getOpt("n",-1);
 
   Graph g;
   if(type == "empty") {
@@ -66,6 +62,23 @@ int main(int argc, char *argv[]) {
     int gap = getOpt("gap",1);
     for(int i = 0; i < n-n/2; i += gap) g.addEdge(i,i+n/2);
   }
+  else if(type == "paths") {
+    assert(m == -1);
+    int n1, n2, n3;
+    getNamed(n1,n2,n3);
+    if(n == -1) n = n1+n2+n3+2;
+    g = Graph(n);
+    rep(i,0,n1-1) g.addEdge(i+1,i+1+1);
+    rep(i,0,n2-1) g.addEdge(i+n1+1,i+1+n1+1);
+    rep(i,0,n3-1) g.addEdge(i+n1+n2+1,i+1+n1+n2+1);
+    g.addEdge(0,1);
+    g.addEdge(0,n1+1);
+    g.addEdge(0,n1+n2+1);
+    g.addEdge(n1,n1+n2+n3+1);
+    g.addEdge(n1+n2,n1+n2+n3+1);
+    g.addEdge(n1+n2+n3,n1+n2+n3+1);
+    rep(i,n1+n2+n3+2,n) g.addEdge(i,rnd.next(i)); // extra branches
+  }
   else if(type == "random") {
     g = Graph::random(n,m);
   }
@@ -85,9 +98,29 @@ int main(int argc, char *argv[]) {
   else if(type == "bamboo") { // a tree
     g = Tree::bamboo(n);
   }
-  //else if(type == "cactus") { // odd cactus
-  //  g = gen_cactus();
-  //}
+  else if(type == "cactus") { // odd cactus
+    g = Graph(n);
+    int r = 1;
+    int siz = getOpt("siz",100);
+    while(r < n) {
+      int a = rnd.next(r);
+      if(rnd.next(10)==4 || n-r <= 3) {
+        g.addEdge(r,a);
+        ++r;
+        continue;
+      }
+      else {
+        int s = rnd.next(min(siz,n-r))+1;
+        if(s % 2 == 1) ++s;
+        if(r+s > n) s -= 2;
+        assert(s > 0);
+        rep(i,0,s-1) g.addEdge(r+i, r+i+1);
+        g.addEdge(r,a);
+        g.addEdge(r+s-1,a);
+        r += s;
+      }
+    }
+  }
   else assert(false);
 
   assert(g.n() == n);
@@ -132,12 +165,7 @@ int main(int argc, char *argv[]) {
   rep(i,0,extra_random_edges) {
     int a = rnd.next(n);
     int b = a;
-    if(bip) {
-      while(b == a || uf.sameSet(a,b)) b = rnd.next(n);
-    }
-    else {
-      while(b == a) b = rnd.next(n);
-    }
+    while(b == a || (bip && uf.sameSet(a,b))) b = rnd.next(n);
     if(edges.count(pii(a,b))) continue;
     g.addEdge(a,b);
     edges.emplace(a,b);
@@ -147,7 +175,7 @@ int main(int argc, char *argv[]) {
   }
 
 
-  g.shuffle();
+  if(rnd.next(4) == 2) g.shuffle();
 
   cout << g.printN().printM().add1() << endl;
 }
