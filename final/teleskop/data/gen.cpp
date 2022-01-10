@@ -50,7 +50,6 @@ int main(int argc, char **argv)
 {
     // The areguments should be in this format:
     // seed=(seed) max_k=(max_k) max_n=(max_n)
-    // plus_one is a boolean to know if data should be generated for the subtask in which there are N cards
     rep(i, 0, argc) args.push_back(argv[i]);
     ll seed = convert_to_int(cmdlinearg("seed"));
     srand(seed);
