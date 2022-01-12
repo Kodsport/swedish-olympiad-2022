@@ -60,7 +60,7 @@ tc small-35 gen seed=35 max_value=2 max_n=4 plus_one=1
 
 #################################################################################
 
-group group2 25 # max_value=2000
+group group2 25 # max_n=2000
 limits max_value=$MAX_VAL max_n=2000 plus_one=1
 include_group sample
 include_group group1
@@ -98,7 +98,7 @@ tc medium-30 gen seed=30 max_value=$MAX_VAL max_n=2000 plus_one=0
 #################################################################################
 
 group group3 20 #plus_one=0
-limits max_value=$MAX_VAL max_n=$MAX_N plus_one=0;
+limits max_value=$MAX_VAL max_n=$MAX_N plus_one=0
 
 tc large-equal-1 gen seed=1 max_value=$MAX_VAL max_n=$MAX_N plus_one=0
 tc large-equal-2 gen seed=2 max_value=$MAX_VAL max_n=$MAX_N plus_one=0
@@ -126,7 +126,7 @@ tc large-equal-22 gen seed=22 max_value=100 max_n=$MAX_N plus_one=0
 #################################################################################
 
 group group4 40
-limits max_value=$MAX_VAL max_n=$MAX_N plus_one=1;
+limits max_value=$MAX_VAL max_n=$MAX_N plus_one=1
 include_group sample
 include_group group1
 include_group group2
