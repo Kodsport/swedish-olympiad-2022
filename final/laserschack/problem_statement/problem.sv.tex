@@ -8,9 +8,9 @@ När en laser träffar en spegelpjäs studsar strålen ut i all fyra riktningar.
 Spelet har just hamnat i en position där Abdullah kommer vinna om han bara trycker på knappen för att skjuta lasern.
 För att stoppa Abdullah från att vinna har nu Fredrik lagt ut rökbomber på planen, markerade med \texttt{R}.
 Röken stoppar laserstrålar från att färdas genom den rutan. Varje sekund sprider sig röken till alla dom fyra angränsande rutorna.
-Om attackpjäsen eller kungen är i rök går kan inte Abdullah vinna. 
+Om attackpjäsen eller kungen är i rök kan inte Abdullah vinna. 
 
-Hur många seunder tar det innan Abdullah inte längre vinner genom att trycka på knappen?
+Hur många sekunder tar det innan Abdullah inte längre vinner genom att trycka på knappen?
 Alltså, hur många sekunder tar det tills att röken spridit sig så att lasern inte längre når kungen från attackpjäsen?
 Det är garanterat att spelet ursprungligen är i en position där lasern når kungen från attackpjäsen utan att gå genom någon rök.
 
@@ -27,7 +27,9 @@ Varje tecken är något av följande:
     \item \texttt{A} för attackpjäsen
     \item \texttt{K} för kungen
 \end{itemize}
-Det garanteras att \texttt{A} och \texttt{K} förekommer exakt en gång vardera, och att laserstrålen når fram till kungen från attackpjäsen från början.
+Det garanteras att \texttt{A} och \texttt{K} förekommer exakt en gång vardera,
+att \texttt{R} förekommer minst en gång,
+och att laserstrålen når fram till kungen från attackpjäsen från början.
 
 \section*{Utdata}
 Skriv ut ett ickenegativt heltal -- antal sekunder det tar tills lasern inte längre når kungen.
@@ -43,7 +45,7 @@ Grupp & Poängvärde & Gränser \\ \hline
 $1$    & $10$       &  $R=1$ \\ \hline
 $2$    & $20$       &  Det finns exakt ett \texttt{R} på brädet. \\ \hline
 $3$    & $20$       &  Ingen ruta är tom (\texttt{.}) \\ \hline
-$4$    & $20$       &  $R\times C \leq 10000$ \\ \hline
+$4$    & $20$       &  $R\times C \leq 2500$ \\ \hline
 $5$    & $30$       &  Inga ytterligare begränsningar. \\ \hline
 \end{tabular}
 

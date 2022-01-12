@@ -61,7 +61,7 @@ int main(){
         if(seen[x][y]) continue;
         seen[x][y] = 1;
         if(g[x][y]=='K') {
-            cout<<mn-1<<endl;
+            cout<<mn<<endl;
             return 0;
         }
 

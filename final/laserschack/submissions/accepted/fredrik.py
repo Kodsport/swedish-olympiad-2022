@@ -46,7 +46,7 @@ while len(q2)>0:
         continue
     seen[x][y] = True
     if g[x][y]=='K':
-        print(mn-1)
+        print(mn)
         exit(0)
         
     for dir in [[0,1],[0,-1],[1,0],[-1,0]]:

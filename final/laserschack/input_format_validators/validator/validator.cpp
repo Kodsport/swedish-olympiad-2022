@@ -45,6 +45,7 @@ void run() {
 		Endl();
 	}
 
+	assert(numR>=1);
 	assert(numA==1);
 	assert(numK==1);
 	if(mode=="singleR") assert(numR==1);
