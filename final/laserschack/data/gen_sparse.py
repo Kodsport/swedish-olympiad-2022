@@ -8,7 +8,7 @@
 import sys
 import random
 
-from helpers import make_solvable
+from helpers import make_solvable, solvable
 
 def cmdlinearg(name, default=None):
     for arg in sys.argv:
@@ -52,16 +52,18 @@ while True:
         break
 grid[K_pos[0]][K_pos[1]] = 'K'
 
-
-for i in range(smoke_machines):
-    while True:
-        x = random.randint(0,r-1)
-        y = random.randint(0,c-1)
-        if grid[x][y] not in ['A','K','R']:
-            break
-    grid[x][y] = 'R'
-
-grid = make_solvable(grid,r,c,*A_pos)
+while True:
+    grid = make_solvable(grid,r,c,*A_pos)
+    num_smokes = sum([sum([x=='R' for x in row]) for row in grid])
+    for i in range(smoke_machines-num_smokes):
+        while True:
+            x = random.randint(0,r-1)
+            y = random.randint(0,c-1)
+            if grid[x][y] not in ['A','K','R']:
+                break
+        grid[x][y] = 'R'
+    if solvable(grid,r,c,*A_pos):
+        break
 
 print(r, c)
 for row in grid:
