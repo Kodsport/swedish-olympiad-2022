@@ -89,3 +89,8 @@ tc large-5 gen_partition n=300000 x=150000 y=50000 z=100000 noise=1
 tc large-6 gen_partition n=$MAXN x=$(($MAXN - 3)) y=1 z=2
 tc large-7 gen_partition n=$MAXN x=$(($MAXN - 3)) y=1 z=2 noise=1
 tc large-8 gen_partition n=$MAXN x=3 y=$(($MAXN - 5)) z=2 noise=-1000
+tc large-9 gen_partition n=$MAXN x=200000 y=210000 z=90000 noise=-1000000
+tc large-10 gen_partition n=$MAXN x=166668 y=166665 z=166667 noise=-1000000
+tc large-11 gen_partition n=$MAXN x=166668 y=166665 z=166667 noise=1
+tc large-12 gen_partition n=$MAXN x=1 y=$(($MAXN - 2)) z=1
+tc large-13 gen_random n=$MAXN maxa=$(($MAXN / 3))
