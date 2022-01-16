@@ -1,19 +1,17 @@
 \problemname{Kortlek}
-I ett kortlek som består av $N$ rundor visas ett tal per runda och varje spelare ska lägga ett kort. Om värdet som visas är $y$ och spelaren använder ett kort med värde $x$ får spelaren $|x-y|$ som skuld. Givet att du har $M$ kort, vad är den minimala skulden du kan få? $M$ är alltid lika med antingen $N$ eller $N+1$
+Nicole och Simon spelar ett kortspel som består av $N$ rundor. I runda $i$ lägger Nicole ut ett kort som har ett tal $a_i$ skrivet på sig. Simon måste då svara med att lägga ut ett kort från sin hand. Om Simons kort har värde $b_i$ så får Nicole $|a_i-b_i|$ poäng. Simon vill alltså lägga ett kort som är så nära det Nicole lade som möjligt.
 
-
+Givet exakt vilka kort Nicole kommer lägga ut och vilka $M$ kort Simon har på sin hand från början, vad är den minsta poängen Nicole kan få om Simon spelar optimalt? $M$ är alltid lika med $N$ eller $N+1$
 
 \section*{Indata}
 Den första raden innehåller två heltal: $1\leq N \leq 2 \cdot 10^5$ och $N\leq M \leq N+1$
 
-Den andra raden innehåller N heltal, det $i:$te talet är värdet som visas i den $i:$te rundan.
+Den andra raden innehåller N heltal, det $i:$te talet $a_i$ ($0\le a_i \le 10^9$) är värdet på kortet Nicole lägger ut i runda $i$.
 
-Den tredje raden innehåller M heltat, det $i:$te talet är värdet av det $i:$te kortet du har.
-
-Alla tal är mellan $0$ och $10^9$ inklusive i både $0$ och $10^9$
+Den tredje raden innehåller M heltal, det $i:$te talet $b_i$ ($0\le b_i \le 10^9$) är värdet av det $i:$te kortet Simon har på sin hand.
 
 \section*{Utdata}
-Skriv ut ett heltal - den minsta totala skulden du kan få i slutet av spelet.
+Skriv ut ett heltal - den minsta totala poängen Nicole får om Simon spelar optimalt.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en antal testfallsgrupper.
@@ -29,6 +27,9 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   $4$   & $40$       & Inga ytterligare begränsningar \\ \hline
 \end{tabular}
 
-Notera att vissa exempelfall är inte giltiga i alla testfallsgrupper.
+\section*{Förklaring av exempelfall}
+I Sample 1 är det optimalt för Simon att i första rundan lägga ut kortet med värde 1, och i andra rundan lägga ut kortet med värde 2. Då får Nicole $|1-1| + |10-2|=8$ poäng.
 
-\section*{Förklaring av exempelfall 1}
+I Sample 2 spelar Simon ut korten av värde 2,5,1 i den ordningen.
+
+I sample 3 spelar Simun ut korten av värde 4,6,3,1 i den ordningen.
