@@ -20,18 +20,9 @@ void run()
   Space();
   int b = Int(0, 1000000000);
   Endl();
-  set<int> as;
-  for (int i = 0; i < n; i++)
-  {
-    int a = Int(1, 1000);
-    as.insert(a);
-    if (i + 1 != n)
-      Space();
-  }
-  Endl();
-  Eof();
+  vector<int> as = SpacedInts(n, 1, 1000);
 
   if(mode=="same_a"){
-    assert(as.size()==1);
+    assert(set<int>(as.begin(), as.end()).size()==1);
   }
 }
