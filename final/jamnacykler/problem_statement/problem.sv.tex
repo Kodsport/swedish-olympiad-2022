@@ -1,8 +1,22 @@
-\problemname{Jämna cykler}
+\problemname{Monopol}
 
-Givet en graf, hitta en enkel cykel med ett jämnt antal kanter, om det finns en.
+Jocke och hans vänner brukar spela Monopol med varandra. Men efter otaliga spel har de tröttnat
+på de vanliga reglerna, och har därför ändrat på dem en aning:
 
-%TODO skriv statement
+
+Först väljer de ett lagom stort land. De tar sedan en titt på vägnätet i landet och väljer ut ett
+antal städer som bildar en cykel (som på ett monopolbräde). Därefter åker de till landet, och spelar
+genom att åka runt cykeln i sina bilar och köper/säljer fastigheter med riktiga pengar.
+
+
+Det finns dock en begränsning som gör det svårt att genomföra spelet: de måste hitta en lämplig
+cykel i vägnätet. Vissa länder har nämligen väldigt stora vägnät. Något som försvårar ytterligare är 
+att cykeln måste ha ett jämnt antal kanter, för annars funkar inte reglerna (``Fri parkering'' hamnar inte
+i mitten vilket ger ett obalanserat spel).
+
+
+Du får givet en oriktad graf, och din uppgift är att hitta en cykel med ett jämnt antal kanter, 
+om det finns en.
 
 \begin{figure}[!h]
 \begin{center}
@@ -16,10 +30,8 @@ Givet en graf, hitta en enkel cykel med ett jämnt antal kanter, om det finns en
 \end{figure}
 
 \section*{Indata}
-\section*{Utdata}
-\section*{Indata}
 
-På den första raden stor två heltal $N$ och $M$, antalet noder respektive antalet kanter
+Den först raden innehåller två heltal $N$ och $M$, antalet noder respektive antalet kanter
 ($1\le N \le 10^5$, $0\le M \le \mathrm{min}(2\cdot 10^5, \tfrac{n(n-1)}{2})$).
 
 Sedan följer $M$ rader med två heltal $a$ och $b$ vardera, vilket betyder att det finns en kant mellan noderna $a$ och $b$ i grafen ($1\le a, b \le N$ och $a\neq b$). Det är garanterat att det inte finns flera kanter mellan samma par av noder i grafen.
