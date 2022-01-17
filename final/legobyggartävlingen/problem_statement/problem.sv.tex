@@ -1,0 +1,37 @@
+\problemname{Triangeltal}
+
+\illustration{0.25}{sample}{Bilden motsvarar första exemplet.}
+
+Du och din ärkefiende Gohu har deltagit i en legobyggartävling. Ni har byggt en massa olika höga och olika fina torn längs x-axeln och väntar nu på att domarna ska komma. Poängsättningen kommer gå till enligt följande: Om ett av dina torn har finhetsgraden f och är h legobitar högt kommer du få f*h poäng för tornet. 
+
+Legobyggartävlingen är ett världskänt jippo och det flyger därför en massa drönare fram och tillbaka i xy-planet för att filma alla fina torn. För att drönarna inte ska krocka med tornen (och därmed riva ner alla legobitar ovanför och inkluderat med legobiten den krockade med) har filmteamet placerat ut en massa radiomaster av olika höjd längs med x-axeln (ev. på torn). En drönare kan röra sig en ruta upp för varje ruta framåt och kommer alltid röra sig så att den ligger så nära marken som möjligt (för att få bra bilder på tornen) utan att någonsin åka under en mast. 
+
+Nu plötsligt tittar filmteamet bort! Du bestämmer dig för att snabbt ta bort några master från linjen så att drönarna ska börja krascha in tornen. Vilka master ska du ta bort för att maximera din vinst (skillnaden mellan dina poäng och Guhos)?
+
+Finhetsgraden på ett torn minskar inte när ett en drönare kraschar in i den, bara höjden. Det är garanterat att masterna initialt är placerade så att drönare inte kan krocka med några torn.
+
+
+\section*{Indata}
+Den första raden innehåller tre heltal $A,B,M$ ($0 \leq A,B \leq 1000, 0 \leq m \leq 100 000$) -- antalet torn du byggt,  antalet torn Guho har byggt och antalet master.
+
+Därefter följer $A$ rader där varje rad innehåller heltal $x,f,h$ ($0 \leq x \leq 10^9, 0\leq f,h \leq 1000$) -- position, finhetsgrad och höjd för ett av dina torn.
+
+Därefter följer $B$ rader där varje rad innehåller heltal $x,f,h$ ($0 \leq x \leq 10^9, 0\leq f,h \leq 1000$) -- position, finhetsgrad och höjd för ett av Guhos torn.
+
+Därefter följer $M$ rader där varje rad innehåller heltal $x,h$ ($0 \leq x \leq 10^9, 0\leq h \leq 1000$) -- position och höjd en av masterna.
+
+\section*{Utdata}
+Skriv ut ett heltal: det största värdet (dina poäng) - (Guhos poäng) kan uppnå om du optimalt väljer vilka master att ta bort. Notera att svaret kan vara negativt.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  Grupp & Poängvärde & Gränser \\ \hline
+  $1$   & $20$       & $a,b,m \leq 8$\\ \hline
+  $2$   & $20$       & $a,b,m \leq 1000$  \\ \hline
+  $2$   & $20$       & Inga ytterligare begränsningar  \\ \hline
+\end{tabular}
