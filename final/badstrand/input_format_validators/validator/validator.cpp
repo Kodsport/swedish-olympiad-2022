@@ -21,6 +21,7 @@ void run()
   int b = Int(0, 1000000000);
   Endl();
   vector<int> as = SpacedInts(n, 1, 1000);
+  Eof();
 
   if(mode=="same_a"){
     assert(set<int>(as.begin(), as.end()).size()==1);
