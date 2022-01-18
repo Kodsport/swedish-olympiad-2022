@@ -21,19 +21,7 @@ void run()
   Space();
   int m = Int(n, n + plus_one);
   Endl();
-  rep(i, 0, n)
-  {
-    int cur = Int(0, max_value);
-    if (i + 1 != n)
-      Space();
-  }
-  Endl();
-  rep(i, 0, m)
-  {
-    int cur = Int(0, max_value);
-    if (i + 1 != m)
-      Space();
-  }
-  Endl();
+  vi a = SpacedInts(n, 0, max_value);
+  vi b = SpacedInts(m, 0, max_value);
   Eof();
 }
