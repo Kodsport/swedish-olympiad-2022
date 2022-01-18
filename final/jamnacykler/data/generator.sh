@@ -32,6 +32,8 @@ tc_manual ../manual_tests/manual-1.in
 tc_manual ../manual_tests/manual-2.in
 tc_manual ../manual_tests/manual-3.in
 tc_manual ../manual_tests/manual-4.in
+tc_manual ../manual_tests/manual-5.in
+tc_manual ../manual_tests/manual-6.in
 
 tc g1-empty gen -type=empty -n=10
 
@@ -172,10 +174,12 @@ tc g3-tree-2
 tc g4-cycle  gen -type=cycle -n=99999
 
 ##################### GROUP 5: degree >= 3 ####################
-group group5 18
+group group5 20
 limits maxn=$N maxm=$M mindeg=3
 
 tc manual-4
+tc manual-5
+tc manual-6
 tc g1-wheel-1
 tc g1-wheel-2
 tc g1-wheel-3
@@ -213,7 +217,7 @@ tc g5-empty-3  gen -type=empty -n=1000 -forced_deg3=1
 tc g5-empty-4  gen -type=empty -n=100000 -forced_deg3=1
 
 ##################### GROUP 6 ####################
-group group6 18
+group group6 16
 limits maxn=$N maxm=$M
 include_group group1
 include_group group2

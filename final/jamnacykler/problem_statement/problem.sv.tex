@@ -31,7 +31,7 @@ om det finns en.
 
 \section*{Indata}
 
-Den först raden innehåller två heltal $N$ och $M$, antalet noder respektive antalet kanter
+Den första raden innehåller två heltal $N$ och $M$, antalet noder respektive antalet kanter
 ($1\le N \le 10^5$, $0\le M \le \mathrm{min}(2\cdot 10^5, \tfrac{n(n-1)}{2})$).
 
 Sedan följer $M$ rader med två heltal $a$ och $b$ vardera, vilket betyder att det finns en kant mellan noderna $a$ och $b$ i grafen ($1\le a, b \le N$ och $a\neq b$). Det är garanterat att det inte finns flera kanter mellan samma par av noder i grafen.
@@ -39,7 +39,7 @@ Sedan följer $M$ rader med två heltal $a$ och $b$ vardera, vilket betyder att 
 \section*{Utdata}
 Om det inte finns en jämn cykel, skriv ut en rad med strängen ``\texttt{NO}''.
 
-Om det finns en jämn cykel, skriv ut en rad med strängen ``\texttt{YES}''. Därefter ska du skriva ut en sådan cykel. Skriv först ut en rad med ett \textbf{jämnt} heltal $k$ ($4\le k \le N$), antalet noder i din cykel. På nästa rad, skriv ut $K$ stycken \textbf{olika} heltal $v_{1}, v_{2}, \ldots, v_{k}$ ($1\le v_{i}\le N$) separerade av mellanslag: noderna på din cykel, så att det kanterna $(v_{1},v_{2}), (v_{2},v_{3}),\ \ldots, (v_{k-1},v_{k}), (v_{k}, v_{1})$ finns i grafen.
+Om det finns en jämn cykel, skriv ut en rad med strängen ``\texttt{YES}''. Därefter ska du skriva ut en sådan cykel. Skriv först ut en rad med ett \textbf{jämnt} heltal $k$ ($4\le k \le N$), antalet noder i din cykel. På nästa rad, skriv ut $K$ stycken \textbf{olika} heltal $v_{1}, v_{2}, \ldots, v_{k}$ ($1\le v_{i}\le N$) separerade av mellanslag: noderna på din cykel, så att kanterna $(v_{1},v_{2}), (v_{2},v_{3}),\ \ldots, (v_{k-1},v_{k}), (v_{k}, v_{1})$ finns i grafen.
 
 Om det finns flera möjliga svar så kommer vilket som helst accepteras.
 
@@ -59,9 +59,9 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   \\ \hline
   $4$  & 13 & Alla noder i grafen har grad högst 2
   \\ \hline
-  $5$  & 18 & Alla noder i grafen har grad minst 3
+  $5$  & 20 & Alla noder i grafen har grad minst 3
   \\ \hline
-  $6$  & 18 & Inga ytterligare begränsningar
+  $6$  & 16 & Inga ytterligare begränsningar
   \\ \hline
 \end{tabular}
 

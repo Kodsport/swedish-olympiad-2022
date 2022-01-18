@@ -7,6 +7,3 @@ grading:
     show_test_data_groups: yes
 
 validation: custom
-
-limits:
-    time_multiplier: 3
