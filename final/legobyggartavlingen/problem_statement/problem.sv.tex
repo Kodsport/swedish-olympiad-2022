@@ -19,16 +19,19 @@ Det är garanterat att masterna initialt är placerade så att drönare inte kan
 
 
 \section*{Indata}
-Den första raden innehåller tre heltal $A,B,M$ ($0 \leq A,B \leq 1000, 0 \leq m \leq 100\,000$) -- antalet torn du byggt,  antalet torn Guho har byggt och antalet master.
+Den första raden innehåller tre heltal $A,B,M$ ($1 \leq A,B,M \leq 1000$) -- antalet torn du byggt, antalet torn Guho har byggt och antalet master.
 
-Därefter följer $A$ rader där varje rad innehåller heltal $x,f,h$ ($0 \leq x \leq 10^9, 0\leq f,h \leq 1000$) -- position, finhetsgrad och höjd för ett av dina torn.
+Därefter följer $A$ rader där varje rad innehåller heltal $x,f,h$ ($1 \leq x \leq 10^6, 1 \le f \le 100, 1\leq h \leq 10000$) -- position, finhetsgrad och höjd för ett av dina torn.
 
-Därefter följer $B$ rader där varje rad innehåller heltal $x,f,h$ ($0 \leq x \leq 10^9, 0\leq f,h \leq 1000$) -- position, finhetsgrad och höjd för ett av Guhos torn.
+Därefter följer $B$ rader där varje rad innehåller heltal $x,f,h$ ($1 \leq x \leq 10^6, 1 \le f \le 100, 1\leq h \leq 10000$) -- position, finhetsgrad och höjd för ett av Guhos torn.
 
-Därefter följer $M$ rader där varje rad innehåller heltal $x,h$ ($0 \leq x \leq 10^9, 0\leq h \leq 1000$) -- position och höjd för en av masterna.
+Därefter följer $M$ rader där varje rad innehåller heltal $x,h$ ($1 \leq x \leq 10^6, 1\leq h \leq 10000$) -- position och höjd för en av masterna.
+
+Inga torn kommer ha samma x-värde som varandra, och inte heller master.
+Däremot kan master ha samma x-position som torn.
 
 \section*{Utdata}
-Skriv ut ett heltal: det största värdet (dina poäng) - (Guhos poäng) kan uppnå om du optimalt väljer vilka master att ta bort. Notera att svaret kan vara negativt.
+Skriv ut ett heltal: det största värdet (dina poäng) - (Guhos poäng) kan uppnå om du optimalt väljer vilka master att ta bort.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
@@ -39,7 +42,7 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   \hline
   Grupp & Poängvärde & Gränser \\ \hline
   $1$   & $23$       & Masterna har lägre x-koordinat än tornen \\ \hline
-  $2$   & $10$       & $a,b,m \leq 8$\\ \hline
-  $3$   & $22$       & $a,b,m \leq 1000$  \\ \hline
+  $2$   & $10$       & $A,B,M \leq 8$\\ \hline
+  $3$   & $22$       & $A,B,M \leq 100$  \\ \hline
   $4$   & $45$       & Inga ytterligare begränsningar  \\ \hline
 \end{tabular}
