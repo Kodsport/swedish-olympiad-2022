@@ -29,10 +29,15 @@ int main(int argc, char **argv) {
   auto check = [&](istream& sol, feedback_function feedback){
     string ans;
     if(!(sol >> ans)) feedback("Expected more output");
+    for (char& c : ans) c = (char)toupper(c);
     if(ans != "NO" && ans != "YES")
       feedback("Answer \'%s\' is not {YES|NO}", ans.c_str());
 
-    if(ans == "NO") return false;
+    if(ans == "NO") {
+      string trailing;
+      if(sol >> trailing) feedback("Trailing output");
+      return false;
+    }
 
     int k;
     if(!(sol >> k)) feedback("Expected more output");
