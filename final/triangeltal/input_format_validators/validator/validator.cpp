@@ -13,29 +13,13 @@ typedef vector<int> vi;
 
 
 void run() {
-  int maxn = Arg("maxn");
-  int k = 3;
-  int same = Arg("same", 0);
-
-  int n = Int(3, maxn);
-  int maxa = Arg("maxa", n);
+  int n = Int(3, Arg("maxn"));
   Endl();
 
-  int a0;
-  rep(c1,0,n){
-      int a = Int(1, maxa);
-
-        if(c1 == 0){
-            a0 = a;
-        }
-        else{
-            if(same == 1)assert(a == a0);
-        }
-
-      if(c1 < n-1)Space();
+  vector<int> as = SpacedInts(n, 1, (int)Arg("maxa", n));
+  if (Arg("same", 0)) {
+    rep(i,0,n) {
+      assert(as[i] == as[0]);
+    }
   }
-  Endl();
-  Eof();
-
 }
-
