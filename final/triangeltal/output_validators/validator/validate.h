@@ -50,14 +50,14 @@
 #include <fstream>
 #include <sstream>
 
-typedef void (*feedback_function)(const std::string &, ...);
+typedef void (*feedback_function)(const char*, ...);
 
 const int EXITCODE_AC = 42;
 const int EXITCODE_WA = 43;
-const std::string FILENAME_AUTHOR_MESSAGE = "teammessage.txt";
-const std::string FILENAME_JUDGE_MESSAGE = "judgemessage.txt";
-const std::string FILENAME_JUDGE_ERROR = "judgeerror.txt";
-const std::string FILENAME_SCORE = "score.txt";
+const char* FILENAME_AUTHOR_MESSAGE = "teammessage.txt";
+const char* FILENAME_JUDGE_MESSAGE = "judgemessage.txt";
+const char* FILENAME_JUDGE_ERROR = "judgeerror.txt";
+const char* FILENAME_SCORE = "score.txt";
 
 #define USAGE "%s: judge_in judge_ans feedback_dir < author_out\n"
 
@@ -66,8 +66,8 @@ std::istream author_out(std::cin.rdbuf());
 
 char *feedbackdir = NULL;
 
-void vreport_feedback(const std::string &category,
-                      const std::string &msg,
+void vreport_feedback(const char* category,
+                      const char* msg,
                       va_list pvar) {
     std::ostringstream fname;
     if (feedbackdir)
@@ -75,36 +75,36 @@ void vreport_feedback(const std::string &category,
     fname << category;
     FILE *f = fopen(fname.str().c_str(), "a");
     assert(f);
-    vfprintf(f, msg.c_str(), pvar);
+    vfprintf(f, msg, pvar);
     fclose(f);
 }
 
-void report_feedback(const std::string &category, const std::string &msg, ...) {
+void report_feedback(const char* category, const char* msg, ...) {
     va_list pvar;
     va_start(pvar, msg);
     vreport_feedback(category, msg, pvar);
 }
 
-void author_message(const std::string &msg, ...) {
+void author_message(const char* msg, ...) {
     va_list pvar;
     va_start(pvar, msg);
     vreport_feedback(FILENAME_AUTHOR_MESSAGE, msg, pvar);
 }
 
-void judge_message(const std::string &msg, ...) {
+void judge_message(const char* msg, ...) {
     va_list pvar;
     va_start(pvar, msg);
     vreport_feedback(FILENAME_JUDGE_MESSAGE, msg, pvar);
 }
 
-void wrong_answer(const std::string &msg, ...) {
+void wrong_answer(const char* msg, ...) {
     va_list pvar;
     va_start(pvar, msg);
     vreport_feedback(FILENAME_JUDGE_MESSAGE, msg, pvar);
     exit(EXITCODE_WA);
 }
 
-void judge_error(const std::string &msg, ...) {
+void judge_error(const char* msg, ...) {
     va_list pvar;
     va_start(pvar, msg);
     vreport_feedback(FILENAME_JUDGE_ERROR, msg, pvar);
