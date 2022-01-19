@@ -59,7 +59,6 @@ string solve3(){
 int main() {
     cin >> n;
 	k = 3;
-    if(n > 5000)return 0;
     rep(c1,0,n){
         int a;
         cin >> a;
