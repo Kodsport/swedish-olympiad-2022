@@ -10,12 +10,6 @@ typedef long double ld;
 const long long inf = 2e9;
 
 using namespace std;
-ll dist(ll next, ll cur)
-{
-    if (next < cur)
-        swap(next, cur);
-    return min(next - cur, (359 - next + cur));
-}
 int main()
 {
     ios_base::sync_with_stdio(false);
