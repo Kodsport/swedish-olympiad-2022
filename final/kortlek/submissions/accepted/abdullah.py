@@ -20,5 +20,6 @@ def solve():
         cur-=abs(rounds[i]-cards[i+1])
         cur+=abs(rounds[i]-cards[i])
         ans=min(ans,cur)
+    return ans    
 
 print(solve())

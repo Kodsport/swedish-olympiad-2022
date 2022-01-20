@@ -7,7 +7,7 @@
 typedef long long ll;
 typedef long double ld;
 
-const long long inf = 2e9;
+const long long inf = 1e18;
 
 using namespace std;
 
