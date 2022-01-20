@@ -19,7 +19,7 @@ sample 3
 #################################################################################
 
 group group1 20 # max_n=1000
-limits max_n=1000 mode=same_a
+limits max_n=500 mode=same_a
 tc same_a-1 gen n=1 ans=1 mode=same_a 
 tc same_a-2 gen n=2 ans=1 mode=same_a 
 tc same_a-3 gen n=2 ans=2 mode=same_a 
@@ -29,16 +29,16 @@ tc same_a-6 gen n=5 ans=4 mode=same_a
 tc same_a-7 gen n=5 ans=5 mode=same_a 
 tc same_a-8 gen n=100 ans=10 mode=same_a 
 tc same_a-9 gen n=100 ans=50 mode=same_a 
-tc same_a-10 gen n=1000 ans=1 mode=same_a 
-tc same_a-11 gen n=1000 ans=2 mode=same_a 
-tc same_a-12 gen n=1000 ans=5 mode=same_a 
-tc same_a-13 gen n=1000 ans=50 mode=same_a 
-tc same_a-14 gen n=1000 ans=200 mode=same_a 
-tc same_a-15 gen n=1000 ans=1000 mode=same_a 
+tc same_a-10 gen n=500 ans=1 mode=same_a 
+tc same_a-11 gen n=500 ans=2 mode=same_a 
+tc same_a-12 gen n=500 ans=5 mode=same_a 
+tc same_a-13 gen n=500 ans=50 mode=same_a 
+tc same_a-14 gen n=500 ans=200 mode=same_a 
+tc same_a-15 gen n=500 ans=500 mode=same_a 
 
 
-group group2 30 # max_n=1000
-limits max_n=1000 mode=none
+group group2 30 # max_n=500
+limits max_n=500 mode=none
 include_group sample
 tc small-1 gen n=1 ans=1 
 tc small-2 gen n=2 ans=1 
@@ -49,12 +49,12 @@ tc small-6 gen n=5 ans=4
 tc small-7 gen n=5 ans=5 
 tc small-8 gen n=100 ans=10 
 tc small-9 gen n=100 ans=50 
-tc small-10 gen n=1000 ans=1 
-tc small-11 gen n=1000 ans=2 
-tc small-12 gen n=1000 ans=5 
-tc small-13 gen n=1000 ans=50 
-tc small-14 gen n=1000 ans=200 
-tc small-15 gen n=1000 ans=1000 
+tc small-10 gen n=500 ans=1 
+tc small-11 gen n=500 ans=2 
+tc small-12 gen n=500 ans=5 
+tc small-13 gen n=500 ans=50 
+tc small-14 gen n=500 ans=200 
+tc small-15 gen n=500 ans=500 
 
 
 #################################################################################
