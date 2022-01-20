@@ -6,3 +6,5 @@ type: scoring
 validation: custom
 grading:
     show_test_data_groups: yes
+limits:
+    time_multiplier: 3
