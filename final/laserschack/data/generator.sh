@@ -10,6 +10,7 @@ use_solution fredrik.cpp
 compile gen_dfs.py
 compile gen_worstcase.py
 compile gen_sparse.py
+compile gen_manual.py
 
 samplegroup
 limits mode=none maxRC=1000000 r=-1
@@ -27,6 +28,9 @@ tc r1-sparse-5 gen_sparse r=1 c=40000 numR=1 mirrors_per_row=100
 tc r1-sparse-6 gen_sparse r=1 c=40000 numR=1 mirrors_per_row=1000000
 tc r1-sparse-7 gen_sparse r=1 c=40000 numR=1 mirrors_per_row=1000000
 tc r1-sparse-8 gen_sparse r=1 c=40000 numR=1 mirrors_per_row=1000000
+tc extreme-1 gen_manual r=1 c=40000 fill=. ky=0 ay=19999 ry=39999
+tc extreme-2 gen_manual r=1 c=40000 fill=o ky=0 ay=19999 ry=39999
+tc extreme-3 gen_manual r=1 c=40000 fill=R ky=20000 ay=19999
 
 
 
@@ -47,6 +51,11 @@ tc singleR-sparse-9 gen_sparse r=8000 c=5 numR=1 mirrors_per_row=4 seed=42
 tc singleR-sparse-10 gen_sparse r=2 c=20000 numR=1 mirrors_per_row=100
 tc singleR-sparse-11 gen_sparse r=40000 c=1 numR=1 mirrors_per_row=5 seed=42
 tc singleR-worstcase-1 gen_worstcase c=40000
+tc extreme-1
+tc extreme-2
+tc extreme-4 gen_manual c=1 r=40000 fill=. kx=0 ax=19999 rx=39999
+tc extreme-5 gen_manual c=1 r=40000 fill=o kx=0 ax=19999 rx=39999
+tc extreme-6 gen_manual c=2 r=20000 fill=o kx=0 ax=9999 rx=19999
 
 group group3 20
 limits mode=noair maxRC=40000 r=-1
@@ -64,7 +73,10 @@ tc noair-dfs-10 gen_dfs r=200 c=200 ans=350 radius=100 mirror_ratio=1 smoke_rati
 tc noair-dfs-11 gen_dfs r=10 c=4000 ans=4 radius=4 mirror_ratio=1 smoke_ratio=1
 tc noair-dfs-12 gen_dfs r=4000 c=10 ans=6 radius=5 mirror_ratio=1 smoke_ratio=1
 tc noair-dfs-13 gen_dfs r=5 c=8000 ans=2 radius=2 mirror_ratio=1 smoke_ratio=1
-tc noair-worstcase-1 gen_worstcase c=40000
+tc singleR-worstcase-1
+tc extreme-2
+tc extreme-3
+tc extreme-5
 
 
 group group4 20
