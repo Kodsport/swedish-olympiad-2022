@@ -41,11 +41,13 @@ void run() {
 	for (auto tow : towers) {
 		for (auto ma : masts) {
 			int dx = abs(tow.first - ma.first);
-			assert(tow.second <= ma.second - dx);
+			if (tow.second <= ma.second - dx) goto found;
 		}
+		assert(0 && "not covered initially");
+found:;
 	}
 
-	if (Arg("separated")) {
+	if (Arg("separated", 0)) {
 		assert(mastMaxX < towerMinX);
 	}
 }
