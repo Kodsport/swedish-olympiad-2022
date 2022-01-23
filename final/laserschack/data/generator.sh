@@ -13,7 +13,7 @@ compile gen_sparse.py
 compile gen_manual.py
 
 samplegroup
-limits mode=none maxRC=1000000 r=-1
+limits mode=none maxRC=40000 r=-1
 sample 1
 sample 2
 sample 3
