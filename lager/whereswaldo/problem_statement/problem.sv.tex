@@ -1,0 +1,26 @@
+\problemname{Where's Waldo?}
+
+TODO
+
+Det finns en gömd permutation p av längd n, som är garanterad att vara genererad uniformt slumpmässigt.
+
+Du får fråga queries $[l,r]$: vad är summan av $p_l + p_{l+1} + \ldots + p_r$?
+
+Med så få queries som möjligt, hitta vilken position 1:an i p är på. Poäng är beroende på hur få queries man använder.
+
+\section*{Interaktion}
+
+T, N
+
+T rundor
+
+? A B
+! X (avslutar rundan)
+
+\section*{Poängsättning}
+
+Ditt program kommer att testas mot enda testfall, med N = T = 1000.
+
+Om någon runda ger fel svar kommer inskickningen bedömas som Wrong Answer.
+
+Scoring: $0,55 \cdot N \cdot T$ queries ger $0$ poäng, $0,30 \cdot N \cdot T$ ger $100$ poäng, linjärt emellan.
