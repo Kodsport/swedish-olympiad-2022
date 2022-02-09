@@ -1,96 +1,167 @@
-#!/usr/bin/env bash
+!/usr/bin/env bash
 
-PPATH=$(realpath ..)
 . ../../../testdata_tools/gen.sh
 
-#ulimit -s unlimited
 
-use_solution nils.cpp
+use_solution abdullah.cpp
 
-compile gen_random.py
-compile gen_partition.py
+compile gen.cpp
 
-MAXN=500000
+MAX_RC=2000
 
 samplegroup
-limits maxn=$MAXN
-sample_manual 1
-sample_manual 2
+limits maxRC=$MAX_RC
+sample 1
+sample 2
+sample 3
+sample 4
 
-group group1 14
-limits maxn=$MAXN same=1
-tc same-1 gen_random n=3 maxa=1 same=1
-tc same-2 gen_random n=3 maxa=2 same=1
-tc same-3 gen_random n=10 maxa=1 same=1
-tc same-4 gen_random n=10 maxa=3 same=1
-tc same-5 gen_random n=10 maxa=4 same=1
-tc same-6 gen_random n=99999 maxa=33333 same=1
-tc same-7 gen_random n=$MAXN maxa=1 same=1
-tc same-8 gen_random n=$MAXN maxa=$(($MAXN / 3)) same=1
-tc same-9 gen_random n=$MAXN maxa=$(($MAXN / 3 + 1)) same=1
-tc same-10 gen_random n=$MAXN maxa=$MAXN same=1
-
-group group2 16
-limits maxn=10
-tc small-1 gen_random n=3 maxa=1
-tc small-2 gen_random n=3 maxa=2
-tc small-3 gen_random n=9 maxa=3 same=1
-tc small-4 gen_random n=10 maxa=4
-tc small-5 gen_random n=10
-tc small-6 gen_partition n=10 x=3 y=5 z=2
-tc small-7 gen_partition n=10 x=5 y=1 z=4
-tc small-8 gen_partition n=10 x=7 y=1 z=2
-tc small-9 gen_partition n=10 x=3 y=5 z=2 noise=-1
-tc small-10 gen_partition n=10 x=3 y=5 z=2 noise=1
-tc small-11 gen_partition n=10 x=7 y=1 z=2 noise=1
-tc 1
-tc 2
-
-group group3 11
-limits maxn=$MAXN maxa=3
-tc a-small-1 gen_random n=4 maxa=1
-tc a-small-2 gen_random n=5 maxa=2
-tc a-small-3 gen_random n=3 maxa=3
-tc a-small-4 gen_random n=$MAXN maxa=3
-tc a-small-5 gen_random n=9 maxa=3 same=1
-tc a-small-6 gen_random n=$MAXN maxa=1
-tc a-small-7 gen_random n=8 maxa=3 same=1
-tc a-small-8 gen_random n=8 maxa=3
-tc a-small-9 gen_partition n=6 x=2 y=3 z=1
-tc a-small-10 gen_partition n=6 x=3 y=1 z=2
-tc a-small-11 gen_partition n=6 x=3 y=1 z=2 noise=1
-
-group group4 23
-limits maxn=3000
-include_group group2
-tc medium-1 gen_random n=3000 maxa=1500
-tc medium-2 gen_random n=3000 maxa=1100
-tc medium-3 gen_random n=3000
-tc medium-4 gen_random n=3000 maxa=1000 same=1
-tc medium-5 gen_partition n=3000 x=1000 y=1500 z=500
-tc medium-6 gen_partition n=3000 x=1500 y=500 z=1000
-tc medium-7 gen_partition n=3000 x=1500 y=500 z=1000 noise=1
-tc medium-8 gen_partition n=3000 x=2 y=2997 z=1
-tc medium-9 gen_partition n=3000 x=1001 y=999 z=1000
-tc medium-10 gen_partition n=3000 x=1001 y=999 z=1000 noise=1
-tc medium-11 gen_partition n=3000 x=1500 y=500 z=1000 noise=-100
+group group1 5
+limits empty=1 maxRC=$MAX_RC
+tc empty-1 gen seed=1 type=1 mode=1 probability=0 maxRC=$MAX_RC
+tc empty-2 gen seed=2 type=1 mode=2 probability=0 maxRC=$MAX_RC
+tc empty-3 gen seed=3 type=1 mode=3 probability=0 maxRC=$MAX_RC
+tc empty-4 gen seed=4 type=1 mode=4 probability=0 maxRC=$MAX_RC
 
 
-group group5 36
-limits maxn=$MAXN
-include_group group1
-include_group group3
-include_group group4
-tc large-1 gen_random n=$MAXN maxa=$(($MAXN / 2))
-tc large-2 gen_random n=$MAXN
-tc large-3 gen_partition n=300000 x=100000 y=150000 z=50000
-tc large-4 gen_partition n=300000 x=150000 y=50000 z=100000
-tc large-5 gen_partition n=300000 x=150000 y=50000 z=100000 noise=1
-tc large-6 gen_partition n=$MAXN x=$(($MAXN - 3)) y=1 z=2
-tc large-7 gen_partition n=$MAXN x=$(($MAXN - 3)) y=1 z=2 noise=1
-tc large-8 gen_partition n=$MAXN x=3 y=$(($MAXN - 5)) z=2 noise=-1000
-tc large-9 gen_partition n=$MAXN x=200000 y=210000 z=90000 noise=-1000000
-tc large-10 gen_partition n=$MAXN x=166668 y=166665 z=166667 noise=-1000000
-tc large-11 gen_partition n=$MAXN x=166668 y=166665 z=166667 noise=1
-tc large-12 gen_partition n=$MAXN x=1 y=$(($MAXN - 2)) z=1
-tc large-13 gen_random n=$MAXN maxa=$(($MAXN / 3))
+
+group group2 10
+limits maxRC=10
+tc small-RC-1 gen seed=1 type=1 mode=1 probability=30 maxRC=10
+tc small-RC-2 gen seed=2 type=1 mode=2 probability=30 maxRC=10
+tc small-RC-3 gen seed=3 type=1 mode=2 probability=30 maxRC=10
+tc small-RC-4 gen seed=4 type=1 mode=2 probability=30 maxRC=10
+tc small-RC-5 gen seed=5 type=1 mode=3 probability=30 maxRC=10
+tc small-RC-6 gen seed=6 type=1 mode=3 probability=30 maxRC=10
+tc small-RC-7 gen seed=7 type=1 mode=3 probability=30 maxRC=10
+tc small-RC-8 gen seed=8 type=1 mode=3 probability=100 maxRC=10
+tc small-RC-9 gen seed=9 type=4 mode=2 probability=75 maxRC=10
+tc small-RC-10 gen seed=10 type=4 mode=2 probability=75 maxRC=10
+tc small-RC-11 gen seed=11 type=4 mode=2 probability=75 maxRC=10
+tc small-RC-12 gen seed=12 type=4 mode=2 probability=75 maxRC=10
+tc small-RC-13 gen seed=13 type=4 mode=2 probability=75 maxRC=10
+tc small-RC-14 gen seed=14 type=4 mode=2 probability=75 maxRC=10
+tc small-RC-15 gen seed=15 type=4 mode=2 probability=75 maxRC=10
+tc small-RC-16 gen seed=16 type=4 mode=2 probability=75 maxRC=10
+tc small-RC-17 gen seed=17 type=4 mode=2 probability=30 maxRC=10
+tc small-RC-18 gen seed=18 type=4 mode=2 probability=30 maxRC=10
+tc small-RC-19 gen seed=19 type=4 mode=2 probability=30 maxRC=10
+tc small-RC-20 gen seed=20 type=4 mode=2 probability=30 maxRC=10
+tc small-RC-21 gen seed=21 type=4 mode=2 probability=10 maxRC=10
+tc small-RC-23 gen seed=23 type=4 mode=2 probability=100 maxRC=10
+tc small-RC-24 gen seed=24 type=4 mode=2 probability=100 maxRC=10
+tc small-RC-25 gen seed=25 type=4 mode=2 probability=100 maxRC=10
+tc small-RC-26 gen seed=26 type=4 mode=2 probability=100 maxRC=10
+tc small-RC-27 gen seed=27 type=4 mode=4 probability=100 maxRC=10
+tc small-RC-28 gen seed=28 type=4 mode=4 probability=50 maxRC=10
+tc small-RC-29 gen seed=29 type=4 mode=4 probability=50 maxRC=10
+tc small-RC-30 gen seed=30 type=4 mode=4 probability=50 maxRC=10
+tc small-RC-31 gen seed=31 type=4 mode=4 probability=100 maxRC=10
+tc small-RC-32 gen seed=32 type=4 mode=4 probability=100 maxRC=10
+tc small-RC-33 gen seed=33 type=4 mode=4 probability=100 maxRC=10
+tc small-RC-34 gen seed=34 type=4 mode=4 probability=100 maxRC=10
+tc small-RC-35 gen seed=35 type=4 mode=4 probability=10 maxRC=10
+tc small-RC-36 gen seed=36 type=4 mode=4 probability=10 maxRC=10
+tc small-RC-37 gen seed=37 type=4 mode=4 probability=10 maxRC=10
+
+
+
+
+
+group group3 15
+limits maxRC=$MAX_RC three=1
+tc three-1 gen type=1 mode=3 seed=1 probability=100 maxRC=$MAX_RC
+tc three-2 gen type=1 mode=3 seed=2 probability=1 maxRC=$MAX_RC
+tc three-3 gen type=1 mode=3 seed=3 probability=10 maxRC=$MAX_RC
+tc three-4 gen type=1 mode=3 seed=4 probability=10 maxRC=$MAX_RC
+tc three-5 gen type=1 mode=3 seed=5 probability=30 maxRC=$MAX_RC
+tc three-6 gen type=1 mode=3 seed=6 probability=30 maxRC=$MAX_RC
+tc three-7 gen type=1 mode=3 seed=7 probability=50 maxRC=$MAX_RC
+tc three-8 gen type=1 mode=3 seed=8 probability=30 maxRC=$MAX_RC
+tc three-9 gen type=1 mode=3 seed=9 probability=50 maxRC=$MAX_RC
+tc three-10 gen type=1 mode=3 seed=10 probability=75 maxRC=$MAX_RC
+tc three-11 gen type=1 mode=3 seed=11 probability=75 maxRC=$MAX_RC
+tc three-12 gen type=1 mode=3 seed=12 probability=100 maxRC=$MAX_RC
+tc three-13 gen type=2 mode=3 seed=13 probability=100 maxRC=$MAX_RC #counter heuristic
+tc three-14 gen type=4 mode=3 seed=14 probability=10 maxRC=$MAX_RC
+tc three-15 gen type=4 mode=3 seed=15 probability=10 maxRC=$MAX_RC
+tc three-16 gen type=4 mode=3 seed=16 probability=10 maxRC=$MAX_RC
+tc three-17 gen type=4 mode=3 seed=17 probability=30 maxRC=$MAX_RC
+tc three-18 gen type=4 mode=3 seed=18 probability=30 maxRC=$MAX_RC
+tc three-19 gen type=4 mode=3 seed=19 probability=30 maxRC=$MAX_RC
+tc three-20 gen type=4 mode=3 seed=20 probability=50 maxRC=$MAX_RC
+tc three-21 gen type=4 mode=3 seed=21 probability=75 maxRC=$MAX_RC
+tc three-22 gen type=4 mode=3 seed=22 probability=75 maxRC=$MAX_RC
+tc three-23 gen type=4 mode=3 seed=23 probability=75 maxRC=$MAX_RC
+tc three-24 gen type=4 mode=3 seed=24 probability=75 maxRC=$MAX_RC
+
+
+group group4 20
+limits maxRC=$MAX_RC two_ways
+tc two-ways-1 gen type=3 mode=2 seed=1 probability=1 maxRC=$MAX_RC 
+tc two-ways-2 gen type=3 mode=2 seed=2 probability=10 maxRC=$MAX_RC 
+tc two-ways-3 gen type=3 mode=2 seed=3 probability=10 maxRC=$MAX_RC 
+tc two-ways-4 gen type=3 mode=2 seed=4 probability=10 maxRC=$MAX_RC 
+tc two-ways-5 gen type=3 mode=2 seed=5 probability=30 maxRC=$MAX_RC 
+tc two-ways-6 gen type=3 mode=2 seed=6 probability=30 maxRC=$MAX_RC 
+tc two-ways-7 gen type=3 mode=2 seed=7 probability=50 maxRC=$MAX_RC 
+tc two-ways-8 gen type=3 mode=2 seed=8 probability=50 maxRC=$MAX_RC 
+tc two-ways-9 gen type=3 mode=2 seed=9 probability=75 maxRC=$MAX_RC 
+tc two-ways-10 gen type=3 mode=2 seed=10 probability=75 maxRC=$MAX_RC 
+tc two-ways-11 gen type=3 mode=2 seed=11 probability=100 maxRC=$MAX_RC 
+tc two-ways-12 gen type=3 mode=2 seed=12 probability=100 maxRC=$MAX_RC 
+tc two-ways-13 gen type=3 mode=2 seed=13 probability=100 maxRC=$MAX_RC 
+tc two-ways-14 gen type=3 mode=2 seed=14 probability=100 maxRC=$MAX_RC 
+tc two-ways-15 gen type=3 mode=4 seed=15 probability=1 maxRC=$MAX_RC 
+tc two-ways-16 gen type=3 mode=4 seed=16 probability=10 maxRC=$MAX_RC 
+tc two-ways-17 gen type=3 mode=4 seed=17 probability=10 maxRC=$MAX_RC 
+tc two-ways-18 gen type=3 mode=4 seed=18 probability=30 maxRC=$MAX_RC 
+tc two-ways-19 gen type=3 mode=4 seed=19 probability=30 maxRC=$MAX_RC 
+tc two-ways-20 gen type=3 mode=4 seed=20 probability=30 maxRC=$MAX_RC 
+tc two-ways-21 gen type=3 mode=4 seed=21 probability=50 maxRC=$MAX_RC 
+tc two-ways-22 gen type=3 mode=4 seed=22 probability=50 maxRC=$MAX_RC 
+tc two-ways-23 gen type=3 mode=4 seed=23 probability=50 maxRC=$MAX_RC 
+tc two-ways-24 gen type=3 mode=4 seed=24 probability=75 maxRC=$MAX_RC 
+tc two-ways-25 gen type=3 mode=4 seed=25 probability=75 maxRC=$MAX_RC 
+tc two-ways-26 gen type=3 mode=4 seed=26 probability=75 maxRC=$MAX_RC 
+tc two-ways-27 gen type=3 mode=4 seed=27 probability=100 maxRC=$MAX_RC 
+tc two-ways-28 gen type=3 mode=4 seed=28 probability=100 maxRC=$MAX_RC 
+tc two-ways-29 gen type=3 mode=4 seed=29 probability=100 maxRC=$MAX_RC 
+tc two-ways-30 gen type=3 mode=4 seed=30 probability=100 maxRC=$MAX_RC 
+
+
+
+group group5 50
+include_group  group1 group2 group3 group4 
+include_group sample
+limits maxRC=$MAX_RC
+tc no-restrictions-1 gen type=1 mode=2 seed=1 probability=100 maxRC=$MAX_RC
+tc no-restrictions-2 gen type=1 mode=2 seed=2 probability=1 maxRC=$MAX_RC
+tc no-restrictions-3 gen type=1 mode=2 seed=3 probability=10 maxRC=$MAX_RC
+tc no-restrictions-4 gen type=1 mode=2 seed=4 probability=10 maxRC=$MAX_RC
+tc no-restrictions-5 gen type=1 mode=2 seed=5 probability=30 maxRC=$MAX_RC
+tc no-restrictions-6 gen type=1 mode=2 seed=6 probability=30 maxRC=$MAX_RC
+tc no-restrictions-7 gen type=1 mode=2 seed=7 probability=50 maxRC=$MAX_RC
+tc no-restrictions-8 gen type=1 mode=2 seed=8 probability=30 maxRC=$MAX_RC
+tc no-restrictions-9 gen type=1 mode=2 seed=9 probability=50 maxRC=$MAX_RC
+tc no-restrictions-10 gen type=1 mode=2 seed=10 probability=75 maxRC=$MAX_RC
+tc no-restrictions-11 gen type=1 mode=2 seed=11 probability=75 maxRC=$MAX_RC
+tc no-restrictions-12 gen type=1 mode=2 seed=12 probability=100 maxRC=$MAX_RC
+tc no-restrictions-13 gen type=2 mode=2 seed=13 probability=100 maxRC=$MAX_RC #counter heuristic
+tc no-restrictions-14 gen type=4 mode=2 seed=14 probability=10 maxRC=$MAX_RC
+tc no-restrictions-15 gen type=4 mode=4 seed=15 probability=10 maxRC=$MAX_RC
+tc no-restrictions-16 gen type=4 mode=4 seed=16 probability=10 maxRC=$MAX_RC
+tc no-restrictions-17 gen type=4 mode=4 seed=17 probability=30 maxRC=$MAX_RC
+tc no-restrictions-18 gen type=4 mode=4 seed=18 probability=30 maxRC=$MAX_RC
+tc no-restrictions-19 gen type=4 mode=4 seed=19 probability=30 maxRC=$MAX_RC
+tc no-restrictions-20 gen type=4 mode=4 seed=20 probability=50 maxRC=$MAX_RC
+tc no-restrictions-21 gen type=4 mode=4 seed=21 probability=75 maxRC=$MAX_RC
+tc no-restrictions-22 gen type=4 mode=4 seed=22 probability=75 maxRC=$MAX_RC
+tc no-restrictions-23 gen type=4 mode=4 seed=23 probability=75 maxRC=$MAX_RC
+tc no-restrictions-24 gen type=4 mode=4 seed=24 probability=75 maxRC=$MAX_RC
+tc no-restrictions-25 gen type=4 mode=4 seed=25 probability=100 maxRC=$MAX_RC
+tc no-restrictions-26 gen type=4 mode=4 seed=26 probability=100 maxRC=$MAX_RC
+tc no-restrictions-27 gen type=4 mode=4 seed=27 probability=100 maxRC=$MAX_RC
+tc no-restrictions-28 gen type=4 mode=4 seed=28 probability=1 maxRC=$MAX_RC
+tc no-restrictions-29 gen type=2 mode=4 seed=29 probability=100 maxRC=$MAX_RC #counter heuristic
+tc no-restrictions-30 gen type=2 mode=4 seed=30 probability=100 maxRC=$MAX_RC #counter heuristic

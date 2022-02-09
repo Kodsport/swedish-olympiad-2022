@@ -3,7 +3,7 @@
 #define rep(i, a, b) for (int i = a; i < int(b); ++i)
 #define all(v) v.begin(), v.end()
 #define trav(a, v) for (auto &a : v)
-
+#define endl '\n'
 typedef long long ll;
 typedef long double ld;
 
@@ -52,7 +52,7 @@ void random_with_probability(ll probability) // type=1
     for (int i = 0; i < r; i++)
     {
         for (int j = 0; j < c; j++)
-            if (rand() % 100 < probability)
+            if (rand() % 100 < probability and (i != 0 || j != 0) and (i != r - 1 || j != c - 1))
                 cout << '#';
             else
                 cout << '.';
@@ -61,6 +61,20 @@ void random_with_probability(ll probability) // type=1
 }
 void counter_heuristic() // type=2
 {
+    if (r == 3)
+    {
+        for (int i = 0; i < c; i++)
+            cout << '.';
+        cout << endl;
+        for (int i = 0; i < c - 1; i++)
+            cout << (i % 2 ? '#' : '.');
+        cout << '.';
+        cout << endl;
+        for (int i = 0; i < c; i++)
+            cout << '.';
+        cout << endl;
+        return;
+    }
     for (int i = 0; i < r; i++)
     {
         for (int j = 0; j < c; j++)
@@ -69,23 +83,6 @@ void counter_heuristic() // type=2
                 cout << '.';
             else
                 cout << '#';
-        }
-        cout << endl;
-    }
-}
-void random_with_n(ll n, ll probability) // type=3
-{
-    for (int i = 0; i < r; i++)
-    {
-        for (int j = 0; j < c; j++)
-        {
-            if ((i != 0 || j != 0) and (i != r - 1 || j != c - 1) and n and rand() % 100 < probability)
-            {
-                cout << '#';
-                n--;
-            }
-            else
-                cout << '.';
         }
         cout << endl;
     }
@@ -105,8 +102,7 @@ bool dfs(ll cur_r, ll cur_c, vector<vector<bool>> &visited, vector<vector<bool>>
     }
     visited[cur_r][cur_c] = 1;
     vector<pair<ll, ll>> change2 = change;
-    unsigned seed2 = std::chrono::system_clock::now().time_since_epoch().count();
-    shuffle(change2.begin(), change2.end(), default_random_engine(seed2));
+    random_shuffle(change2.begin(), change2.end());
     for (int i = 0; i < 4; i++)
     {
         ll next_r = cur_r + change2[i].first;
@@ -121,8 +117,43 @@ bool dfs(ll cur_r, ll cur_c, vector<vector<bool>> &visited, vector<vector<bool>>
 
     return 0;
 }
-
-void generate_two_paths(ll probability) // type=4
+bool bfs(ll start_r, ll start_c, vector<vector<bool>> &visited, vector<vector<bool>> &on_path)
+{
+    queue<pair<ll, ll>> q;
+    q.emplace(start_r, start_c);
+    visited[start_r][start_c] = 1;
+    vector<vector<pair<ll, ll>>> path(r, vector<pair<ll, ll>>(c, make_pair(-1, -1)));
+    while (!q.empty())
+    {
+        pair<ll, ll> cur = q.front();
+        q.pop();
+        random_shuffle(change.begin(), change.end());
+        for (int i = 0; i < 4; i++)
+        {
+            ll next_r = cur.first + change[i].first;
+            ll next_c = cur.second + change[i].second;
+            if (inside(next_r, next_c) and !visited[next_r][next_c])
+            {
+                visited[next_r][next_c] = 1;
+                q.emplace(next_r, next_c);
+                path[next_r][next_c] = cur;
+            }
+        }
+    }
+    for (int i = 0; i < r; i++)
+    {
+        for (int j = 0; j < c; j++)
+            visited[i][j] = 0;
+    }
+    pair<ll, ll> cur = make_pair(r - 1, c - 1);
+    while (cur.first != -1)
+    {
+        on_path[cur.first][cur.second] = visited[cur.first][cur.second] = 1;
+        cur = path[cur.first][cur.second];
+    }
+    return 1; // doesn't matter. The function had to be bool type so that it could be used as an argument
+}
+void generate_two_paths(ll probability, bool (*f)(ll, ll, vector<vector<bool>> &, vector<vector<bool>> &)) // type=4
 {
     vector<vector<bool>> visited(r, vector<bool>(c));
     vector<vector<bool>> on_path(r, vector<bool>(c));
@@ -131,12 +162,12 @@ void generate_two_paths(ll probability) // type=4
     for (int i = 0; i < c; i++)
         visited[0][i] = 1;
     visited[r - 1][c - 1] = 0;
-    dfs(0, 0, visited, on_path);
+    f(0, 0, visited, on_path);
     for (int i = 0; i < c; i++)
         visited[0][i] = 0;
     for (int i = 0; i < r; i++)
         visited[i][c - 1] = 0;
-    dfs(0, 0, visited, on_path);
+    f(0, 0, visited, on_path);
     for (int i = 0; i < r; i++)
     {
         for (int j = 0; j < c; j++)
@@ -151,43 +182,26 @@ void generate_two_paths(ll probability) // type=4
         cout << endl;
     }
 }
-void block_corners() // type=5
-{
-    for (int i = 0; i < r; i++)
-    {
-        for (int j = 0; j < c; j++)
-        {
-            if (((i == r - 2 and j == c - 1) || (i == r - 1 and j == c - 2)) and (i != 0 || j != 0))
-                cout << '#';
-            else
-                cout << '.';
-        }
-        cout << endl;
-    }
-}
+
 int main(int argc, char **argv)
 {
     // The areguments should be: seed, type, mode, maxRC, probabilty
     // probabilty is used for type=4 and type=1, it should be a non-negative x integer<=100 which means that the probability of an obstacle is x percent
-    // mode=0 -> r=1 , mode=1 c=1,  mode=2 -> r=c=sqrt(maxRC), mode=3 -> random r
+    // mode=1 -> r=1 ,  mode=2 -> r=c=sqrt(maxRC), mode=3 -> r=3 , mode=4 -> random r
+
     // type=1 -> random placement of obstacles with probabilty, type=2 -> couter heurstic , type=3 -> random placement of at most N obstacles,
-    // type=4 -> generate two paths, type=5 -> empty with surrounded (r-1,c-1) or surrounded (0,0)
+    // type=4 -> generate two paths, type=5 -> thre is only two paths
     rep(i, 0, argc) args.push_back(argv[i]);
     seed = convert_to_int(cmdlinearg("seed"));
     srand(seed);
     ll maxRC = convert_to_int(cmdlinearg("maxRC"));
     ll mode = convert_to_int(cmdlinearg("mode"));
     ll type = convert_to_int(cmdlinearg("type"));
-    ld probability = stod(cmdlinearg("probability"));
-    if (mode == 0)
+    ll probability = stod(cmdlinearg("probability"));
+    if (mode == 1)
     {
         r = 1;
         c = maxRC;
-    }
-    else if (mode == 1)
-    {
-        c = 1;
-        r = maxRC;
     }
     else if (mode == 2)
     {
@@ -195,8 +209,26 @@ int main(int argc, char **argv)
     }
     else if (mode == 3)
     {
-        r = 1 + rand() % (ll)sqrt(maxRC);
-        c = maxRC / r;
+        assert(maxRC >= 3);
+        r = 3;
+        c = maxRC / 3;
+    }
+    else if (mode == 4)
+    {
+        if (type == 2)
+        {
+            ll RC = maxRC;
+            assert(RC >= 10);
+            c = 5;
+            r = RC / 5;
+        }
+        else
+        {
+            r = 1 + rand() % (ll)(sqrt(maxRC));
+            if (type >= 3 and r == 1)
+                r++;
+            c = maxRC / r;
+        }
     }
     else
         assert(0);
@@ -211,16 +243,15 @@ int main(int argc, char **argv)
     }
     else if (type == 3)
     {
-        ll n = maxRC / 10; // can be changed
-        random_with_n(n, probability);
+        assert(r > 1 and c > 1);
+        generate_two_paths(100, bfs);
     }
     else if (type == 4)
     {
-        generate_two_paths(probability);
+        assert(r > 1 and c > 1);
+        generate_two_paths(probability, dfs);
     }
-    else if (type == 5)
-    {
-        block_corners();
-    }
+    else
+        assert(0);
     return 0;
 }

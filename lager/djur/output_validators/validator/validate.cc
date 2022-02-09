@@ -100,9 +100,9 @@ int main(int argc, char **argv)
             }
         }
         if (!bfs(ans, 'K'))
-            feedback("Path of K is not connected or it doesn't connectes the starting position and the ending position");
+            feedback("Path of K is not connected or it doesn't connect the starting position and the ending position");
         if (!bfs(ans, 'V'))
-            feedback("Path of V is not connected or it doesn't connectes the starting position and the ending position");
+            feedback("Path of V is not connected or it doesn't connect the starting position and the ending position");
         string trailing;
         if (sol >> trailing)
             feedback("Trailing output");
