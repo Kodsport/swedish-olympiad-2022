@@ -3,19 +3,15 @@
 typedef long long ll;
 const long long inf = 2e9;
 using namespace std;
-
-bool swapped=0;
+vector<ll> change_x = {-1, 0, 1, 0}; // Here the order matters
+vector<ll> change_y = {0, 1, 0, -1};
 ll r, c;
 bool inside(ll x, ll y)
 {
     return x >= 0 and y >= 0 and x < c and y < r;
 }
-bool dfs(vector<string> &v, ll cur_x, ll cur_y, char color, vector<vector<bool>> &visited,vector<ll> change_x, vector<ll> change_y)
+bool dfs(vector<string> &v, ll cur_x, ll cur_y, char color, vector<vector<bool>> &visited)
 {
-    if(cur_y==r-1){
-        change_x={0,1,0,-1};
-        change_y={1,0,-1,0};
-    }
     if (cur_x == c - 1 and cur_y == r - 1)
         return 1;
     visited[cur_y][cur_x] = 1;
@@ -25,7 +21,7 @@ bool dfs(vector<string> &v, ll cur_x, ll cur_y, char color, vector<vector<bool>>
         ll y = cur_y + change_y[i];
         if (inside(x, y) and v[y][x] == '.' and !visited[y][x])
         {
-            if (dfs(v, x, y, color, visited,change_x,change_y))
+            if (dfs(v, x, y, color, visited))
             {
                 v[cur_y][cur_x] = color;
                 return 1;
@@ -43,17 +39,14 @@ int main()
     for (int i = 0; i < r; i++)
         cin >> v[i];
     vector<vector<bool>> visited(r, vector<bool>(c));
-    vector<ll> change_x={-1,0,1,0};
-    vector<ll> change_y={0,1,0,-1};
-    dfs(v, 0, 0, 'K', visited,change_x,change_y);
+    dfs(v, 0, 0, 'K', visited);
     v[0][0] = v[r - 1][c - 1] = '.';
     for (int i = 0; i < r; i++)
         for (int j = 0; j < c; j++)
             if (v[i][j] != 'K')
                 visited[i][j] = 0;
-    if (!dfs(v, 0, 0, 'V', visited,change_x,change_y)){
+    if (!dfs(v, 0, 0, 'V', visited))
         cout << "NO\n";
-    }
     else
     {
         v[0][0] = v[r - 1][c - 1] = '.';
