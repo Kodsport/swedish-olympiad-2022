@@ -46,7 +46,7 @@ int main()
             if (v[i][j] != 'K')
                 visited[i][j] = 0;
     if (!dfs(v, 0, 0, 'V', visited))
-        cout << "NO";
+        cout << "NO\n";
     else
     {
         v[0][0] = v[r - 1][c - 1] = '.';

@@ -7,7 +7,7 @@ use_solution abdullah.cpp
 
 compile gen.cpp
 
-MAX_RC=2000
+MAX_RC=200000
 
 samplegroup
 limits maxRC=$MAX_RC
@@ -97,7 +97,7 @@ tc three-24 gen type=4 mode=3 seed=24 probability=75 maxRC=$MAX_RC
 
 
 group group4 20
-limits maxRC=$MAX_RC two_ways
+limits maxRC=$MAX_RC two_ways=1
 tc two-ways-1 gen type=3 mode=2 seed=1 probability=1 maxRC=$MAX_RC 
 tc two-ways-2 gen type=3 mode=2 seed=2 probability=10 maxRC=$MAX_RC 
 tc two-ways-3 gen type=3 mode=2 seed=3 probability=10 maxRC=$MAX_RC 
