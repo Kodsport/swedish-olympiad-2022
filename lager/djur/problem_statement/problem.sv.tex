@@ -1,19 +1,24 @@
 \problemname{Djur}
-I ett rutnät med R rader och C columner står en varg på rutan (1,1) och en kanin på rutan (R,C). Vargen vill gå till rutan (R,C) och kaninen vill gå till rutan (1,1). Det finns dock ett problem, om vargen går in i en ruta som kaninen befann sig på kommer den att följa kaninen och jaga den. Nu undrar vi, givet hur rutnätet ser ut, kan du hitta en väg beskrivning för kanninen och vargen så att vägarna inte korsar varandrda? start och slut rutan räknas inte med i vägen, nämligen rutorna (1,1) och (R,C) 
-
-
+I ett rutnät med $R$ rader och $C$ columner står en varg på rutan $(1, 1)$ och en kanin på rutan $(R, C)$.
+Vargen vill gå till rutan $(R, C)$ och kaninen vill gå till rutan $(1, 1)$.
+Det finns dock ett problem: om vargen går in i en ruta som kaninen befann sig på kommer den att följa kaninen och jaga den.
+Nu undrar vi, givet hur rutnätet ser ut, kan du hitta en väg beskrivning för kaninen och vargen så att vägarna inte korsar varandra?
+Start- och slutrutorna ($(1, 1)$ och $(R, C)$) räknas inte med i vägen.
 
 \section*{Indata}
-Den första raden innehåller två heltal: $ R, C$. I alla testfall gäller det att $1 \leq R \cdot C \leq 2 \cdot 10^5$
+Den första raden innehåller två heltal: $R, C$. I alla testfall gäller det att $1 \leq R \cdot C \leq 2 \cdot 10^5$.
 
-Sedan föjer ett $R \cdot C$ rutnät. Varje ruta är antingen $.$ som betyder en tom ruta, eller $#$ som betyder ett hinder.
+Sedan föjer ett $R \cdot C$ rutnät. Varje ruta är antingen ``\texttt{.}'' som betyder en tom ruta, eller ``\texttt{\#}'' som betyder ett hinder.
 
 \section*{Utdata}
-Skriv ut NO om det inte finns två vägar som uppfyller kraven i uppgiften.
+Skriv ut \texttt{NO} om det inte finns två vägar som uppfyller kraven i uppgiften.
 
-Annars skriv ut en rad med YES. Skriv sedan ut rutnätet där du markerar kanines väg med "K" och vargens väg med "V". Notera att alla hinder måste förbli hinder när du skriver ut rutnätet och att alla tomma rutor som inte är en del av vägen måste förbli tomma rutor. En väg måste vara sammanghängade.
+Annars skriv ut en rad med \texttt{YES}.
+Skriv sedan ut ett rutnät där du markerar kaninens väg med ``\texttt{K}'' och vargens väg med ``\texttt{V}''.
+Notera att alla hinder måste förbli hinder när du skriver ut rutnätet och att alla tomma rutor som inte är en del av vägen måste förbli tomma rutor.
+En väg måste vara sammanhängade.
 
-Om du avnänder C++ kan det vara bra att avnända $'\backslash n'$ istället för $endl$ för att inte riskera få Time Limit Exceeded på en fungerande lösning.
+Om du använder C++ kan det vara bra att använda \texttt{'\textbackslash{}n'} istället för \texttt{endl} för att inte riskera få Time Limit Exceeded på en fungerande lösning.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en antal testfallsgrupper.
@@ -23,18 +28,20 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   Grupp & Poängvärde & Gränser \\ \hline
-  $1$   & $5$       & Det finns inga hinder\\ \hline
+  $1$   & $5$        & Det finns inga hinder\\ \hline
   $2$   & $10$       & $R \cdot C \leq 10$  \\ \hline
   $3$   & $15$       & $R= 3$  \\ \hline
-  $4$   & $20$       & $Det finns exakt två sätt att lösa problemet på$  \\ \hline
-  $5$   & $50$       & $Inga ytterliggare begränsningar$  \\ \hline
+  $4$   & $20$       & Det finns exakt två sätt att lösa problemet på  \\ \hline
+  $5$   & $50$       & Inga ytterligare begränsningar  \\ \hline
 \end{tabular}
 
 Notera att vissa exempelfall inte är giltiga i alla testfallsgrupper.
 
-Exempelfall 3 är ett exempel på ett testfall som kan förekomma i grupp 4
+\section*{Förklaring av grupp 4}
+Exempelfall 2 och 3 är exempel på testfall som kan förekomma i grupp 4. Det andra sättet att lösa problemet på i exempel 2 är:
 
-\section*{Förklaring av exempelfall 1}
-
-
-\end{document}
+\begin{verbatim}
+.KK
+V#K
+VV.
+\end{verbatim}

@@ -2,6 +2,7 @@
 
 . ../../../testdata_tools/gen.sh
 
+ulimit -s unlimited
 
 use_solution abdullah.cpp
 
@@ -115,7 +116,10 @@ tc two-ways-30 gen type=3 mode=4 seed=30 probability=100 maxRC=$MAX_RC
 
 
 group group5 50
-include_group  group1 group2 group3 group4 
+include_group group1
+include_group group2
+include_group group3
+include_group group4
 include_group sample
 limits maxRC=$MAX_RC
 tc no-restrictions-1 gen type=1 mode=2 seed=1 probability=100 maxRC=$MAX_RC
