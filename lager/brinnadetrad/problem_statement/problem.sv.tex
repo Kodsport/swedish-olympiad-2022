@@ -1,25 +1,28 @@
 \problemname{Brinnande träd}
 
 En skogsbrand har brutit ut i ett naturreservat. I området finns det en sällsynt art av träd
-som inte finns någon annanstans i världen, och så många som möjligt av träden måste räddas.
+som inte finns någon annanstans i världen. Du befinner dig i skogen, och på din väg hem tänker du försöka rädda så många träd som möjligt.
 
-Totalt finns det $N$ sällsynta träd. Det $i$:te trädet kommer slukas av elden om $D_i$ sekunder,
-och det tar $A_i$ sekunder att rädda det. Du kan bara rädda ett träd i taget. Om ett träd nås
-av elden medan du håller på att rädda det så brinner det upp. Om du däremot blir klar med att rädda
-trädet exakt samma sekund som elden kommer, så lyckas räddningen (se exempel $2$).
+Totalt finns det $N$ sällsynta träd numrerade från $1$ till $N$, och du kommer springa förbi dem i den ordningen. 
+Det tar $A_i$ sekunder för dig att rädda det $i$:te trädet, men du måste påbörja räddningen
+senast sekund $X_i$, annars brinner trädet upp. Däremot gör det inget om sekund $X_i$ inträffar medan
+du håller på att rädda trädet.
 
-Tiden det tar för att rädda ett träd beror bland annat på avståndet till trädet. Därför uppfyller
-talen $A_i, D_i$ följande triangelolikhetsliknande relation: Om $D_j > D_i$, så gäller det att 
+Att springa mellan träden tar ingen tid alls för dig, men du kan bara springa framåt och kan därför
+bara rädda träd i den ordning som du besöker dem. Däremot vet du att
+$$X_1 \leq X_2 \leq X_3, \leq \cdots \leq X_N$$
 
-$$A_j - A_i \leq D_j - D_i$$
+Hitta det maximala antalet träd du kan rädda.
 
 \section*{Indata}
 
-Den första raden innehåller Ett heltal $N$ ($1 \leq N \leq 4 \cdot 10^5$).
+Den första raden innehåller ett heltal $N$ ($1 \leq N \leq 4 \cdot 10^5$), antalet träd.
 
-Den andra raden innehåller $N$ heltal $D_i$ ($1 \leq D_i \leq 10^9$).
+Den andra raden innehåller $N$ heltal $X_i$ ($0 \leq X_i \leq 10^9$), senaste sekunden du måste
+påbörja en räddning av det $i$:te trädet.
 
-Den tredje raden innehåller $N$ heltal $A_i$ ($1 \leq A_i \leq 10^9$).
+Den tredje raden innehåller $N$ heltal $A_i$ ($1 \leq A_i \leq 10^9$), tiden det tar att rädda det 
+$i$:te trädet.
 
 \section*{Utdata}
 Skriv ut ett heltal, det maximala antalet träd som går att rädda.
@@ -33,8 +36,8 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
   \hline
   Grupp & Poängvärde & Gränser \\ \hline
   $1$   & $14$       & $A_1 = A_2 = \cdots = A_N$\\ \hline
-  $2$   & $16$       & $D_1 = D_2 = \cdots = D_N$  \\ \hline
-  $3$   & $11$       & $N, A_i, D_i \leq 100$ \\ \hline
+  $2$   & $16$       & $X_1 = X_2 = \cdots = X_N$  \\ \hline
+  $3$   & $11$       & $N, A_i, X_i \leq 100$ \\ \hline
   $3$   & $23$       & $N \leq 2000$ \\ \hline
   $4$   & $36$       & Inga ytterligare begränsningar \\ \hline
 \end{tabular}

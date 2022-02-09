@@ -29,11 +29,7 @@ const ll mod =  998244353;
 
 const int MAXN = 400001;
 
-vl A,D,ind;
-
-bool comp(int i,int j){
-    return A[i] < A[j];
-}
+vl A,X;
 
 int main() {
     ios_base::sync_with_stdio(0);
@@ -47,8 +43,7 @@ int main() {
 
     rep(c1,0,n){
         cin >> a;
-        D.push_back(a);
-        ind.push_back(c1);
+        X.push_back(a);
     }
     rep(c1,0,n){
         cin >> a;
@@ -57,10 +52,9 @@ int main() {
 
     int ans = 0;
     ll sum = 0;
-    sort(all(ind), comp);
     rep(c1,0,n){
-        int i = ind[c1];
-        if(sum+A[i] <= D[i]){
+        int i = c1;
+        if(sum <= X[i]){
             ans++;
             sum += A[i];
         }

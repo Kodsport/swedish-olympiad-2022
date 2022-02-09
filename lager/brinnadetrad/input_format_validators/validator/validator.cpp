@@ -18,24 +18,18 @@ void run() {
   
   int MAXA = 1000000000;
 
-  vi D = SpacedInts(n, 1, (int)Arg("maxd", MAXA));
+  vi X = SpacedInts(n, 0, (int)Arg("maxx", MAXA));
   vi A = SpacedInts(n, 1, (int)Arg("maxa", MAXA));
 
-  vector<pair<int,int>> DX;
-
-  rep(c1,0,n){
-      DX.push_back({D[c1]-A[c1], D[c1]});
-  }
-
-  bool same_d = (bool)Arg("same_d", 0);
+  bool same_x = (bool)Arg("same_x", 0);
   bool same_a = (bool)Arg("same_a", 0);
   
-  sort(all(A));
-  sort(all(D));
-  sort(all(DX));
-  if(same_a)assert(A[0] == A[n-1]);
-  if(same_d)assert(D[0] == D[n-1]);
   rep(c1,0,n-1){
-      assert(DX[c1].second <= DX[c1+1].second);
+    assert(X[c1] <= X[c1+1]);
   }
+
+  sort(all(A));
+  if(same_a)assert(A[0] == A[n-1]);
+  if(same_x)assert(X[0] == X[n-1]);
+ 
 }

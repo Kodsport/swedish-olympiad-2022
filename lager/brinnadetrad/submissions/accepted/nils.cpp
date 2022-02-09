@@ -14,12 +14,6 @@ const int MAXN = 500001;
 int n;
 ll X[MAXN] = {0};
 ll A[MAXN] = {0};
-ll D[MAXN] = {0};
-vi ind;
-
-bool comp(int i, int j){
-    return (pair<int,int>){D[i], X[i]} < (pair<int,int>){D[j], X[j]};
-}
 
 int main() {
     ios_base::sync_with_stdio(0);
@@ -29,23 +23,18 @@ int main() {
     cin >> n;
     rep(c1,0,n){
         cin >> a;
-        D[c1] = a;
-        ind.push_back(c1);
+        X[c1] = a;
     }
     rep(c1,0,n){
         cin >> a;
         A[c1] = a;
     }
-    rep(c1,0,n){
-        X[c1] = D[c1]-A[c1];
-    }
-    sort(all(ind), comp);
 
     set<pair<ll,ll> > S;
     S.insert({0,0});
     ll sum = 0;
     rep(c1,0,n){
-        int i = ind[c1];
+        int i = c1;
         S.insert({A[i], i});
         sum += A[i];
         auto last = S.end();

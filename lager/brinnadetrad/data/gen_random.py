@@ -13,27 +13,14 @@ def cmdlinearg(name, default=None):
 random.seed(int(cmdlinearg('seed', sys.argv[-1])))
 n = int(cmdlinearg('n', 10))
 maxa = int(cmdlinearg('maxa', 10**9))
-maxd = int(cmdlinearg('maxd', 10**9))
+maxx = int(cmdlinearg('maxx', 10**9))
 mina = int(cmdlinearg('mina', 1))
-mind = int(cmdlinearg('mind', 1))
+minx = int(cmdlinearg('minx', 0))
 
 print(n)
 
-D = [random.randint(mind, maxd) for _ in range(n)]
-X = [random.randint(mind-maxa, maxd-mina) for _ in range(n)]
+A = [random.randint(mina, maxa) for _ in range(n)]
+X = [random.randint(minx, maxx) for _ in range(n)]
 X.sort()
-D.sort()
-A = []
-I = []
-for i in range(n):
-    a = D[i] - X[i]
-    a = max(a, mina)
-    a = min(a, maxa)
-    A.append(a)
-    I.append(i)
-
-random.shuffle(I)
-print(*[D[i] for i in I])
-print(*[A[i] for i in I])
-
-
+print(*X)
+print(*A)
