@@ -114,6 +114,7 @@ tc two-ways-28 gen type=3 mode=4 seed=28 probability=100 maxRC=$MAX_RC
 tc two-ways-29 gen type=3 mode=4 seed=29 probability=100 maxRC=$MAX_RC 
 tc two-ways-30 gen type=3 mode=4 seed=30 probability=100 maxRC=$MAX_RC 
 tc 5
+tc_manual ../manual_tests/spiral2.in
 
 
 

@@ -1,14 +1,14 @@
 \problemname{Djur}
-I ett rutnät med $R$ rader och $C$ columner står en varg på rutan $(1, 1)$ och en kanin på rutan $(R, C)$.
+I ett rutnät med $R$ rader och $C$ kolumner står en varg på rutan $(1, 1)$ och en kanin på rutan $(R, C)$.
 Vargen vill gå till rutan $(R, C)$ och kaninen vill gå till rutan $(1, 1)$.
-Det finns dock ett problem: om vargen går in i en ruta som kaninen befann sig på kommer den att följa kaninen och jaga den.
-Nu undrar vi, givet hur rutnätet ser ut, kan du hitta en väg beskrivning för kaninen och vargen så att vägarna inte korsar varandra?
+Det finns dock ett problem: om de två vägarna korsar varandra kommer vargen att följa kaninen och jaga den.
+Nu undrar vi, givet hur rutnätet ser ut, kan du hitta en vägbeskrivning för kaninen och vargen så att vägarna inte korsar varandra?
 Start- och slutrutorna ($(1, 1)$ och $(R, C)$) räknas inte med i vägen.
 
 \section*{Indata}
 Den första raden innehåller två heltal: $R, C$. I alla testfall gäller det att $1 \leq R \cdot C \leq 2 \cdot 10^5$.
 
-Sedan föjer ett $R \cdot C$ rutnät. Varje ruta är antingen ``\texttt{.}'' som betyder en tom ruta, eller ``\texttt{\#}'' som betyder ett hinder.
+Sedan föjer ett $R \times C$ rutnät. Varje ruta är antingen ``\texttt{.}'' som betyder en tom ruta, eller ``\texttt{\#}'' som betyder ett hinder.
 
 \section*{Utdata}
 Skriv ut \texttt{NO} om det inte finns två vägar som uppfyller kraven i uppgiften.
