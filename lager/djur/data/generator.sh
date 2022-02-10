@@ -113,9 +113,6 @@ tc two-ways-27 gen type=3 mode=4 seed=27 probability=100 maxRC=$MAX_RC
 tc two-ways-28 gen type=3 mode=4 seed=28 probability=100 maxRC=$MAX_RC 
 tc two-ways-29 gen type=3 mode=4 seed=29 probability=100 maxRC=$MAX_RC 
 tc two-ways-30 gen type=3 mode=4 seed=30 probability=100 maxRC=$MAX_RC 
-tc 5
-tc_manual ../manual_tests/spiral2.in
-
 
 
 group group5 50
@@ -154,3 +151,6 @@ tc no-restrictions-26 gen type=4 mode=4 seed=26 probability=100 maxRC=$MAX_RC
 tc no-restrictions-27 gen type=4 mode=4 seed=27 probability=100 maxRC=$MAX_RC
 tc no-restrictions-28 gen type=4 mode=4 seed=28 probability=1 maxRC=$MAX_RC
 tc no-restrictions-29 gen type=2 mode=4 seed=101 probability=100 maxRC=$MAX_RC #counter heuristic
+tc 5
+tc_manual ../manual_tests/spiral2.in
+tc_manual ../manual_tests/maze1.in
