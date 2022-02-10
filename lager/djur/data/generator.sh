@@ -4,7 +4,7 @@
 
 ulimit -s unlimited
 
-use_solution abdullah.cpp
+use_solution joakim.cc
 
 compile gen.cpp
 
@@ -17,6 +17,7 @@ sample 1
 sample 2
 sample 3
 sample 4
+sample 5
 
 group group1 5
 limits empty=1 maxRC=$MAX_RC
@@ -112,6 +113,7 @@ tc two-ways-27 gen type=3 mode=4 seed=27 probability=100 maxRC=$MAX_RC
 tc two-ways-28 gen type=3 mode=4 seed=28 probability=100 maxRC=$MAX_RC 
 tc two-ways-29 gen type=3 mode=4 seed=29 probability=100 maxRC=$MAX_RC 
 tc two-ways-30 gen type=3 mode=4 seed=30 probability=100 maxRC=$MAX_RC 
+tc 5
 
 
 
