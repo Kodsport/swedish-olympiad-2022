@@ -1,26 +1,39 @@
 \problemname{Where's Waldo?}
 
-TODO
+Det finns en gömd permutation $P$ av längd $N$, som är garanterad att vara genererad uniformt slumpmässigt.
+Permutationen innehåller talen $1, 2, 3, \cdots, N$ i någon okänd ordning.
 
-Det finns en gömd permutation p av längd n, som är garanterad att vara genererad uniformt slumpmässigt.
+Du kan välja positioner $l$ och $r$, och ställa frågor på formen: vad är summan av $P_l + P_{l+1} + \ldots + P_r$?
 
-Du får fråga queries $[l,r]$: vad är summan av $p_l + p_{l+1} + \ldots + p_r$?
-
-Med så få queries som möjligt, hitta vilken position 1:an i p är på. Poäng är beroende på hur få queries man använder.
+Din uppgift är att hitta på vilken position $1$:an befinner sig i $P$ med så få frågor som möjligt.
+Du får poäng beroende på hur få frågor du ställer.
 
 \section*{Interaktion}
 
-T, N
+Ditt program ska först läsa in två heltal på en rad, $T$ och $N$. 
+$T$ är antalet omgångar ditt program kommer köras, och $N$ är längden på $P$.
 
-T rundor
+Därefter sker $T$ omgångar:
 
-? A B
-! X (avslutar rundan)
+När en omgång börjar kan du börja ställa frågor. Skriv ut en rad med ``\verb|? a b|'' för
+att fråga efter summan av talen mellan position $a$ och $b$ ($1 \leq a \leq b \leq N$).
+
+Efter varje fråga ska ditt program läsa in ett heltal, summan av talen i intervallet.
+
+När du har hittat vilken position $1$:an befinner sig på, skriv ut en rad på formen ``\verb|! i|'',
+där $i$ är det index sådan att $P_i = 1$. Efter att du skrivit ut detta börjar nästa omgång.
+
+\textbf{Se till att flusha outputen efter varje query}, annars kan du få \textit{Time Limit Exceeded}.
+I C++ kan detta göras med exempelvis \texttt{cout << flush}
+eller \texttt{fflush(stdout)};
+i Python med \texttt{stdout.flush()};
+och i Java med \texttt{System.out.flush()}.
 
 \section*{Poängsättning}
 
-Ditt program kommer att testas mot enda testfall, med N = T = 1000.
+Ditt program kommer att testas mot enda testfall, med $N = T = 1000$.
 
-Om någon runda ger fel svar kommer inskickningen bedömas som Wrong Answer.
+Om någon omgång ger fel svar kommer inskickningen bedömas som Wrong Answer.
 
-Scoring: $0,55 \cdot N \cdot T$ queries ger $0$ poäng, $0,30 \cdot N \cdot T$ ger $100$ poäng, linjärt emellan.
+Låt $M$ vara antalet frågor ditt program ställer över alla $N \cdot T$ omgångar. Du kommer då få
+$\min(100, 220 - \frac{M}{2500})$ poäng. Om du får negativ poäng så räknas det som noll poäng.
