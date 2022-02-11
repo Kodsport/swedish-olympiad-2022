@@ -82,37 +82,37 @@ tc three-24 gen type=4 mode=3 seed=24 probability=75 maxRC=$MAX_RC
 
 
 group group4 20
-limits maxRC=$MAX_RC down_and_right=1
-tc down-and-right-1 gen type=3 mode=2 seed=1 probability=1 maxRC=$MAX_RC 
-tc down-and-right-2 gen type=3 mode=2 seed=2 probability=10 maxRC=$MAX_RC 
-tc down-and-right-3 gen type=3 mode=2 seed=3 probability=10 maxRC=$MAX_RC 
-tc down-and-right-4 gen type=3 mode=2 seed=4 probability=10 maxRC=$MAX_RC 
-tc down-and-right-5 gen type=3 mode=2 seed=5 probability=30 maxRC=$MAX_RC 
-tc down-and-right-6 gen type=3 mode=2 seed=6 probability=30 maxRC=$MAX_RC 
-tc down-and-right-7 gen type=3 mode=2 seed=7 probability=50 maxRC=$MAX_RC 
-tc down-and-right-8 gen type=3 mode=2 seed=8 probability=50 maxRC=$MAX_RC 
-tc down-and-right-9 gen type=3 mode=2 seed=9 probability=75 maxRC=$MAX_RC 
-tc down-and-right-10 gen type=3 mode=2 seed=10 probability=75 maxRC=$MAX_RC 
-tc down-and-right-11 gen type=3 mode=2 seed=11 probability=100 maxRC=$MAX_RC 
-# tc down-and-right-12 gen type=3 mode=2 seed=12 probability=100 maxRC=$MAX_RC 
-tc down-and-right-13 gen type=3 mode=2 seed=13 probability=100 maxRC=$MAX_RC 
-tc down-and-right-14 gen type=3 mode=2 seed=14 probability=100 maxRC=$MAX_RC 
-tc down-and-right-15 gen type=3 mode=4 seed=15 probability=1 maxRC=$MAX_RC 
-tc down-and-right-16 gen type=3 mode=4 seed=16 probability=10 maxRC=$MAX_RC 
-tc down-and-right-17 gen type=3 mode=4 seed=17 probability=10 maxRC=$MAX_RC 
-tc down-and-right-18 gen type=3 mode=4 seed=18 probability=30 maxRC=$MAX_RC 
-tc down-and-right-19 gen type=3 mode=4 seed=19 probability=30 maxRC=$MAX_RC 
-tc down-and-right-20 gen type=3 mode=4 seed=20 probability=30 maxRC=$MAX_RC 
-tc down-and-right-21 gen type=3 mode=4 seed=21 probability=50 maxRC=$MAX_RC 
-tc down-and-right-22 gen type=3 mode=4 seed=22 probability=50 maxRC=$MAX_RC 
-tc down-and-right-23 gen type=3 mode=4 seed=23 probability=50 maxRC=$MAX_RC 
-tc down-and-right-24 gen type=3 mode=4 seed=24 probability=75 maxRC=$MAX_RC 
-tc down-and-right-25 gen type=3 mode=4 seed=25 probability=75 maxRC=$MAX_RC 
-tc down-and-right-26 gen type=3 mode=4 seed=26 probability=75 maxRC=$MAX_RC 
-tc down-and-right-27 gen type=3 mode=4 seed=27 probability=100 maxRC=$MAX_RC 
-tc down-and-right-28 gen type=3 mode=4 seed=28 probability=100 maxRC=$MAX_RC 
-tc down-and-right-29 gen type=3 mode=4 seed=29 probability=100 maxRC=$MAX_RC 
-tc down-and-right-30 gen type=3 mode=4 seed=30 probability=100 maxRC=$MAX_RC 
+limits maxRC=1000 down_and_right=1
+tc down-and-right-1 gen type=3 mode=2 seed=1 probability=1 maxRC=1000 
+tc down-and-right-2 gen type=3 mode=2 seed=2 probability=10 maxRC=1000 
+tc down-and-right-3 gen type=3 mode=2 seed=3 probability=10 maxRC=1000 
+tc down-and-right-4 gen type=3 mode=2 seed=4 probability=10 maxRC=1000 
+tc down-and-right-5 gen type=3 mode=2 seed=5 probability=30 maxRC=1000 
+tc down-and-right-6 gen type=3 mode=2 seed=6 probability=30 maxRC=1000 
+tc down-and-right-7 gen type=3 mode=2 seed=7 probability=50 maxRC=1000 
+tc down-and-right-8 gen type=3 mode=2 seed=8 probability=50 maxRC=1000 
+tc down-and-right-9 gen type=3 mode=2 seed=9 probability=75 maxRC=1000 
+tc down-and-right-10 gen type=3 mode=2 seed=10 probability=75 maxRC=1000 
+tc down-and-right-11 gen type=3 mode=2 seed=11 probability=100 maxRC=1000 
+# tc down-and-right-12 gen type=3 mode=2 seed=12 probability=100 maxRC=1000 
+tc down-and-right-13 gen type=3 mode=2 seed=13 probability=100 maxRC=1000 
+tc down-and-right-14 gen type=3 mode=2 seed=14 probability=100 maxRC=1000 
+tc down-and-right-15 gen type=3 mode=4 seed=15 probability=1 maxRC=1000 
+tc down-and-right-16 gen type=3 mode=4 seed=16 probability=10 maxRC=1000 
+tc down-and-right-17 gen type=3 mode=4 seed=17 probability=10 maxRC=1000 
+tc down-and-right-18 gen type=3 mode=4 seed=18 probability=30 maxRC=1000 
+tc down-and-right-19 gen type=3 mode=4 seed=19 probability=30 maxRC=1000 
+tc down-and-right-20 gen type=3 mode=4 seed=20 probability=30 maxRC=1000 
+tc down-and-right-21 gen type=3 mode=4 seed=21 probability=50 maxRC=1000 
+tc down-and-right-22 gen type=3 mode=4 seed=22 probability=50 maxRC=1000 
+tc down-and-right-23 gen type=3 mode=4 seed=23 probability=50 maxRC=1000 
+tc down-and-right-24 gen type=3 mode=4 seed=24 probability=75 maxRC=1000 
+tc down-and-right-25 gen type=3 mode=4 seed=25 probability=75 maxRC=1000 
+tc down-and-right-26 gen type=3 mode=4 seed=26 probability=75 maxRC=1000 
+tc down-and-right-27 gen type=3 mode=4 seed=27 probability=100 maxRC=1000 
+tc down-and-right-28 gen type=3 mode=4 seed=28 probability=100 maxRC=1000 
+tc down-and-right-29 gen type=3 mode=4 seed=29 probability=100 maxRC=1000 
+tc down-and-right-30 gen type=3 mode=4 seed=30 probability=100 maxRC=1000 
 
 
 group group5 50
