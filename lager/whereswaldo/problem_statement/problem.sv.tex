@@ -3,7 +3,7 @@
 Det finns en gömd permutation $P$ av längd $N$, som är garanterad att vara genererad uniformt slumpmässigt.
 Permutationen innehåller talen $1, 2, 3, \cdots, N$ i någon okänd ordning.
 
-Du kan välja positioner $l$ och $r$, och ställa frågor på formen: vad är summan av $P_l + P_{l+1} + \ldots + P_r$?
+Du kan välja positioner $l$ och $r$, och ställa frågor på formen: ``vad är summan av $P_l + P_{l+1} + \ldots + P_r$?''
 
 Din uppgift är att hitta på vilken position $1$:an befinner sig i $P$ med så få frågor som möjligt.
 Du får poäng beroende på hur få frågor du ställer.
@@ -31,9 +31,12 @@ och i Java med \texttt{System.out.flush()}.
 
 \section*{Poängsättning}
 
-Ditt program kommer att testas mot enda testfall, med $N = T = 1000$.
+Ditt program kommer att testas mot \textbf{ett enda testfall, med $N = T = 1000$}.
 
 Om någon omgång ger fel svar kommer inskickningen bedömas som Wrong Answer.
 
 Låt $M$ vara antalet frågor ditt program ställer över alla $N \cdot T$ omgångar. Du kommer då få
 $\min(100, 220 - \frac{M}{2500})$ poäng. Om du får negativ poäng så räknas det som noll poäng.
+
+Alltså, om du använder fler än $550\,000$ frågor får du 0 poäng, och
+om du använder $300\,000$ eller färre frågor får du 100 poäng. Där emellan växer poängen linjärt.
