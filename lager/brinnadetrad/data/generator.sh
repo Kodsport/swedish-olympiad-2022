@@ -16,6 +16,7 @@ samplegroup
 limits maxn=$MAXN
 sample_manual 1
 sample_manual 2
+sample 3
 
 group group1 10
 limits maxn=$MAXN same_a=1
@@ -37,6 +38,7 @@ tc same_x-5 gen_random n=$MAXN minx=$MAXA maxx=$MAXA
 tc same_x-6 gen_random n=$MAXN minx=$MAXA maxx=$MAXA maxa=100000
 tc same_x-7 gen_random n=$MAXN minx=$MAXA maxx=$MAXA maxa=500000 a_order=increasing
 tc same_x-8 gen_random n=$MAXN minx=$MAXA maxx=$MAXA maxa=500000 a_order=decreasing
+tc 3
 
 group group3 15
 limits maxn=100 maxa=100 maxx=100
@@ -53,6 +55,7 @@ tc small-10 gen_random n=100 maxa=100 maxx=100 distinct_x=7
 tc small-11 gen_random n=100 maxa=100 maxx=100 distinct_x=20
 tc 1
 tc 2
+tc 3
 
 
 group group4 22
