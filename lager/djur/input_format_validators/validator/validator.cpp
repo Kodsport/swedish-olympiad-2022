@@ -22,7 +22,7 @@ bool dfs(vector<string> &v, ll cur_x, ll cur_y, char color, vector<vector<bool>>
   if (cur_x == c - 1 and cur_y == r - 1)
     return 1;
   visited[cur_y][cur_x] = 1;
-  for (int i = 0; i < 4; i++)
+  for (int i = 0; i < 2; i++)
   {
     ll x = cur_x + change_x[i];
     ll y = cur_y + change_y[i];
