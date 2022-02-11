@@ -188,9 +188,8 @@ int main(int argc, char **argv)
     // The areguments should be: seed, type, mode, maxRC, probabilty
     // probabilty is used for type=4 and type=1, it should be a non-negative x integer<=100 which means that the probability of an obstacle is x percent
     // mode=1 -> r=1 ,  mode=2 -> r=c=sqrt(maxRC), mode=3 -> r=3 , mode=4 -> random r
-
-    // type=1 -> random placement of obstacles with probabilty, type=2 -> couter heurstic , type=3 -> random placement of at most N obstacles,
-    // type=4 -> generate two paths, type=5 -> thre is only two paths
+    // type=1 -> random placement of obstacles with probabilty, type=2 -> couter heurstic
+    // type=3 -> generate two paths, type=4 -> thre is only two paths
     rep(i, 0, argc) args.push_back(argv[i]);
     seed = convert_to_int(cmdlinearg("seed"));
     srand(seed);
@@ -244,7 +243,7 @@ int main(int argc, char **argv)
     else if (type == 3)
     {
         assert(r > 1 and c > 1);
-        generate_two_paths(100, bfs);
+        generate_two_paths(probability, bfs);
     }
     else if (type == 4)
     {

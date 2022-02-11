@@ -10,8 +10,8 @@ using namespace std;
 typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<int> vi;
-vector<ll> change_x = {-1, 0, 1, 0}; // Here the order matters
-vector<ll> change_y = {0, 1, 0, -1};
+vector<ll> change_x = {1, 0};
+vector<ll> change_y = {0, 1};
 int r, c;
 bool inside(ll x, ll y)
 {
@@ -41,7 +41,7 @@ void run()
 {
   int maxRC = Arg("maxRC");
   bool empty = Arg("empty", 0);
-  bool two_ways = Arg("two_ways", 0);
+  bool down_and_right = Arg("down_and_right", 0);
   bool three = Arg("three", 0);
   r = Int(1, maxRC);
   if (three)
@@ -68,17 +68,9 @@ void run()
     v.push_back(cur_row);
     Endl();
   }
-  if (two_ways)
+  if (down_and_right)
   {
     vector<vector<bool>> visited(r, vector<bool>(c));
-    assert(dfs(v, 0, 0, 'K', visited) and dfs(v, 0, 0, 'V', visited));
-    for (int i = 0; i < r; i++)
-    {
-      for (int j = 0; j < c; j++)
-      {
-        if ((i != 0 || j != 0) and (i != r - 1 || j != c - 1))
-          assert(v[i][j] != '.');
-      }
-    }
+    assert(dfs(v, 0, 0, 'V', visited) && dfs(v, 0, 0, 'K', visited));
   }
 }
