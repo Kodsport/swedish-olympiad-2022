@@ -19,7 +19,7 @@ sample 3
 sample 4
 sample 5
 
-group group1 5
+group group1 9
 limits empty=1 maxRC=$MAX_RC
 tc empty-1 gen seed=1 type=1 mode=1 probability=0 maxRC=$MAX_RC
 tc empty-2 gen seed=2 type=1 mode=2 probability=0 maxRC=$MAX_RC
@@ -27,12 +27,12 @@ tc empty-3 gen seed=3 type=1 mode=3 probability=0 maxRC=$MAX_RC
 tc empty-4 gen seed=4 type=1 mode=4 probability=0 maxRC=$MAX_RC
 
 
-
 group group2 10
 limits maxRC=10
+tc 1
+tc 2
 tc small-RC-1 gen seed=1 type=1 mode=1 probability=30 maxRC=10
 tc small-RC-2 gen seed=2 type=1 mode=2 probability=30 maxRC=10
-tc 2
 tc small-RC-4 gen seed=4 type=1 mode=2 probability=30 maxRC=10
 tc small-RC-5 gen seed=5 type=1 mode=2 probability=30 maxRC=10
 tc small-RC-6 gen seed=6 type=1 mode=4 probability=30 maxRC=10
@@ -53,8 +53,9 @@ tc small-RC-17 gen seed=17 type=4 mode=2 probability=30 maxRC=10
 
 
 
-group group3 15
+group group3 20
 limits maxRC=$MAX_RC three=1
+tc empty-3
 tc three-1 gen type=1 mode=3 seed=1 probability=100 maxRC=$MAX_RC
 tc three-2 gen type=1 mode=3 seed=2 probability=1 maxRC=$MAX_RC
 tc three-3 gen type=1 mode=3 seed=3 probability=10 maxRC=$MAX_RC
@@ -81,7 +82,7 @@ tc three-23 gen type=4 mode=3 seed=23 probability=75 maxRC=$MAX_RC
 tc three-24 gen type=4 mode=3 seed=24 probability=75 maxRC=$MAX_RC
 
 
-group group4 20
+group group4 25
 limits maxRC=1000 down_and_right=1
 tc down-and-right-1 gen type=3 mode=2 seed=1 probability=1 maxRC=1000 
 tc down-and-right-2 gen type=3 mode=2 seed=2 probability=10 maxRC=1000 
@@ -115,13 +116,17 @@ tc down-and-right-29 gen type=3 mode=4 seed=29 probability=100 maxRC=1000
 tc down-and-right-30 gen type=3 mode=4 seed=30 probability=100 maxRC=1000 
 
 
-group group5 50
+group group5 36
+limits maxRC=$MAX_RC
+include_group sample
 include_group group1
 include_group group2
 include_group group3
 include_group group4
-include_group sample
-limits maxRC=$MAX_RC
+tc_manual ../manual_tests/spiral2.in
+tc_manual ../manual_tests/maze1.in
+tc_manual ../manual_tests/small.in
+tc_manual ../manual_tests/diagonal_maxcase.in
 tc no-restrictions-1 gen type=1 mode=2 seed=1 probability=100 maxRC=$MAX_RC
 tc no-restrictions-2 gen type=1 mode=2 seed=2 probability=1 maxRC=$MAX_RC
 tc no-restrictions-3 gen type=1 mode=2 seed=3 probability=10 maxRC=$MAX_RC
@@ -151,6 +156,3 @@ tc no-restrictions-26 gen type=4 mode=4 seed=26 probability=100 maxRC=$MAX_RC
 tc no-restrictions-27 gen type=4 mode=4 seed=27 probability=100 maxRC=$MAX_RC
 tc no-restrictions-28 gen type=4 mode=4 seed=28 probability=1 maxRC=$MAX_RC
 tc no-restrictions-29 gen type=2 mode=4 seed=101 probability=100 maxRC=$MAX_RC #counter heuristic
-tc 5
-tc_manual ../manual_tests/spiral2.in
-tc_manual ../manual_tests/maze1.in

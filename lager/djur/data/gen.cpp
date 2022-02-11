@@ -199,8 +199,8 @@ int main(int argc, char **argv)
     ll probability = stod(cmdlinearg("probability"));
     if (mode == 1)
     {
-        r = 1;
-        c = maxRC;
+        r = maxRC;
+        c = 1;
     }
     else if (mode == 2)
     {
