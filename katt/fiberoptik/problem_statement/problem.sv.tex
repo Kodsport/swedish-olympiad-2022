@@ -1,0 +1,36 @@
+\problemname{Fiberoptik}
+
+Kommunikationsnätverket i Stackköping består av ett träd med $N$ noder. Du vill välja ut vissa av
+kanterna och lägga fiberkablar där. Men varje nod kan bara ha högst $K$ kanter med fiberkablar 
+sammankopplade med sig. 
+
+Din uppgift är att placera ut så många fiberkablar som möjligt. Men varje kant har också en kostnad,
+och av alla sätt som finns att lägga ut det maximala antalet fiberkablar, så vill du hitta den
+minimala möjliga kostnaden.
+
+\section*{Indata}
+
+Den första raden innehåller två heltal $N$ och $K$ ($2 \leq N \leq 10^5$, $1 \leq K \leq 100$).
+
+De följande $N-1$ raderna innehåller två heltal $p_i$, $w_i$ ($1 \leq p_i \leq i$, $0 \leq w_i \leq 10^9$).
+Detta innebär att det finns en kant mellan noderna med index $p_i$ och $i+1$, med kostnad $w_i$. 
+
+\section*{Utdata}
+Skriv ut två heltal, det maximala antalet kanter, och den minimala kostnaden för det antalet kanter.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  Grupp & Poängvärde & Gränser \\ \hline
+  $1$   & $10$       & $N \leq 15$\\ \hline
+  $2$   & $10$       & $K = 1$  \\ \hline
+  $3$   & $10$       & $K \leq 2$ \\ \hline
+  $4$   & $10$       & $N \leq 100$ \\ \hline
+  $5$   & $20$       & $N \leq 2000$ \\ \hline
+  $6$   & $15$       & $w_i = 0$ \\ \hline
+  $7$   & $25$       & Inga ytterligare begränsningar \\ \hline
+\end{tabular}

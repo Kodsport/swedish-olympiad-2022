@@ -1,0 +1,8 @@
+# author: Andrey Stankevich
+source: KATT 2022 # http://neerc.ifmo.ru/school/archive/2021-2022/ru-olymp-regional-2022-day2.pdf
+rights_owner: Programmeringsolympiaden
+license: permission
+type: scoring
+grading:
+    show_test_data_groups: yes
+    
