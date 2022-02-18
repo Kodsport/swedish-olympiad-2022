@@ -1,0 +1,8 @@
+# author: Nikolay Budin
+source: KATT 2022 # http://neerc.ifmo.ru/school/archive/2020-2021/ru-olymp-roi-2021-day1.pdf
+rights_owner: Programmeringsolympiaden
+license: permission
+type: scoring
+grading:
+    show_test_data_groups: yes
+    

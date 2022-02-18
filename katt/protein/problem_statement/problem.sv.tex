@@ -1,0 +1,46 @@
+\problemname{Protein}
+
+Nikolaj är kemist och försöker skapa ett protein med en viss form. Just nu har han ett protein
+som består av en kedja av aminosyror av längd $N$. Kedjan är en sträng $s$, där 
+varje aminosyra är en bokstav.
+Bokstäverna som används är de $K$ första i alfabetet ($1 \leq K \leq 26$).
+
+Aminosyrorna kan reagera med varandra så att de försvinner från kedjan. Nikolaj har en $K \times K$ tabell
+$A_{ij}$ som innehåller ettor och nollor. Den här tabellen indikerar om en bokstav $s_i$ kan ta
+bort nästa bokstav $s_{i+1}$ i strängen. Så om till exempel $A_{12} = 1$, så kan ett \textbf{a} på
+position $i$ ta bort ett \textbf{b} på position $i+1$. Efter en sådan borttagning så förskjuts 
+indexen, så att bokstaven på position $i$ återigen kan ta bort nästa bokstav till höger.
+
+Nikolaj vill skapa ett protein som är så litet som möjligt lexikografiskt, genom att ta bort 
+bokstäver från $s$ på det här sättet. Din uppgift är att hitta dem lexikografiskt minsta
+strängen som är möjlig.
+
+\section*{Indata}
+
+Den första raden innehåller två heltal $K$ och $N$ ($1 \leq N \leq 5 \cdot 10^5$, $1 \leq K \leq 26$).
+
+Därefter följer $K$ rader med en sträng av längd $K$, matrisen $A_{ij}$.
+
+På sista raden är strängen $s$.
+
+\section*{Utdata}
+Skriv ut en sträng, den lexikografiskt minimala strängen som kan skapas genom att göra borttagningar
+som beskrivs i problemet.
+
+\section*{Poängsättning}
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  Grupp & Poängvärde & Gränser \\ \hline
+ 
+  $1$   & $15$       & $N \leq 20$\\ \hline
+  $2$   & $10$       & $N \leq 300$, $K \leq 5$  \\ \hline
+  $3$   & $20$       & $N \leq 500$ \\ \hline
+  $4$   & $10$       & $N \leq 2000$ \\ \hline
+  $5$   & $25$       & $N \leq 10^5$ \\ \hline
+  $6$   & $10$       & $K \leq 2$ \\ \hline
+  $7$   & $10$       & Inga ytterligare begränsningar \\ \hline
+\end{tabular}
