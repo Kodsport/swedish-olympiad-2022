@@ -1,6 +1,6 @@
 \problemname{Växter}
-Längs en lång väg finns det $N$ växter, växten $i$ är av arten $A_i$. En växt forskare vill gå längs vägen för att samla växter. Då han har tillbringat hela sin tid i sin labb så har han inte bra kondition,
-därför frågar han dig $Q$ frågor $i$ formen: om jag vill samla alla växter av arterna som är mellan $0$ och $Q_i$ hur mycket behöver jag gå som minst?
+Längs en $N$ meter lång väg finns det $N$ växter. Växten $i$ är av arten $A_i$ och är exakt en meter bortifrån växten $A_{i-1}$. En växt forskare vill gå längs vägen för att samla växter. Då han har tillbringat hela sin tid i sin labb så har han inte bra kondition,
+därför frågar han dig $Q$ frågor $i$ formen: om jag vill samla alla växter av arterna som är mellan $0$ och $Q_i$ hur långt behöver jag gå som minst?
 Han kan börja var som helst och sluta var som helst och han kan gå förbi en växt utan att samla den
 \section*{Indata}
 Den första raden innehåller de två heltalen $N$ ($1\leq N \leq 2 \cdot 10^5$) och $Q$ ($1 \leq Q \leq 2 \cdot 10^5$).
@@ -10,7 +10,7 @@ Den andra raden innehåller $N$ heltal, där det $i$:te talet $A_i$ ($0\le A_i \
 Därefter följer $Q$ rader, den $i$:te raden innehåller ett tal$Q_i$ ($0 \leq Q_i \leq 10^9$) som representerar den $i$:te frågan växtforskaren ställer till dig.
 
 \section*{Utdata}
-Skriv ut $Q$ rader som -- i den $i$:te raden ska innehålla svaret av den $i$:te frågan. Om det är omöjligt att samla växter mellan $0$ och $Q_i$  skriv ut $-1$;
+Skriv ut $Q$ rader som -- i den $i$:te raden ska innehålla svaret av den $i$:te frågan. Om det är omöjligt att samla växter mellan $0$ och $Q_i$  skriv ut $-1$.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
@@ -20,11 +20,12 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
   Grupp & Poängvärde & Gränser \\ \hline
-  $1$   & $5$       & $N \leq 300 Q \leq 300 $\\ \hline
-  $2$   & $7$       & $N \leq 300 $\\ \hline
+  $1$   & $5$       & $N,Q, A_i \leq 200 $\\ \hline
+  $2$   & $7$       & $N \leq 200 $\\ \hline
   $3$   & $15$       & $N \leq 2000 $  \\ \hline
   $4$   & $30$       &  För alla frågor är det garanterat att det finns en ökande subsekvens som ger optimalt svar \\ \hline
   $5$   & $43$       & Inga ytterligare begränsningar \\ \hline
 \end{tabular}
 
 \section*{Förklaring av exempelfall}
+
