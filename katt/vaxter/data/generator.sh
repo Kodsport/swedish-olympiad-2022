@@ -7,6 +7,7 @@ use_solution joakim.cc
 
 #compile gen.cpp
 compile gen_unique.py
+compile gen_onequery.py
 
 MAX_N=200000
 MAX_VAL=1000000000
@@ -72,12 +73,19 @@ tc unique-7 gen_unique n=$MAX_N q=$MAX_N mode=unimodal
 group group5 25
 limits max_q=1
 tc onequery-1 gen_unique n=1 q=1 maxv=0
-tc onequery-2 gen_unique n=$MAX_N q=1 maxv=0 mode=random
-tc onequery-3 gen_unique n=$MAX_N q=1 mode=random
-tc onequery-4 gen_unique n=$MAX_N q=1 maxv=10000 mode=random
-
-
-
+tc onequery-2 gen_onequery n=20 k=5
+tc onequery-3 gen_unique n=$MAX_N q=1 maxv=0 mode=random
+tc onequery-4 gen_unique n=$MAX_N q=1 mode=random
+tc onequery-5 gen_unique n=$MAX_N q=1 maxv=10000 mode=random
+tc onequery-6 gen_unique n=$MAX_N q=1 maxv=1000 mode=random
+tc onequery-7 gen_unique n=$MAX_N q=1 maxv=100 mode=random
+tc onequery-8 gen_unique n=$MAX_N q=1 maxv=100 mode=01_edge
+tc onequery-9 gen_onequery n=$MAX_N k=10
+tc onequery-10 gen_onequery n=$MAX_N k=100
+tc onequery-11 gen_onequery n=$MAX_N k=1000
+tc onequery-12 gen_onequery n=$MAX_N k=10000
+tc onequery-13 gen_onequery n=$MAX_N k=100 mode=rare_zero
+tc onequery-14 gen_onequery n=$MAX_N k=10000 mode=big_numbers
 
 #################################################################################
 
