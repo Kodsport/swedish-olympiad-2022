@@ -10,10 +10,10 @@ string cmdlinearg(string name, string defaul = "")
 {
     for (auto a : args)
     {
-        if (a.size() < name.size() + 1)
+        if ((int)a.size() < (int)name.size() + 1)
             continue;
         bool good = 1;
-        for (int i = 0; i < name.size(); i++)
+        for (int i = 0; i < (int)name.size(); i++)
         {
             if (a[i] != name[i])
             {
@@ -26,7 +26,7 @@ string cmdlinearg(string name, string defaul = "")
         if (good)
         {
             string res = "";
-            for (int i = name.size() + 1; i < a.size(); i++)
+            for (int i = name.size() + 1; i < (int)a.size(); i++)
                 res += a[i];
             return res;
         }
@@ -41,7 +41,7 @@ ll convert_to_int(string s)
     ll val = 0;
     reverse(s.begin(), s.end());
     ll power = 1;
-    for (int i = 0; i < s.size(); i++)
+    for (int i = 0; i < (int)s.size(); i++)
         val += power * (s[i] - '0'), power *= 10;
     return val;
 }
@@ -62,7 +62,7 @@ vector<ll> equally_frequent(ll n, ll max_value)
         if (!left)
             break;
     }
-    assert(v.size() == n);
+    assert((long long)v.size() == n);
     return v;
 }
 int main(int argc, char **argv)
