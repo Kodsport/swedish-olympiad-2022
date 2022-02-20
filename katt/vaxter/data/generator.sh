@@ -8,6 +8,7 @@ use_solution joakim.cc
 compile gen.cpp
 compile gen_unique.py
 compile gen_onequery.py
+compile gen_random.py
 
 MAX_N=200000
 MAX_VAL=1000000000
@@ -127,6 +128,8 @@ tc medium-9 gen max_n=2000 max_q=$MAX_N max_value=$MAX_VAL seed=9 type=1
 tc medium-10 gen max_n=2000 max_q=$MAX_N max_value=$MAX_VAL seed=10 type=1
 tc medium-11 gen max_n=2000 max_q=$MAX_N max_value=$MAX_VAL seed=11 type=1 slump=1
 tc medium-12 gen max_n=2000 max_q=$MAX_N max_value=$MAX_VAL seed=12 type=2
+tc medium-13 gen_random n=2000 q=2000 maxv=1000 mode=unimodal
+tc medium-14 gen_random n=2000 q=2000 maxv=300 mode=uneven
 
 #################################################################################
 
@@ -197,5 +200,6 @@ tc large-26 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_N type=1 seed=26
 tc large-27 gen max_n=$MAX_N max_q=$MAX_N max_value=500 type=1 seed=27
 tc large-28 gen max_n=$MAX_N max_q=$MAX_N max_value=500 type=1 seed=28
 tc large-29 gen max_n=$MAX_N max_q=$MAX_N max_value=500 type=1 seed=29
-
-
+tc large-30 gen_random n=$MAX_N q=$MAX_N maxv=30000 mode=unimodal
+tc large-31 gen_random n=$MAX_N q=$MAX_N maxv=50000 mode=uneven
+tc large-32 gen_random n=$MAX_N q=$MAX_N maxv=5000 mode=uneven
