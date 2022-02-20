@@ -154,6 +154,7 @@ tc onequery-18 gen max_n=$MAX_N max_q=1 max_value=$MAX_VAL seed=18 type=1
 tc onequery-19 gen max_n=$MAX_N max_q=1 max_value=$MAX_VAL seed=19 type=1
 tc onequery-20 gen max_n=$MAX_N max_q=1 max_value=$MAX_VAL seed=20 type=2
 tc onequery-21 gen max_n=$MAX_N max_q=1 max_value=$MAX_VAL seed=21 type=3
+tc onequery-22 gen_unique n=$MAX_N q=1 mode=unimodal
 
 #################################################################################
 
