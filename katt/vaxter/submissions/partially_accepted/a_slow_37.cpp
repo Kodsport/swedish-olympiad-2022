@@ -26,7 +26,6 @@ int latest[MAXN] = {0};
 int main() {
 
     cin >> n >> q;
-    assert(n <= 2000);
     rep(c1,0,n){
         int a;
         cin >> a;
@@ -35,9 +34,11 @@ int main() {
         ANS[c1] = big;
     }
     rep(c1,0,n){
-        latest[A[c1]] = c1;
+        if(A[c1] < n)latest[A[c1]] = c1;
         int mi = big;
-        rep(c2,0,n){
+        int lim = n;
+        if(n > 2000)lim = 20;
+        rep(c2,0,lim){
             mi = min(mi, latest[c2]);
             if(mi == -1)break;
             ANS[c2] = min(ANS[c2], c1-mi+1);
