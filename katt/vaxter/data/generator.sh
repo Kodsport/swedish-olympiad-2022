@@ -178,14 +178,24 @@ tc large-7 gen max_n=$MAX_N max_q=$MAX_N max_value=10 type=1 seed=7
 tc large-8 gen max_n=$MAX_N max_q=$MAX_N max_value=100 type=1 seed=8
 tc large-9 gen max_n=$MAX_N max_q=$MAX_N max_value=1000 type=1 seed=9
 tc large-10 gen max_n=$MAX_N max_q=$MAX_N max_value=1000 type=1 seed=10
-tc large-11 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_VAL type=1 seed=11
-tc large-12 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_VAL type=1 seed=12
-tc large-13 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_VAL type=1 seed=13
+tc large-11 gen max_n=$MAX_N max_q=$MAX_N max_value=500 type=1 seed=11
+tc large-12 gen max_n=$MAX_N max_q=$MAX_N max_value=500 type=1 seed=12
+tc large-13 gen max_n=$MAX_N max_q=$MAX_N max_value=500 type=1 seed=13
 tc large-14 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_VAL type=1 seed=14 slump=1 
 tc large-15 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_VAL type=1 seed=15 slump=1
-tc large-16 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_VAL type=2 seed=16 slump=1
-tc large-17 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_VAL type=2 seed=17 slump=1
-tc large-18 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_VAL type=2 seed=18 
-tc large-19 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_VAL type=2 seed=19
-tc large-20 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_VAL type=3 seed=20
+tc large-16 gen max_n=$MAX_N max_q=$MAX_N max_value=500 type=2 seed=16 slump=1
+tc large-17 gen max_n=$MAX_N max_q=$MAX_N max_value=500 type=2 seed=17 slump=1
+tc large-18 gen max_n=$MAX_N max_q=$MAX_N max_value=500 type=2 seed=18 slump=1
+tc large-19 gen max_n=$MAX_N max_q=$MAX_N max_value=500 type=2 seed=19 slump=1
+tc large-20 gen max_n=$MAX_N max_q=$MAX_N max_value=500 type=2 seed=20 slump=1
+tc large-21 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_VAL type=2 seed=21 slump=1
+tc large-22 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_VAL type=2 seed=22 
+tc large-23 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_VAL type=2 seed=23
+tc large-24 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_VAL type=3 seed=24
+tc large-25 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_N type=1 seed=25
+tc large-26 gen max_n=$MAX_N max_q=$MAX_N max_value=$MAX_N type=1 seed=26
+tc large-27 gen max_n=$MAX_N max_q=$MAX_N max_value=500 type=1 seed=27
+tc large-28 gen max_n=$MAX_N max_q=$MAX_N max_value=500 type=1 seed=28
+tc large-29 gen max_n=$MAX_N max_q=$MAX_N max_value=500 type=1 seed=29
+
 
