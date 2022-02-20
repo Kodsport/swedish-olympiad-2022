@@ -5,11 +5,13 @@ som består av en kedja av aminosyror av längd $N$. Kedjan är en sträng $s$, 
 varje aminosyra är en bokstav.
 Bokstäverna som används är de $K$ första i alfabetet ($1 \leq K \leq 26$).
 
-Aminosyrorna kan reagera med varandra så att de försvinner från kedjan. Nikolaj har en $K \times K$ tabell
-$A_{ij}$ som innehåller ettor och nollor. Den här tabellen indikerar om en bokstav $s_i$ kan ta
-bort nästa bokstav $s_{i+1}$ i strängen. Så om till exempel $A_{12} = 1$, så kan ett \textbf{a} på
-position $i$ ta bort ett \textbf{b} på position $i+1$. Efter en sådan borttagning så förskjuts 
-indexen, så att bokstaven på position $i$ återigen kan ta bort nästa bokstav till höger.
+Nikolaj kan göra så att en aminosyra $s_i$ reagerar med $s_{i+1}$ så att $s_{i+1}$ försvinner 
+från kedjan. Men detta är bara möjligt för vissa par av bokstäver. Nikolaj har en $K \times K$-tabell
+$A$ med nollor och ettor som indikerar vilka par av bokstäver som kan reagera med varandra. 
+Om $A_{xy} = 1$ så betyder det att bokstav nummer $x$ i alfabetet kan reagera med bokstav nummer $y$.
+Så om till exempel $A_{23} = 1$ och strängen är \textbf{bccbca}, så kan den första bokstaven reagera
+med den andra så att strängen blir \textbf{bcbca}. Därefter kan två till reaktioner ske så
+att strängen blir \textbf{bba}.  
 
 Nikolaj vill skapa ett protein som är så litet som möjligt lexikografiskt, genom att ta bort 
 bokstäver från $s$ på det här sättet. Din uppgift är att hitta den lexikografiskt minsta
