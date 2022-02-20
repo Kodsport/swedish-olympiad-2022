@@ -19,9 +19,9 @@ void run()
 {
   int max_n = Arg("max_n", MAXN);
   int max_q = Arg("max_q", MAXN);
-  int max_value = Arg("max_value",MAXV);
+  int max_value = Arg("max_value", MAXV);
   bool unique = Arg("unique", 0);
-  
+  bool queryone = Arg("queryone", 0); // Q_i=1
   int n = Int(1, max_n);
   Space();
   int q = Int(1, max_q);
@@ -29,13 +29,18 @@ void run()
 
   vi v = SpacedInts(n, 0, max_value);
   set<int> seen;
-  for(int i = 0; i < n; i++){
-    if(unique)assert(seen.find(v[i]) == seen.end());
+  for (int i = 0; i < n; i++)
+  {
+    if (unique)
+      assert(seen.find(v[i]) == seen.end());
     seen.insert(v[i]);
   }
 
-  for (int i = 0; i < q; i++){
-    Int(0, max_value);
+  for (int i = 0; i < q; i++)
+  {
+    int q_i = Int(0, max_value);
+    if (queryone)
+      assert(q_i == 1);
     Endl();
   }
   Eof();

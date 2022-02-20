@@ -5,7 +5,7 @@
 
 use_solution joakim.cc
 
-#compile gen.cpp
+compile gen.cpp
 compile gen_unique.py
 compile gen_onequery.py
 
@@ -13,8 +13,9 @@ MAX_N=200000
 MAX_VAL=1000000000
 
 #################################################################################
+
 samplegroup
-limits max_value=$MAX_VAL max_n=10
+limits max_value=$MAX_VAL max_n=10 
 sample 1
 sample 2
 
@@ -31,7 +32,7 @@ tc smallest-4 gen_unique n=200 q=200 maxv=200 mode=random
 tc smallest-5 gen_unique n=200 q=200 maxv=200 mode=01_edge
 tc smallest-6 gen_unique n=200 q=200 maxv=200 mode=increasing
 tc smallest-7 gen_unique n=200 q=200 maxv=200 mode=unimodal
-
+tc smallest-8 gen max_n=200 max_q=200 max_value=200 seed=8 type=1 
 #################################################################################
 
 group group2 7
@@ -43,8 +44,23 @@ tc small-3 gen_unique n=200 q=$MAX_N maxv=30 mode=random
 tc small-4 gen_unique n=200 q=$MAX_N maxv=30 mode=increasing
 
 #################################################################################
+group group3 9
+limits max_q=1 queryone=1
+tc queryone-1 gen max_n=$MAX_N max_q=1 seed=1 type=1 max_value=$MAX_VAL queryone=1
+tc queryone-2 gen max_n=$MAX_N max_q=1 seed=2 type=1 max_value=$MAX_VAL queryone=1
+tc queryone-3 gen max_n=$MAX_N max_q=1 seed=3 type=1 max_value=$MAX_VAL queryone=1
+tc queryone-4 gen max_n=$MAX_N max_q=1 seed=4 type=1 max_value=100 queryone=1
+tc queryone-5 gen max_n=$MAX_N max_q=1 seed=5 type=1 max_value=100 queryone=1
+tc queryone-6 gen max_n=$MAX_N max_q=1 seed=6 type=1 max_value=100 queryone=1
+tc queryone-7 gen max_n=$MAX_N max_q=1 seed=7 type=3 max_value=$MAX_VAL queryone=1
+tc queryone-8 gen max_n=$MAX_N max_q=1 seed=8 type=3 max_value=$MAX_VAL queryone=1
+tc queryone-9 gen max_n=$MAX_N max_q=1 seed=9 type=3 max_value=100 queryone=1
+tc queryone-10 gen max_n=$MAX_N max_q=1 seed=10 type=3 max_value=1000 queryone=1
+tc queryone-11 gen max_n=$MAX_N max_q=1 seed=11 type=2 max_value=1000 queryone=1
+tc queryone-12 gen max_n=$MAX_N max_q=1 seed=12 type=2 max_value=1000 queryone=1
 
-group group3 10
+#################################################################################
+group group4 12
 limits max_n=2000
 include_group group2
 tc medium-1 gen_unique n=2000 q=2000 maxv=$MAX_VAL mode=random
@@ -58,7 +74,7 @@ tc medium-7 gen_unique n=2000 q=$MAX_N maxv=2000 mode=unimodal
 
 #################################################################################
 
-group group4 15
+group group5 16
 limits unique=1
 tc unique-1 gen_unique n=1 q=1 maxv=0
 tc unique-2 gen_unique n=10 q=200 maxv=10
@@ -70,7 +86,7 @@ tc unique-7 gen_unique n=$MAX_N q=$MAX_N mode=unimodal
 
 #################################################################################
 
-group group5 25
+group group6 18
 limits max_q=1
 tc onequery-1 gen_unique n=1 q=1 maxv=0
 tc onequery-2 gen_onequery n=20 k=5
@@ -90,7 +106,7 @@ tc onequery-14 gen_onequery n=$MAX_N k=10000 mode=big_numbers
 #################################################################################
 
 
-group group6 38
+group group7 33
 
 include_group group3
 include_group group4
