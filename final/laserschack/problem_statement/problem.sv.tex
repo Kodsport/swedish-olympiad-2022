@@ -1,7 +1,8 @@
 \problemname{Laserschack}
-Fredrik och Abdullah spelar ett parti Laserschack mot varandra. Spelet spelas på ett rutnät,
+Fredrik och Abdullah spelar ett parti Laserschack mot varandra. Spelet spelas på ett rutnät
 och går ut på att skjuta en laserstråle på motståndarens kung.
-Abdullah har en attackpjäs som när man trycker på en knapp skjuter ut laser i alla fyra riktningar (upp, ned, höger och vänster), markerad med \texttt{A} i rutnätet.
+Abdullah har en attackpjäs som när man trycker på en knapp skjuter ut laser i alla fyra riktningar (upp, ned, höger och vänster).
+Attackpjäsen är markerad med \texttt{A} i rutnätet.
 Fredriks kung är markerad med \texttt{K}. Det finns också spegelpjäser i rutnätet, markerade med \texttt{o}.
 När en laser träffar en spegelpjäs studsar strålen ut i all fyra riktningar.
 
@@ -15,7 +16,7 @@ Alltså, hur många sekunder tar det tills att röken spridit sig så att lasern
 Det är garanterat att spelet ursprungligen är i en position där lasern når kungen från attackpjäsen utan att gå genom någon rök.
 
 \section*{Indata}
-Den första raden innehåller två heltal $R$ och $C$ ($1\le R, 1 \le C, R\times C \le 40 000$) , antalet rader och kolumner i rutnätet som utgör spelplanen.
+Den första raden innehåller två heltal $R$ och $C$ ($1\le R, C$ och $R\times C \le 40 000$), antalet rader och kolumner i rutnätet som utgör spelplanen.
 
 De följande $R$ raderna utgör en beskrivning av hur spelplanen ser ut.
 Den $i$:te av dessa rader innehåller $C$ tecken som beskriver hur den $i$:te raden ser ut.
@@ -32,7 +33,7 @@ att \texttt{R} förekommer minst en gång,
 och att laserstrålen når fram till kungen från attackpjäsen från början.
 
 \section*{Utdata}
-Skriv ut ett positivt heltal -- antal sekunder det tar tills lasern inte längre når kungen.
+Skriv ut antal sekunder det tar tills lasern inte längre når kungen.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.
@@ -66,4 +67,4 @@ $5$    & $30$       &  Inga ytterligare begränsningar. \\ \hline
   \caption{Exempelfall 3 efter två sekunder.}
 \end{figure}
 
-Så här ser rökens spridning ut för varje exempelfall i sista sekunden där lasern fortfarande når kungen.
+Figurerna ovan visar rökens spridning ut för varje exempelfall i sista sekunden där lasern fortfarande når kungen.

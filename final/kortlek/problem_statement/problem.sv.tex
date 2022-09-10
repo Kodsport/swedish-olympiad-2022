@@ -1,17 +1,22 @@
 \problemname{Kortlek}
-Nicole och Simon spelar ett kortspel som består av $N$ rundor. I runda $i$ lägger Nicole ut ett kort som har ett tal $a_i$ skrivet på sig. Simon måste då svara med att lägga ut ett kort från sin hand. Om Simons kort har värde $b_i$ så får Nicole $|a_i-b_i|$ poäng. Simon vill alltså lägga ett kort som är så nära det Nicole lade som möjligt.
+Nicole och Simon spelar ett kortspel som består av $N$ rundor.
+I runda $i$ lägger Nicole ut ett kort som har ett tal $a_i$ skrivet på sig.
+Simon måste då svara med att lägga ut ett kort från sin hand.
+Om Simons kort har värde $b_i$ så får Nicole $|a_i-b_i|$ poäng.
+Nicole får alltså fler poäng ju längre ifrån värdet på Simons kort är från det som Nicole lade.
 
-Givet exakt vilka kort Nicole kommer lägga ut och vilka $M$ kort Simon har på sin hand från början, vad är den minsta poängen Nicole kan få om Simon spelar optimalt? $M$ är alltid lika med $N$ eller $N+1$.
+Givet exakt vilka kort Nicole kommer lägga ut och vilka kort Simon har på sin hand från början, vad är den minsta poängen Nicole kan få om Simon spelar optimalt?
+Om Simon har $M$ kort kommer de dessutom alltid spela antingen exakt $M$ eller $M - 1$ rundor, d.v.s $M = N$ eller $M = N + 1$..
 
 \section*{Indata}
-Den första raden innehåller de två heltalen $N$ ($1\leq N \leq 2 \cdot 10^5$) och $M$ ($N\leq M \leq N+1$).
+Den första raden innehåller de två heltalen $N$ ($1\leq N \leq 2 \cdot 10^5$) och $M$ ($N\leq M \leq N+1$), antalet rundor i spelet och antalet kort Simon har.
 
-Den andra raden innehåller $N$ heltal, där det $i$:te talet $a_i$ ($0\le a_i \le 10^9$) är värdet på kortet Nicole lägger ut i runda $i$.
+Den andra raden innehåller $N$ heltal $a_1, \dots, a_N$ ($0\le a_i \le 10^9$), där $a_i$ är värdet på kortet Nicole lägger ut i runda $i$.
 
-Den tredje raden innehåller $M$ heltal, där det $i$:te talet $b_i$ ($0\le b_i \le 10^9$) är värdet av det $i:$te kortet Simon har på sin hand.
+Den tredje raden innehåller $M$ heltal $b_1, \dots, b_M$ ($0\le b_i \le 10^9$), värdena på Simons kort.
 
 \section*{Utdata}
-Skriv ut ett heltal -- den minsta totala poängen Nicole får om Simon spelar optimalt.
+Skriv ut den minsta totala poängen Nicole får om Simon spelar optimalt.
 
 \section*{Poängsättning}
 Din lösning kommer att testas på en mängd testfallsgrupper.

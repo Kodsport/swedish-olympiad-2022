@@ -11,7 +11,7 @@ MAX_N=100000
 
 #################################################################################
 samplegroup
-limits  max_n=$MAXN mode=none
+limits max_n=$MAX_N mode=none
 sample 1
 sample 2
 sample 3

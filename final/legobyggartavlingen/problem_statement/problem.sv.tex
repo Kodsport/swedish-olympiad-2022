@@ -1,28 +1,25 @@
 \problemname{Legobyggartävlingen}
 Du och din ärkefiende Gohu har deltagit i en legobyggartävling.
 Ni har byggt en massa olika höga och olika fina torn längs $x$-axeln och väntar nu på att domarna ska komma.
-Poängsättningen kommer gå till enligt följande: Om ett av dina torn har finhetsgraden $f$ och är $h$ legobitar högt kommer du få $f\cdot h$ poäng för tornet.
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=6cm]{sample}
-  \caption{Bilden motsvarar andra exemplet.}
-\end{figure}
+Poängsättningen kommer gå till enligt följande: om ett av dina torn har finhetsgraden $f$ och är $h$ legobitar högt kommer du få $f\cdot h$ poäng för tornet.
 
 Legobyggartävlingen är ett världskänt jippo och det flyger därför en massa drönare fram och tillbaka för att filma alla fina torn.
 För att drönarna inte ska krocka med tornen (och därmed riva ner alla legobitar ovanför och inkluderat med legobiten den krockade med) har filmteamet placerat ut en massa radiomaster av olika höjd längs med $x$-axeln.
-En drönare kan röra sig en ruta upp eller ned för varje ruta framåt och kommer alltid röra sig så att den ligger så nära marken som möjligt (för att få bra bilder på tornen) utan att någonsin åka under en mast.
+En drönare kan röra sig en ruta upp eller ned för varje ruta den rör sig framåt och kommer alltid röra sig så att den ligger så nära marken som möjligt (för att få bra bilder på tornen) utan att någonsin åka under en mast.
+I bilderna längre ner kan du se illustrationer över hur masterna påverkar drönarnas bana.
 
 Nu plötsligt tittar filmteamet bort!
 Du bestämmer dig för att snabbt ta bort några master från linjen så att drönarna ska börja krascha in tornen.
-Vilka master ska du ta bort för att maximera din vinst (skillnaden mellan dina poäng och Guhos)?
-
-Finhetsgraden på ett torn minskar inte när en drönare kraschar in i den, bara höjden.
+Om en drönare efter att masterna tagits bort kommer börja flyga på höjd $h$ i en kolumn som har ett torn med minst höjd $h$ så kraschar drönaren in i tornet.
+Tornets nya höjd blir då $h - 1$.
+Dess finhetsgrad ändras dock inte.
+Om en drönare kraschar in i ett hörn när det har höjden $h$ blir tornets nya höjd $h - 1$, men dess finhetsgrad ändras inte alls.
 Det är garanterat att masterna initialt är placerade så att drönarna inte krockar med några torn.
 
+Vilka master ska du ta bort för att maximera din vinst (skillnaden mellan dina poäng och Guhos)?
 
 \section*{Indata}
-Den första raden innehåller tre heltal $A,B,M$ ($1 \leq A,B,M \leq 2000$) -- antalet torn du byggt, antalet torn Guho har byggt och antalet master.
+Den första raden innehåller de tre heltalen $A,B,M$ ($1 \leq A,B,M \leq 2000$): antalet torn du byggt, antalet torn Guho har byggt och antalet master.
 
 Därefter följer $A$ rader där varje rad innehåller heltal $x,f,h$ ($1 \leq x \leq 10^6, 1 \le f \le 100, 1\leq h \leq 10000$) -- position, finhetsgrad och höjd för ett av dina torn.
 
@@ -51,21 +48,33 @@ För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 \end{tabular}
 
 \section*{Förklaring av exempelfall}
+I alla bilder visas dina torn i blått och Guhos torn i rött.
 
 \begin{figure}[!h]
   \centering
   \includegraphics[width=4cm]{sample1.png}
   \caption{Exempelfall 1}
 \end{figure}
+I det första exempelfallet är det optimalt att bara plocka bort den första masten.
+Drönarna kommer då att börja flyga på höjd $1$ i kolumnen med tornet längst till vänster, som därför kraschas bort helt.
+Efter det har du $2$ poäng och Guho har $0+1$ poäng, med en skillnad på $1$ poäng.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=6cm]{sample1.png}
+  \caption{Exempelfall 2}
+\end{figure}
+I andra exempelfallet är det bästa du kan göra att plocka bort den andra och den tredje masten.
+Drönaren kommer då flyga på höjderna $5$, $6$, $5$, $4$, $3$, $4$, $5$, $6$, $7$, $8$.
+Det första, tredje och fjärde tornet kommer alltså få en bit förstörd, medan det andra och sista tornet inte påverkas alls.
+Tornen får alltså höjderna $4$, $5$, $3$, $3$, $6$.
+
+Efter det har du $500+30+120=650$ poäng och Guho har $400+30=430$ poäng, med en skillnad på $220$ poäng.
+
 \begin{figure}[!h]
   \centering
   \includegraphics[width=4cm]{sample3.png}
   \caption{Exempelfall 3}
 \end{figure}
-I alla bilder visas dina torn i blått och Guhos torn i rött.
-
-I det första exempelfallet är det optimalt att bara plocka bort det första tornet. Efter det har du $2$ poäng och Guho har $0+1$ poäng, med en skillnad på $1$ poäng.
-
-I andra exempelfallet är det bästa du kan göra att plocka bort det andra och det tredje tornet. Efter det har du $500+30+120=650$ poäng och Guho har $400+30=430$ poäng, med en skillnad på $220$ poäng.
-
-I det tredje exempelfallet är det optimalt att plocka bort det andra och det tredje tornet. Efter det har du $20$ poäng och Guho har $9$ poäng, med en skillnad på $11$ poäng.
+I det tredje exempelfallet är det optimalt att plocka bort den andra och den tredje masten.
+Efter det har du $20$ poäng och Guho har $9$ poäng, med en skillnad på $11$ poäng.
