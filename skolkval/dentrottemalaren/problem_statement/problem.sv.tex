@@ -17,19 +17,28 @@ Skriv ett program som berättar för roboten hur den ska måla golvet.
 För att inte slösa på färg får den inte måla samma rad eller kolumn flera gånger.
 
 %För att inte slösa på färg får roboten inte måla en rad eller kolumn, om samtliga rutor i raden eller kolumnen målas över (möjligtvis av samma färg) senare.
-%Den får heller inte måla en rad eller kolumn om alla rutor i raden eller kolumnen redan har den tiltänkta färgen.
+%Den får heller inte måla en rad eller kolumn om alla rutor i raden eller kolumnen redan har den tilltänkta färgen.
 
 \section*{Indata}
 På första raden står ett tal $1 \leq N \leq 9$, antalet rader och kolumner på golvet som roboten ska måla.
-Därefter följer $N$ rader och med $N$ tecken på varje rad, en punkt ($.$) för en omålad ruta, $S$ för en svart ruta och $V$ för en vit ruta.
+Därefter följer $N$ rader och med $N$ tecken på varje rad, en punkt (\verb|.|) för en omålad ruta, \verb|S| för en svart ruta och \verb|V| för en vit ruta.
 
-Golvet kommer alltid vara möjligt att måla enligt det givna mönstret. 
+Golvet kommer alltid vara möjligt att måla enligt det givna mönstret. Mönstret kommer innehålla minst en målad ruta. 
 
 \section*{Utdata}
 Skriv först ut en teckensträng med de rader och kolumner roboten ska måla, i ordning.
-Rader beskrivs med siffrorna $1$, $2$, $\dots$ och kolumner med bokstäverna $A$, $B$, $\dots$.
+Rader beskrivs med siffrorna \verb|1|, \verb|2|, $\dots$ uppifrån och ned, och kolumner med bokstäverna \verb|A|, \verb|B|, $\dots$ från vänster till höger.
 
 Skriv sedan ut en teckensträng med de färger roboten ska måla varje gång, med tecknen \texttt{V} för vitt och \texttt{S} för svart.
 
 \section*{Poängsättning}
-För testfall värda 2 poäng är $N \le 4$.
+Din lösning kommer att testas på en mängd testfallsgrupper.
+För att få poäng för en grupp så måste du klara alla testfall i gruppen.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
+  $1$    & $40$      & $N \leq 4$ \\ \hline
+  $2$    & $60$      & Inga ytterligare begränsningar. \\ \hline
+\end{tabular}
