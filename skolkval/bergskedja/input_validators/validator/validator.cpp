@@ -9,9 +9,13 @@ using namespace std;
 typedef long long ll;
 
 void run() {
-	int n = Int(1, 8);
+	int n = Int(1, Arg("maxn", 8));
 	Space();
-	int m = Int(1, 8);
+	int m = Int(1, Arg("maxm", 8));
+
+    bool eq = Arg("eq", 0);
+    if(eq)assert(n == m);
+
 	Endl();
 
 	for(int c1 = 0; c1 < n; c1++){
