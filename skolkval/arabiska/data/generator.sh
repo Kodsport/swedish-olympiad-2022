@@ -24,6 +24,7 @@ tc rnd03 gen_random subtask=1
 tc rnd04 gen_random subtask=1
 
 group g2 60
+include_group g1
 tc 2
 tc 3
 tc_manual g3
