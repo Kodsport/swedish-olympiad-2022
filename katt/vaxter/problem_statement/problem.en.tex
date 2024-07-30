@@ -1,0 +1,30 @@
+\problemname{Plants}
+\noindent
+Along a road that is $N$ meters long, there are $N$ plants. Plant $i$ is of species $A_i$ and is exactly one meter away from plant $A_{i-1}$. A botanist wants to walk along the road to collect plants. Since he has spent all his time in his lab, he is not in good shape, and therefore he asks you $Q$ questions of the form: if I want to collect all plants of the species between $0$ and $Q_i$, what is the minimum number of plants I need to pass by? He can start and end anywhere and can pass by a plant without collecting it.
+
+\section*{Input}
+The first line contains two integers $N$ ($1 \leq N \leq 2 \cdot 10^5$) and $Q$ ($1 \leq Q \leq 2 \cdot 10^5$).
+
+The second line contains $N$ integers, where the $i$-th integer $A_i$ ($0 \le A_i \le 10^9$) is the species of plant $i$.
+
+Then follow $Q$ lines, each containing an integer $Q_i$ ($0 \leq Q_i \leq 10^9$) representing the $i$-th question the botanist asks you.
+
+\section*{Output}
+Print $Q$ lines where the $i$-th line contains the answer to the $i$-th question. If it is impossible to collect plants between $0$ and $Q_i$, print $-1$.
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+  $1$   & $5$       & $N, Q, A_i, Q_i \leq 200 $\\ \hline
+  $2$   & $7$       & $N \leq 200 $\\ \hline
+  $3$   & $9$       & $Q=1, Q_i=1$\\ \hline
+  $4$   & $12$       & All integers $A_i$ are different. \\ \hline
+  $5$   & $16$       & $N \leq 2000 $  \\ \hline
+  $6$   & $18$       & $Q = 1$ \\ \hline
+  $7$   & $33$       & No additional constraints. \\ \hline
+\end{tabular}

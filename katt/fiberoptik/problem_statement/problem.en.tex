@@ -1,0 +1,31 @@
+\problemname{Fiber Optics}
+\noindent
+The communication network in Stackköping consists of a tree with $N$ nodes. You want to select certain edges and place fiber optic cables there. However, each node can have at most $K$ edges with fiber optic cables connected to it.
+
+Your task is to place as many fiber optic cables as possible. But each edge also has a cost, and among all the ways to place the maximum number of fiber optic cables, you want to find the one with the minimum possible cost.
+
+\section*{Input}
+The first line contains two integers $N$ and $K$ ($2 \leq N \leq 10^5$, $1 \leq K \leq 100$).
+
+The following $N-1$ lines each contain two integers $p_i$, $w_i$ ($1 \leq p_i \leq i$, $0 \leq w_i \leq 10^9$).
+This means that there is an edge between the nodes with indices $p_i$ and $i+1$, with a cost $w_i$.
+
+\section*{Output}
+Print two integers: the maximum number of edges, and the minimum cost for that number of edges.
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+  $1$   & $10$       & $N \leq 15$\\ \hline
+  $2$   & $10$       & $K = 1$  \\ \hline
+  $3$   & $10$       & $K \leq 2$ \\ \hline
+  $4$   & $10$       & $N \leq 100$ \\ \hline
+  $5$   & $20$       & $N \leq 2000$ \\ \hline
+  $6$   & $15$       & $w_i = 0$ \\ \hline
+  $7$   & $25$       & No additional constraints. \\ \hline
+\end{tabular}

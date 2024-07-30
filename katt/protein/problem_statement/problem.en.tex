@@ -1,0 +1,34 @@
+\problemname{Protein}
+\noindent
+Nikolaj is a chemist and is trying to create a protein with a specific shape. Right now, he has a protein that consists of a chain of amino acids of length $N$. The chain is a string $s$, where each amino acid is a letter. The letters used are the first $K$ letters of the alphabet ($1 \leq K \leq 26$).
+
+Nikolaj can make an amino acid $s_i$ react with $s_{i+1}$ so that $s_{i+1}$ disappears from the chain. But this is only possible for certain pairs of letters. Nikolaj has a $K \times K$ table $A$ with zeros and ones that indicate which pairs of letters can react with each other. If $A_{xy} = 1$, it means that the $x$-th letter of the alphabet can react with the $y$-th letter. So, if for example $A_{23} = 1$ and the string is \textbf{bccbca}, then the first letter can react with the second so that the string becomes \textbf{bcbca}. Then two more reactions can occur so that the string becomes \textbf{bba}.
+
+Nikolaj wants to create a protein that is as small as possible lexicographically by removing letters from $s$ in this way. Your task is to find the lexicographically smallest string possible.
+
+\section*{Input}
+The first line contains two integers $K$ and $N$ ($1 \leq K \leq 26$, $1 \leq N \leq 5 \cdot 10^5$).
+
+Next, there are $K$ lines each containing a string of length $K$, the matrix $A_{ij}$.
+
+The last line contains the string $s$.
+
+\section*{Output}
+Print a string, the lexicographically smallest string that can be created by making deletions as described in the problem.
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+  $1$   & $15$       & $N \leq 20$\\ \hline
+  $2$   & $10$       & $N \leq 300$, $K \leq 5$  \\ \hline
+  $3$   & $20$       & $N \leq 500$ \\ \hline
+  $4$   & $10$       & $N \leq 2000$ \\ \hline
+  $5$   & $25$       & $N \leq 10^5$ \\ \hline
+  $6$   & $10$       & $K \leq 2$ \\ \hline
+  $7$   & $10$       & No additional constraints. \\ \hline
+\end{tabular}
