@@ -1,0 +1,28 @@
+\problemname{Beach}
+\noindent
+Maja is tired of the coast being taken up by large seaside plots and instead wants to create a long, beautiful beach for public use.
+She is now planning to buy a segment of plots along the coast to create the beach.
+
+Maja has a budget of $B$ kronor, and the plots along the coast cost $A_1, A_2, \dots, A_N$ kr from left to right.
+What is the longest segment of plots that Maja can afford to buy?
+
+\section*{Input}
+The first line contains two integers $N$ ($1 \leq N \leq 10^5$), the number of plots, and $B$ ($0 \leq B \leq 10^9$), Maja's budget.
+
+The second line contains the $N$ integers $A_1, A_2, \dots, A_N$ ($1 \le A_i \le 1,000$), where $A_i$ is the price of plot $i$.
+
+\section*{Output}
+Print a single integer: the largest number of consecutive plots Maja can afford to buy.
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+  $1$   & $20$       & $N \leq 500 $ and all $A_i$ has the same value.\\ \hline
+  $2$   & $30$       & $N \leq 500 $\\ \hline
+  $3$   & $50$       & No additional constraints. \\ \hline
+\end{tabular}

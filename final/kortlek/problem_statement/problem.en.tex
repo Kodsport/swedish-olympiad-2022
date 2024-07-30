@@ -1,0 +1,41 @@
+\problemname{Card game}
+\noindent
+Nicole and Simon are playing a card game consisting of $N$ rounds.
+In round $i$, Nicole plays a card with a number $a_i$ written on it.
+Simon must respond by playing a card from his hand.
+If Simon's card has a value $b_i$, Nicole scores $|a_i - b_i|$ points.
+Nicole thus scores more points the farther Simon's card value is from the one Nicole played.
+
+Given exactly which cards Nicole will play and which cards Simon has in his hand from the start, what is the minimum score Nicole can get if Simon plays optimally?
+If Simon has $M$ cards, they will always play exactly $M$ or $M - 1$ rounds, i.e., $M = N$ or $M = N + 1$.
+
+\section*{Input}
+The first line contains two integers $N$ ($1 \leq N \leq 2 \cdot 10^5$) and $M$ ($N \leq M \leq N+1$), the number of rounds in the game and the number of cards Simon has.
+
+The second line contains $N$ integers $a_1, \dots, a_N$ ($0 \le a_i \le 10^9$), where $a_i$ is the value of the card Nicole plays in round $i$.
+
+The third line contains $M$ integers $b_1, \dots, b_M$ ($0 \le b_i \le 10^9$), the values of Simon's cards.
+
+\section*{Output}
+Print the minimum total score Nicole gets if Simon plays optimally.
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+  $1$   & $15$       & $N \leq 8 $\\ \hline
+  $2$   & $25$       & $N \leq 2000 $  \\ \hline
+  $3$   & $20$       & $M=N$ \\ \hline
+  $4$   & $40$       & No additional constraints. \\ \hline
+\end{tabular}
+
+\section*{Explanation of Samples}
+In example case 1, it is optimal for Simon to play the card with value 1 in the first round, and the card with value 2 in the second round. Then Nicole gets $|1-1| + |10-2| = 8$ points.
+
+In example case 2, Simon plays the cards with values 2, 5, 1, in that order.
+
+In example case 3, Simon plays the cards with values 4, 6, 3, 1, in that order.

@@ -1,0 +1,58 @@
+\problemname{Card game}
+\noindent
+Fredrik and Abdullah are playing a game of Laser Chess against each other. The game is played on a grid and the objective is to shoot a laser beam at the opponent's king.
+Abdullah has an attacking piece that, when a button is pressed, shoots laser in all four directions (up, down, left, and right).
+The attacking piece is marked with \texttt{A} on the grid.
+Fredrik's king is marked with \texttt{K}. There are also mirror pieces on the grid, marked with \texttt{o}.
+When a laser hits a mirror piece, the beam bounces out in all four directions.
+
+The game has reached a position where Abdullah will win if he simply presses the button to shoot the laser.
+To stop Abdullah from winning, Fredrik has now placed smoke bombs on the board, marked with \texttt{R}.
+The smoke prevents laser beams from traveling through that square. Every second, the smoke spreads to all four adjacent squares.
+If the attacking piece or the king is in the smoke, Abdullah cannot win.
+
+How many seconds will it take until Abdullah no longer wins by pressing the button?
+In other words, how many seconds will it take for the smoke to spread so that the laser can no longer reach the king from the attacking piece?
+It is guaranteed that the game is originally in a position where the laser reaches the king from the attacking piece without passing through any smoke.
+
+\section*{Input}
+The first line contains two integers $R$ and $C$ ($1 \le R, C$ and $R \times C \le 40,000$), the number of rows and columns in the grid that make up the game board.
+
+The following $R$ lines describe the layout of the game board.
+The $i$-th of these lines contains $C$ characters describing the appearance of the $i$-th row.
+Each character is one of the following:
+\begin{itemize}
+    \item \texttt{.} for an empty square
+    \item \texttt{o} for a mirror piece
+    \item \texttt{R} for a smoke bomb
+    \item \texttt{A} for the attacking piece
+    \item \texttt{K} for the king
+\end{itemize}
+It is guaranteed that \texttt{A} and \texttt{K} each appear exactly once,
+that \texttt{R} appears at least once,
+and that the laser beam initially reaches the king from the attacking piece.
+
+\section*{Output}
+Print the number of seconds it takes until the laser no longer reaches the king.
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+    $1$    & $10$       &  $R=1$ \\ \hline
+    $2$    & $20$       &  There is exactly one \texttt{R} on the board. \\ \hline
+    $3$    & $20$       &  No cell is empty (\texttt{.}) \\ \hline
+    $4$    & $20$       &  $R\times C \leq 400$ \\ \hline
+    $5$    & $30$       & No additional constraints. \\ \hline
+\end{tabular}
+
+\section*{Explanation of Samples}
+In example case 1, it is optimal for Simon to play the card with value 1 in the first round, and the card with value 2 in the second round. Then Nicole gets $|1-1| + |10-2| = 8$ points.
+
+In example case 2, Simon plays the cards with values 2, 5, 1, in that order.
+
+In example case 3, Simon plays the cards with values 4, 6, 3, 1, in that order.
