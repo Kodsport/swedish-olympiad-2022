@@ -1,0 +1,36 @@
+\problemname{Burning Trees}
+\noindent
+A forest fire has broken out in a nature reserve. In the area, there is a rare species of tree that cannot be found anywhere else in the world. You are in the forest, and on your way home, you intend to save as many trees as possible.
+
+There are $N$ rare trees numbered from $1$ to $N$, and you will run past them in that order.
+It takes $A_i$ seconds for you to save the $i$-th tree, but you must start saving it by second $X_i$, otherwise, the tree will burn up. However, it doesn't matter if second $X_i$ occurs while you are in the process of saving the tree.
+
+Running between the trees takes no time at all for you, but you can only run forward and therefore can only save trees in the order that you visit them. However, you know that
+$$X_1 \leq X_2 \leq X_3 \leq \cdots \leq X_N$$
+
+Find the maximum number of trees you can save.
+
+\section*{Input}
+The first line contains an integer $N$ ($1 \leq N \leq 4 \cdot 10^5$), the number of trees.
+
+The second line contains $N$ integers $X_i$ ($0 \leq X_i \leq 10^9$), the latest second by which you must start saving the $i$-th tree.
+
+The third line contains $N$ integers $A_i$ ($1 \leq A_i \leq 10^9$), the time it takes to save the $i$-th tree.
+
+\section*{Output}
+Print a single integer, the maximum number of trees that can be saved.
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+  $1$   & $10$       & $A_1 = A_2 = \cdots = A_N$\\ \hline
+  $2$   & $18$       & $X_1 = X_2 = \cdots = X_N$  \\ \hline
+  $3$   & $15$       & $N, A_i, X_i \leq 100$ \\ \hline
+  $4$   & $22$       & $N \leq 2000$ \\ \hline
+  $5$   & $35$       &  No additional constraints. \\ \hline
+\end{tabular}

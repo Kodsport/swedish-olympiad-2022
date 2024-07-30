@@ -1,0 +1,41 @@
+\problemname{Animal}
+\noindent
+In a grid with $R$ rows and $C$ columns, a wolf stands at cell $(1, 1)$ and a rabbit stands at cell $(R, C)$.
+The wolf wants to move to cell $(R, C)$, and the rabbit wants to move to cell $(1, 1)$.
+However, there is a problem: if their paths cross, the wolf will follow the rabbit and chase it.
+Now we wonder, given the layout of the grid, can you find a path for both the rabbit and the wolf so that their paths do not cross each other?
+The start and end cells ($(1, 1)$ and $(R, C)$) are not counted as part of the path.
+
+\section*{Input}
+The first line contains two integers: $R$ and $C$. In all test cases, it holds that $2 \leq R \cdot C \leq 2 \cdot 10^5$.
+
+Then follows an $R \times C$ grid. Each cell is either ``\texttt{.}'' which means an empty cell, or ``\texttt{\#}'' which means an obstacle.
+
+It is guaranteed that the cells (1,1) and (R,C) are empty.
+
+\section*{Output}
+Print \texttt{NO} if there are no two paths that meet the requirements of the task.
+
+Otherwise, print a line with \texttt{YES}.
+Then print a grid where you mark the rabbit's path with ``\texttt{K}'' and the wolf's path with ``\texttt{V}''.
+Note that all obstacles must remain obstacles when you print the grid and that all empty cells that are not part of the paths must remain empty cells.
+A path must be contiguous.
+
+If you are using C++, it may be good to use \texttt{'\textbackslash{}n'} instead of \texttt{endl} to avoid risking Time Limit Exceeded on a working solution.
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+  $1$   & $9$        & There are on obstacles. \\ \hline
+  $2$   & $10$       & $R \cdot C \leq 10$  \\ \hline
+  $3$   & $20$       & $R = 3$  \\ \hline
+  $4$   & $25$       & $R \cdot C \leq 1000$, and there exist a solution where the wolf only walks down and right, and the rabbit only up and left. \\ \hline
+  $5$   & $36$       & No additional constraints. \\ \hline
+\end{tabular}
+
+Note that some example cases are not valid in all test case groups.
