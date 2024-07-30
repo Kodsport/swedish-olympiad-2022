@@ -1,0 +1,42 @@
+\problemname{Hockey Match}
+\noindent
+Malin loves watching ice hockey. 
+Unfortunately, she had too much homework to do last night and couldn’t watch the live broadcast of her favorite team’s latest game, so now she is curious about what happened during the match.
+
+Usually, she checks Kvällspappret’s sports pages to find out, but unfortunately, 
+a large part of their website is broken (they need better programmers, as good as PO participants) and only a part of the statistics can be read. 
+Malin is primarily interested in three different questions for each team: the number of goals they scored, the number of shots their goalkeeper saved, and the total number of shots they took on the opponent’s goal. 
+Given some of this statistics for each team, reconstruct as much of the statistics as possible.
+
+\section*{Input}
+The first line contains three integers: the number of saves made by the first team's goalkeeper, the number of goals scored by the first team, and the number of shots the first team took on the opponent's goal.
+The second line contains the corresponding information for the second team.
+
+All known numbers in the statistics are between $0$ and $10^9$.
+If a number in the statistics is missing, it is replaced with $-1$.
+
+It is guaranteed that there is at least one way to replace all $-1$ with numbers so that the resulting statistics are correct.
+
+\section*{Output}
+Print the statistics for the two teams in the same format as the input.
+All missing statistics that can be uniquely determined from the other numbers should be printed instead of $-1$.
+If it is not possible to uniquely determine a certain number, print $-1$.
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+  $1$   & $30$         & All numbers can be reconstructed. \\ \hline
+  $2$   & $20$         & All numbers in the original statistics were at most $5$. \\ \hline
+  $3$   & $50$         & No additional constraints. \\ \hline
+\end{tabular}
+
+\section*{Explanation of Example Case 1}
+Since the first team had a total of $3$ shots on goal and the second team had $2$ saves, they must have conceded the last shot, resulting in $1$ goal.
+Since the first team made $1$ save but the second team scored $4$ goals, the second team must have made a total of $5$ shots on goal.
+
+This case could occur in all test groups.

@@ -1,0 +1,50 @@
+\problemname{Solar system}
+\noindent
+The planets in a solar system have entered into a number of very complicated customs unions.
+Each customs union consists of a continuous interval of planets, where the customs union $[a, b]$ consists of all planets between the $a$-th and $b$-th, counted from the sun.
+
+Your friend Zorgax runs a large logistics company that handles interplanetary transports.
+Every time the company makes a transport between two planets, they must go through a customs process for each customs union they enter or exit between the two planets.
+However, if a certain customs union lies strictly between the start and end points of the journey, the transport does not have to go through that customs union; they simply fly over all the planets that are part of that union.
+
+For each transport, Zorgax must first determine which entry and exit processes the transport must undergo.
+This is very time-consuming, so he has asked for your help.
+
+Zorgax has planned $Q$ different trips, where each trip goes between two planets.
+For each planned trip, print the number of entry and exit customs processes the transport must undergo.
+
+\section*{Input}
+The first line contains the number of customs unions $N$ ($1 \le N \le 10^5$).
+
+This is followed by $N$ lines, one for each customs union.
+The $i$-th of these contains two integers, $1 \le l_i \leq r_i \le 10^9$.
+This means there is a customs union that consists of all planets $j$ where $l_i \leq j \leq r_i$, where the planets are numbered according to their distance from the sun.
+
+Next, there is a line with the number of planned trips $Q$ ($1 \le Q \le 10^5$).
+
+Finally, there are $Q$ lines, one for each trip.
+Each line consists of two integers $1 \le a \neq b \le 10^9$ -- the planets from which the trip starts and ends, respectively.
+
+\section*{Output}
+Print a single integer for each trip -- the number of entry and exit customs processes the transport must undergo.
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+  $1$   & $15$        & $Q=1$  \\ \hline
+  $2$   & $35$        & $l_i \le l_{i + 1}$ and $r_i \le r_{i+1}$ for all $i$. \\ \hline
+  $3$   & $38$       & $ a,b,r_i \leq 10^5$ \\ \hline
+  $4$   & $12$       &  No additional constraints. \\ \hline
+\end{tabular}
+
+\section*{Explanation of Sample 2}
+In example case $2$, there are five customs unions.
+Of these, planet $1$ is part of the first and fourth unions, and planet $10$ is part of the first and fifth unions.
+The trip between planet $1$ and $10$ thus requires two customs processes: first when the transport leaves planet $1$ and the fourth union, and another when it arrives at planet $10$ and enters the fifth union.
+The second and third unions lie strictly between the two planets, so the transport never needs to enter either of these unions.
+Therefore, the answer is $2$.

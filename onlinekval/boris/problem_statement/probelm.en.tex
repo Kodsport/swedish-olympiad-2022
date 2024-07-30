@@ -1,0 +1,45 @@
+\problemname{Boris}
+\noindent
+In Philip's hometown, you can often find the world's most beautiful billboard. This billboard features none other than the math teacher Boris, along with the text "Count on Boris." Naturally, Philip has become completely obsessed with collecting these beautiful billboards, and now he needs your help to optimize his route between train stations in the city to collect as many Borises as possible.
+
+Through his extensive network, Philip has learned that in the near future, $N$ trains will depart from the city. For each train, he knows the departure time in seconds after the start of his pursuit, the number of Borises that will be on the train, and the coordinates of the train station, given in meters.
+To collect the Borises on a train, he must be at the station exactly at the time the train departs, but he can also arrive early and wait for the train calmly if he wishes.
+Since Philip loves Boris so much and does not want to get stuck on a train that will take him away from his hometown, he is extremely quick at picking up all the Borises on the train and does it in 0 seconds. Note that no matter how early he arrives, he cannot collect the Borises before the train's departure time, as it is only then that the train doors open.
+
+In such stressful situations as chasing Borises, it becomes very taxing for Philip to keep track of directions accurately. To avoid getting lost, he prefers to move only directly north, south, east, or west, so he knows more easily where he is headed.
+
+Since Philip has plenty of time to prepare for his adventure, he can start anywhere in the city. Once he starts, he moves at a speed of 1 meter/second. Philip has a very large backpack, so he can carry as many Borises as he wants at once.
+
+What is the maximum number of Borises that Philip can collect?
+
+\section*{Input}
+The first line contains an integer $N$ ($1 \le N \le 2,000$), the number of trains.
+
+Following this are $N$ lines, each describing one train.
+Each line contains four integers: the departure time $t$ in seconds after the start ($0 \le t \le 5 \cdot 10^8$), the number of Borises $s$ on the train ($1 \le s \le 500,000$), and the coordinates $x, y$ of the station from which the train departs ($0 \le x, y \le 5 \cdot 10^8$).
+
+No two trains will depart at the same time from exactly the same station.
+
+\section*{Output}
+Output a single line with an integer -- the maximum number of Borises that Philip can collect.
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
+
+\noindent
+\begin{tabular}{| l | l | l |}
+  \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+  $1$   & $8$        & $N \le 2$ \\ \hline
+  $2$   & $31$       & $N \le 16$ \\ \hline
+  $3$   & $33$       & $t, x, y \le 50$ and $s = 1$. \\ \hline
+  $4$   & $28$       & No additional constraints. \\ \hline
+\end{tabular}
+
+\section*{Explanation of Sample Case 3}
+In the third example case, there are four departures.
+We refer to these as trains $0$ - train $3$, in the order they appear in the input.
+
+If Philip starts at the point $(493,377)$, he can collect $952$ Borises from train $3$ at time $148$. He then has exactly $164$ meters to walk (which takes $164$ seconds) to reach train $1$. This train departs at $312$, which is $164$ seconds after train $3$.
+So he arrives exactly in time for train $1$ and can collect its $911$ Borises. From there, he has $6$ seconds to walk to train $2$ and collect $927$ Borises. In total, he can collect $952 + 911 + 927 = 2790$ Borises.

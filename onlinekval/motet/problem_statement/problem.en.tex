@@ -1,0 +1,44 @@
+\problemname{Meeting}
+\noindent
+A board with $N$ members is planning to have a meeting.
+Due to the large number of board members, it is difficult to find a time that suits everyone, but the aim is to have as many people as possible attend the meeting.
+
+Each member is available during a number of different time intervals, where each time interval $[a, b]$ means that the member can attend if the \textbf{meeting starts at some time} $t$ where $a \le t \le b$.
+Since some members are very careless with their calendars, the same member may accidentally give you overlapping time intervals, e.g., $[1, 3]$ and $[2, 4]$, even though one interval would have sufficed, in this case $[1, 4]$.
+
+Calculate the maximum number of members who can attend the meeting.
+
+\section*{Input}
+The first line contains an integer $N$ ($1 \le N \leq 2\cdot 10^5$), the number of members on the board.
+
+This is followed by $N$ lines, one for each board member.
+The $i$-th line starts with the number of time intervals $m_i$ ($1 \leq m_i \leq 2\cdot 10^5$) during which the $i$-th member can attend.
+This is followed by $m_i$ pairs of integers, one for each interval.
+These pairs $a, b$ ($0 \le a \le b \le 10^9$) represent the interval $[a, b]$.
+
+Let $B=\sum_{i=1}^{N} m_i$ be the sum of the number of time intervals during which all members are available.
+It is given that $B \leq 2\cdot 10^5$.
+
+\section*{Output}
+Print a single line with an integer -- the maximum number of members that can attend the meeting if the start time is chosen optimally.
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+  $1$   & $10$       & $B \leq 100$ and $0 \leq a \leq b \leq 100$ \\ \hline
+  $2$   & $15$       & $B \leq 1,000$, and $0 \leq a \leq b \leq 4,000$, and no single member has two overlapping time intervals \\ \hline
+  $3$   & $30$       & No single member has two overlapping time intervals \\ \hline
+  $4$   & $15$       & $B \leq 1,000$ and $0 \leq a \leq b \leq 4,000$ \\ \hline
+  $5$    & $30$        &  No additional constraints. \\ \hline
+\end{tabular}
+
+\section*{Explanation of Samples}
+In the first example, we can choose to start the meeting at time $4$, when members $2$ and $3$ can attend.
+This case could be included in all test case groups.
+
+Examples $2$ and $3$ could not be included in test case groups $2$ or $3$.
