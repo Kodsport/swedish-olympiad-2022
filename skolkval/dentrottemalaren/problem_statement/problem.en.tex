@@ -1,0 +1,45 @@
+\problemname{The Tired Painter}
+\noindent
+Ilad Rodavlas has worked as a painter all his life but is starting to get tired of his job.
+He brushes up, down, and up again.
+The same thing every day.
+% He has long considered quitting but has never done so.
+% He doesn't know where he would work otherwise.
+But one day when he is about to paint a floor, divided into $N \times N$ squares, he has a brilliant idea.
+"Imagine if a robot could do all the work for me," he exclaims.
+However, there are two problems with this idea.
+First, the robot can only move straight ahead, so it always paints an entire row or column with the same color.
+Second, Ilad cannot program.
+He knows, however, that you are a skilled programmer and wonders if you could help him.
+
+Ilad has a picture that shows exactly how the floor should look in the end.
+The whole floor is initially unpainted.
+Write a program that tells the robot how to paint the floor.
+To avoid wasting paint, the robot must not paint the same row or column more than once.
+
+% To avoid wasting paint, the robot must not paint a row or column if all the squares in the row or column are covered (possibly by the same color) later.
+% It must also not paint a row or column if all squares in the row or column already have the intended color.
+
+\section*{Input}
+The first line contains an integer $1 \leq N \leq 9$, the number of rows and columns on the floor that the robot will paint.
+Following this are $N$ lines, each with $N$ characters: a dot (\verb|.|) for an unpainted square, \verb|S| for a black square, and \verb|V| for a white square.
+
+The floor will always be possible to paint according to the given pattern. The pattern will contain at least one painted square.
+
+\section*{Output}
+First, output a string with the rows and columns the robot should paint, in order.
+Rows are described with the numbers \verb|1|, \verb|2|, $\dots$ from top to bottom, and columns with the letters \verb|A|, \verb|B|, $\dots$ from left to right.
+
+Then output a string with the colors the robot should use each time, with the characters \texttt{V} for white and \texttt{S} for black.
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+  $1$    & $40$      & $N \leq 4$ \\ \hline
+  $2$    & $60$        & No additional constraints. \\ \hline
+\end{tabular}

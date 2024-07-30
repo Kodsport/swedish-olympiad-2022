@@ -1,0 +1,38 @@
+\problemname{Mountain Range}
+\noindent
+To climb a wall, two people are required: one to climb and one to stay on the ground and hold the rope (belay) in case the climber falls. To belay, one must have a green card. However, one does not need a green card to climb.
+
+Climbing a wall, including tying the rope to the harness and everything around it, takes exactly $10$ minutes. There are many climbing walls available, so any number of people can climb simultaneously (but they must be belayed by different people).
+
+A group of friends consists of $N$ people with green cards and $M$ people without green cards. How many minutes will it take at a minimum before everyone has had a chance to climb once?
+
+
+\section*{Input}
+The first line contains an integer $N$ ($2 \le N \le 400,000,000$), the number of people with a green card.
+
+The second line contains an integer $M$ ($0 \le M \le 400,000,000$), the number of people without a green card.
+
+\section*{Output}
+Output an integer: the minimum number of minutes required before all $N + M$ people have had a chance to climb.
+
+\section*{Points}
+Your solution will be tested on several test case groups.
+To get the points for a group, it must pass all the test cases in the group.
+
+\noindent
+\begin{tabular}{| l | l | p{12cm} |}
+  \hline
+  \textbf{Group} & \textbf{Point value} & \textbf{Constraints} \\ \hline
+  $1$   & $20$        & $M = 0$ \\ \hline
+  $2$   & $20$        & $N = 2$ \\ \hline
+  $3$   & $40$        & $M, N \le 100$ \\ \hline
+  $4$    & $20$        & No additional constraints. \\ \hline
+\end{tabular}
+
+\section*{Explanation of Examples}
+
+In the first example, there are two people, both with green cards. One person belays while the other climbs, and then they can switch roles. In total, it takes $20$ minutes for both people to have climbed.
+
+In the second example, there are four people, two of whom have green cards. The two people with green cards can both climb during the first $20$ minutes (as in the first example). Then, the two people without green cards can climb simultaneously. Thus, it takes a total of $30$ minutes for everyone to have climbed.
+
+In the third example, there are six people, three of whom have green cards. One way to achieve climbing in $30$ minutes is to have always two people climbing at the same time, one with a green card and one without.
