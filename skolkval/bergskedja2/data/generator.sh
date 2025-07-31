@@ -2,7 +2,6 @@
 
 PPATH=$(realpath ..)
 
-REQUIRE_SAMPLE_REUSE=0
 . ../../../testdata_tools/gen.sh
 
 compile gen.py
@@ -46,6 +45,7 @@ tc slope-medium gen n=4 m=4 mode=slope
 
 group g4 40
 #limits maxn=$MAXN maxm=$MAXM
+include_group sample
 include_group g3
 include_group g1
 tc_manual g4

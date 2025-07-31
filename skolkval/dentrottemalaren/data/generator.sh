@@ -2,7 +2,6 @@
 
 PPATH=$(realpath ..)
 
-REQUIRE_SAMPLE_REUSE=0
 . ../../../testdata_tools/gen.sh
 
 use_solution joakim.cc
@@ -16,6 +15,7 @@ sample 3
 
 group g1 40
 limits maxn=4
+tc 1
 tc_manual g1
 tc_manual g2
 tc random-small-1 gen n=1
@@ -31,6 +31,7 @@ tc stripe-small-2 gen n=4 mode=nocross paints=3
 
 group g2 60
 limits maxn=9
+include_group sample
 include_group g1
 tc_manual g3
 tc_manual g4

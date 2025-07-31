@@ -1,0 +1,42 @@
+\problemname{Where's Waldo?}
+
+There is a hidden permutation $P_{1},P_{2},\ldots,P_{N}$ of length $N$, which is guaranteed to be generated uniformly at random.
+The permutation contains the numbers $1, 2, 3, \ldots, N$ exactly once each in some unknown order.
+
+You can choose positions $l$ and $r$, and ask queries of the form: ``What is the sum of $P_l + P_{l+1} + \cdots + P_r$''?
+
+Your task is to find the position of the number $1$ in $P$ using as few queries as possible.
+You will score points based on how few queries you use.
+
+\section*{Interaction}
+
+Your program should first read two integers on a line, $T$ and $N$.
+$T$ is the number of rounds your program will be run, and $N$ is the length of $P$.
+
+Then there will be $T$ rounds:
+
+When a round begins, you may start asking questions. Output a line with ``\verb|? a b|'' to
+ask for the sum of the numbers between positions $a$ and $b$ ($1 \leq a \leq b \leq N$).
+
+After each query, your program should read an integer: the sum of the values in the interval.
+
+Once you have found the position where the number $1$ is located, output a line of the form ``\verb|! i|'',
+where $i$ is the index such that $P_i = 1$. After you output this, the next round begins.
+
+\textbf{Make sure to flush the output after each query}, otherwise you may get a \textit{Time Limit Exceeded}.
+In C++, this can be done with, for example, \texttt{cout << flush}
+or \texttt{fflush(stdout)};
+in Python with \texttt{stdout.flush()};
+and in Java with \texttt{System.out.flush()}.
+
+\section*{Scoring}
+
+Your program will be tested on \textbf{a single test case, with $N = T = 1000$}.
+
+If any round gives the wrong answer, the submission will be judged as \textit{Wrong Answer}.
+
+Let $M$ be the number of queries your program makes across all $T$ rounds. You will receive
+$\min(100, 220 - \frac{M}{2500})$ points. If you get negative points, it will count as zero.
+
+In other words, if you use more than $550,000$ queries, you get 0 points, and
+if you use $300,000$ or fewer queries, you get 100 points. In between, the score increases linearly.

@@ -2,7 +2,6 @@
 
 PPATH=$(realpath ..)
 
-REQUIRE_SAMPLE_REUSE=0
 . ../../../testdata_tools/gen.sh
 
 use_solution nils.py
@@ -20,6 +19,7 @@ tc same-2 gen n=50 mode=same
 
 group g2 40
 limits maxlen=10
+include_group sample
 tc_manual g2
 tc_manual g3
 tc random-small-1 gen n=5
