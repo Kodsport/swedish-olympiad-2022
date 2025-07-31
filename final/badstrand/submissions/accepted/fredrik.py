@@ -1,4 +1,4 @@
-#! /usr/dev/env python3
+#!/usr/bin/python3
 n, b = input().split()
 n = int(n)
 b = int(b)

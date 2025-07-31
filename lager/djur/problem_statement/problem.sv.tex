@@ -8,7 +8,7 @@ Start- och slutrutorna ($(1, 1)$ och $(R, C)$) räknas inte med i vägen.
 \section*{Indata}
 Den första raden innehåller två heltal: $R, C$. I alla testfall gäller det att $2 \leq R \cdot C \leq 2 \cdot 10^5$.
 
-Sedan följer ett $R \times C$ rutnät. Varje ruta är antingen ``\texttt{.}'' som betyder en tom ruta, eller ``\texttt{\#}'' som betyder ett hinder.
+Sedan följer ett $R \times C$ rutnät. Varje ruta är antingen ''\texttt{.}'' som betyder en tom ruta, eller ''\texttt{\#}'' som betyder ett hinder.
 
 Det är garanterat att rutorna (1,1) och (R,C) är tomma.
 
@@ -16,25 +16,25 @@ Det är garanterat att rutorna (1,1) och (R,C) är tomma.
 Skriv ut \texttt{NO} om det inte finns två vägar som uppfyller kraven i uppgiften.
 
 Annars skriv ut en rad med \texttt{YES}.
-Skriv sedan ut ett rutnät där du markerar kaninens väg med ``\texttt{K}'' och vargens väg med ``\texttt{V}''.
+Skriv sedan ut ett rutnät där du markerar kaninens väg med ''\texttt{K}'' och vargens väg med ''\texttt{V}''.
 Notera att alla hinder måste förbli hinder när du skriver ut rutnätet och att alla tomma rutor som inte är en del av vägen måste förbli tomma rutor.
 En väg måste vara sammanhängade.
 
 Om du använder C++ kan det vara bra att använda \texttt{'\textbackslash{}n'} istället för \texttt{endl} för att inte riskera få Time Limit Exceeded på en fungerande lösning.
 
 \section*{Poängsättning}
-Din lösning kommer att testas på en antal testfallsgrupper.
+Din lösning kommer att testas på en mängd testfallsgrupper.
 För att få poäng för en grupp så måste du klara alla testfall i gruppen.
 
 \noindent
 \begin{tabular}{| l | l | p{12cm} |}
   \hline
-  Grupp & Poängvärde & Gränser \\ \hline
+  \textbf{Grupp} & \textbf{Poäng} & \textbf{Gränser} \\ \hline
   $1$   & $9$        & Det finns inga hinder. \\ \hline
   $2$   & $10$       & $R \cdot C \leq 10$  \\ \hline
   $3$   & $20$       & $R = 3$  \\ \hline
   $4$   & $25$       & $R \cdot C \leq 1000$, och det finns garanterat en lösning där vargen enbart går ned och till höger, och kaninen enbart upp och till vänster.  \\ \hline
-  $5$   & $36$       & Inga ytterligare begränsningar  \\ \hline
+  $5$   & $36$       & Inga ytterligare begränsningar.  \\ \hline
 \end{tabular}
 
 Notera att vissa exempelfall inte är giltiga i alla testfallsgrupper.

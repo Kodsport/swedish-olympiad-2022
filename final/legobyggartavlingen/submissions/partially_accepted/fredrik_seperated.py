@@ -1,4 +1,4 @@
-#!/usr/dev/env python3
+#!/usr/bin/python3
 
 a,b,m = list(map(int, input().split()))
 

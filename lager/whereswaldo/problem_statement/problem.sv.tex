@@ -3,7 +3,7 @@
 Det finns en gömd permutation $P_{1},P_{2},\ldots,P_{N}$ av längd $N$, som är garanterad att vara genererad uniformt slumpmässigt.
 Permutationen innehåller talen $1, 2, 3, \ldots, N$ exakt en gång vardera i någon okänd ordning.
 
-Du kan välja positioner $l$ och $r$, och ställa frågor på formen: ``Vad är summan av $P_l + P_{l+1} + \cdots + P_r$?''
+Du kan välja positioner $l$ och $r$, och ställa frågor på formen: ''Vad är summan av $P_l + P_{l+1} + \cdots + P_r$?''
 
 Din uppgift är att hitta på vilken position $1$:an befinner sig i $P$ med så få frågor som möjligt.
 Du får poäng beroende på hur få frågor du ställer.
@@ -15,12 +15,12 @@ $T$ är antalet omgångar ditt program kommer köras, och $N$ är längden på $
 
 Därefter sker $T$ omgångar:
 
-När en omgång börjar kan du börja ställa frågor. Skriv ut en rad med ``\verb|? a b|'' för
+När en omgång börjar kan du börja ställa frågor. Skriv ut en rad med ''\verb|? a b|'' för
 att fråga efter summan av talen mellan position $a$ och $b$ ($1 \leq a \leq b \leq N$).
 
 Efter varje fråga ska ditt program läsa in ett heltal, summan av talen i intervallet.
 
-När du har hittat vilken position $1$:an befinner sig på, skriv ut en rad på formen ``\verb|! i|'',
+När du har hittat vilken position $1$:an befinner sig på, skriv ut en rad på formen ''\verb|! i|'',
 där $i$ är det index sådant att $P_i = 1$. Efter att du skrivit ut detta börjar nästa omgång.
 
 \textbf{Se till att flusha outputen efter varje query}, annars kan du få \textit{Time Limit Exceeded}.
